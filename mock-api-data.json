@@ -30,7 +30,7 @@
       "age": 25,
       "agreetc": true,
       "dob": "2019-12-31",
-      "email": "seller@gmail.com",
+      "email": "farmer@gmail.com",
       "gender": "Male",
       "address": {
         "id": 0,
@@ -47,7 +47,7 @@
       "name": "Bijay",
       "password": "123456",
       "uploadPhoto": "C:\\fakepath\\Online Application.pdf",
-      "role": "seller",
+      "role": "farmer",
       "id": 2
     },
     {
@@ -55,7 +55,7 @@
       "mobNumber": "0123456789",
       "age": 25,
       "dob": "2017-11-30",
-      "email": "buyer@gmail.com",
+      "email": "merchant@gmail.com",
       "password": "123456",
       "gender": "Male",
       "address": {
@@ -68,7 +68,7 @@
       },
       "aboutYou": "djdhjdh",
       "uploadPhoto": "C:\\fakepath\\Online Application.pdf",
-      "role": "buyer",
+      "role": "merchant",
       "id": 3
     },
     {
@@ -93,7 +93,7 @@
       "name": "Saurabh Sunil Solanke",
       "password": "123456",
       "uploadPhoto": "C:\\fakepath\\853c4848-e613-49cd-bb61-176a840d88fb.jpg",
-      "role": "buyer",
+      "role": "merchant",
       "id": 4
     }
   ],

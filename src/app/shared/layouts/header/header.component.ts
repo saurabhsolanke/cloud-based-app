@@ -11,20 +11,18 @@ export class HeaderComponent implements OnInit {
 
   logged_in: Boolean = false;
   language: String = 'English';
-  user_role: String;
+  user_role = '';
+  name = ''
 
   constructor(private translate: TranslateService, private router: Router) { }
 
 
   ngOnInit() {
-    
-    
   }
 
   ngDoCheck() {
     this.user_role = sessionStorage.getItem("role");
-    // console.log(this.user_role);
-    
+    this.name = sessionStorage.getItem("name");
     const user_session_id = sessionStorage.getItem("user_session_id")
     if (user_session_id) {
       this.logged_in = true;

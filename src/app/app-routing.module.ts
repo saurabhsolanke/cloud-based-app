@@ -5,15 +5,14 @@ import { PageNotFoundErrorComponent } from './shared/layouts/page-not-found-erro
 import { AdminAuthGuardLogin, AdminAuthGaurdService, SellerBuyerAuthGuardLogin, SellerAuthGaurdService, BuyerAuthGaurdService } from './shared/services/auth-gaurd.service';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
-import { SellerDashboardComponent } from './customer/seller/seller-dashboard/seller-dashboard.component';
-import { BuyerDashboardComponent } from './customer/buyer/buyer-dashboard/buyer-dashboard.component';
 import { SigninSignupComponent } from './customer/signin-signup/signin-signup.component';
 import { UserCrudComponent } from './admin/user-crud/user-crud.component';
 import { ProductCrudComponent } from './product/product-crud/product-crud.component';
-import { CheckoutComponent } from './customer/buyer/checkout/checkout.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-
+import { BuyerDashboardComponent } from './customer/buyer/buyer-dashboard/buyer-dashboard.component';
+import { CheckoutComponent } from './customer/buyer/checkout/checkout.component';
+import { SellerDashboardComponent } from './customer/seller/seller-dashboard/seller-dashboard.component';
 const routes: Routes = [
   { path: "", redirectTo: "/", pathMatch: "full" },
   { path: "", component: HomeComponent },
@@ -34,7 +33,7 @@ const routes: Routes = [
     ]
   },
 
-  //Path/component you want to access before customer(seller and buyer) login/signin
+  //Path/component you want to access before customer(farmer and merchant) login/signin
   {
     path: '', canActivate: [SellerBuyerAuthGuardLogin], children: [
       { path: "sign-in", component: SigninSignupComponent },
@@ -42,18 +41,18 @@ const routes: Routes = [
     ]
   },
 
-  //Path/component you want to access after customer(seller) login/signin
+  //Path/component you want to access after customer(farmer) login/signin
   {
     path: '', canActivate: [SellerAuthGaurdService], children: [
-      { path: "seller-dashboard", component: SellerDashboardComponent },
-      { path: "seller/product", component: ProductCrudComponent },
+      { path: "farmer-dashboard", component: SellerDashboardComponent },
+      { path: "farmer/product", component: ProductCrudComponent },
     ]
   },
 
-  //Path/component you want to access after customer(buyer) login/signin
+  //Path/component you want to access after customer(merchant) login/signin
   {
     path: '', canActivate: [BuyerAuthGaurdService], children: [
-      { path: "buyer-dashboard", component: BuyerDashboardComponent },
+      { path: "merchant-dashboard", component: BuyerDashboardComponent },
       { path: "checkout", component: CheckoutComponent }
     ]
   },

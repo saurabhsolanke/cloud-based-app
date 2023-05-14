@@ -23,10 +23,15 @@ export class ProductCrudComponent implements OnInit {
 
   single_product_data;
   edit_product_id;
+  user_session_id:any;
+  name: any;
+  loggedinname='';
 
   constructor(private formBuilder: FormBuilder, private router: Router, private product_service: ProductService) { }
 
   ngOnInit() {
+    this.loggedinname = sessionStorage.getItem("name");
+    this.user_session_id = sessionStorage.getItem("user_session_id");
     this.addEditProductForm = this.formBuilder.group({
       name: ['', Validators.required],
       uploadPhoto: ['', Validators.required],
@@ -42,11 +47,32 @@ export class ProductCrudComponent implements OnInit {
 
   getAllProduct() {
     this.product_service.allProduct().subscribe(data => {
-      this.all_product_data = data;
+      this.all_product_data = data.filter(product => product.userId == this.user_session_id);
+
+      // this.all_product_data = data;
     }, error => {
       console.log("My error", error);
     })
   }
+
+  Search() {
+    if (this.name == "") {
+      this.ngOnInit();
+    }
+    else {
+      this.all_product_data = this.all_product_data.filter((res: { name: string; }) => {
+        return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+      })
+    }
+  }
+
+  key: string = 'id';
+  reverse: boolean = false;
+  sort(key: string) {
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
+
   addProductPopup() {
     this.add_product = true;
     this.edit_product = false;
@@ -68,7 +94,9 @@ export class ProductCrudComponent implements OnInit {
       productDesc: this.product_data.productDesc,
       mrp: this.product_data.mrp,
       dp: this.product_data.dp,
-      status: this.product_data.status
+      status: this.product_data.status,
+      addedBy: this.loggedinname,
+      user_session_id: this.user_session_id
     }
     this.product_service.addNewProduct(this.product_dto).subscribe(data => {
       // console.log(data);
@@ -114,7 +142,10 @@ export class ProductCrudComponent implements OnInit {
       productDesc: this.product_data.productDesc,
       mrp: this.product_data.mrp,
       dp: this.product_data.dp,
-      status: this.product_data.status
+      status: this.product_data.status,
+      addedBy: this.loggedinname,      
+      user_session_id: this.user_session_id
+
     }
     this.product_service.updateProduct(this.edit_product_id, this.product_dto).subscribe(data => {
       // console.log(data);

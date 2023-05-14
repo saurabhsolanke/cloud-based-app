@@ -1,7 +1,7 @@
 {
     "intro": "Welcome to the world of Internationalization",
-    "proj_name": "B2B Ecommerce Portal",
-    "project_short_desc": "This project is like ecommerce portal where some of the user(Seller) who want to sell the product and services using this and some of the user(Buyer/End User) who needs the product they can buy from the user(Seller). On top of this two user there is another user(Admin) we named as admin, who have control all the operation like, he/she can delete the product, buyer, seller, can edit and update also. ",
+    "proj_name": "Cloud-based Farmer-merchant App",
+    "project_short_desc": "This project is like ecommerce portal where some of the user(farmer) who want to sell the product and services using this and some of the user(merchant/End User) who needs the product they can buy from the user(farmer). On top of this two user there is another user(Admin) we named as admin, who have control all the operation like, he/she can delete the product, merchant, farmer, can edit and update also. ",
     "view_detail_doc_btn": "View Detailed Documentation",
     "header": {
         "ecommerce": "Ecommerce 2.0",
@@ -22,9 +22,6 @@
         "signout": "SignOut"
     },
     "footer": {
-        "year": "2019",
-        "d&d_by": "Designed and developed by",
-        "my_name": "Srikrushna Pal",
-        "tc": "Terms and condition of usages"
+        "year": "2019"
     }
 }

@@ -111,14 +111,16 @@ export class SigninSignupComponent implements OnInit {
       this.user_data = data;
       if (this.user_data.length == 1) {
         // alert("Validate")
-        if (this.user_data[0].role == "seller") {
+        if (this.user_data[0].role == "farmer") {
           sessionStorage.setItem("user_session_id", this.user_data[0].id);
           sessionStorage.setItem("role", this.user_data[0].role);
-          this.router.navigateByUrl('/seller-dashboard');
-        } else if (this.user_data[0].role == "buyer") {
+          sessionStorage.setItem("name", this.user_data[0].name);
+          this.router.navigateByUrl('/farmer-dashboard');
+        } else if (this.user_data[0].role == "merchant") {
           sessionStorage.setItem("user_session_id", this.user_data[0].id);
           sessionStorage.setItem("role", this.user_data[0].role);
-          this.router.navigateByUrl('/buyer-dashboard');
+          sessionStorage.setItem("name", this.user_data[0].name);
+          this.router.navigateByUrl('/merchant-dashboard');
         } else {
           alert("Invalid-user-role")
         }

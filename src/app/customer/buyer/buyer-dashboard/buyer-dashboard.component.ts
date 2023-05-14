@@ -34,7 +34,6 @@ export class BuyerDashboardComponent implements OnInit {
   }
 
   addToCart() {
-    alert("This a showcase, if you need this feature comment in the comment section")
   }
 
 }

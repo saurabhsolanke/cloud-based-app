@@ -27,8 +27,11 @@ export class UserCrudComponent implements OnInit {
   popup_header: string;
 
   signInFormValue: any = {};
+  name: string;
 
   constructor(private formBuilder: FormBuilder, private router: Router, private admin_service: AdminService) { }
+
+  User!: User[];
 
   ngOnInit() {
     this.getAllUser();
@@ -51,6 +54,24 @@ export class UserCrudComponent implements OnInit {
       agreetc: ['', Validators.required],
       role: ['', Validators.required]
     })
+  }
+
+  Search() {
+    if (this.name == "") {
+      this.ngOnInit();
+    }
+    else {
+      this.User = this.User.filter((res: { name: string; }) => {
+        return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+      })
+    }
+  }
+
+  key: string = 'id';
+  reverse: boolean = false;
+  sort(key: string) {
+    this.key = key;
+    this.reverse = !this.reverse;
   }
 
   getAllUser() {

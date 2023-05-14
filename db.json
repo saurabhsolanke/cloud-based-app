@@ -1,196 +1,292 @@
 {
   "user": [
     {
-      "name": "Srikrushna Pal",
-      "mobNumber": "1234567891",
-      "age": 27,
-      "dob": "1992-09-17",
-      "email": "admin@gmail.com",
-      "password": "123456",
-      "address": {
-        "addLine1": "Marathalli",
-        "addLine2": "Aswathnagar",
-        "city": "Bangalore",
-        "state": "Choose...",
-        "zipCode": "560037"
-      },
+      "name": "rohit shrikhande",
+      "mobNumber": "9876543210",
+      "age": 23,
+      "dob": "1999-12-25",
+      "email": "rohit@gmail.com",
+      "password": "12345678",
       "language": [
-        "English",
-        "Oriya/Odiya"
+        "English"
       ],
       "gender": "Male",
-      "aboutYou": "I am a programmer...",
-      "uploadPhoto": "C:\\fakepath\\Screenshot-demo from 2019-06-21 17-13-05.png",
+      "address": {
+        "id": 0,
+        "addLine1": "Chhatrapati Sambhaji Nagar",
+        "addLine2": null,
+        "city": "Chhatrapati Sambhaji Nagar",
+        "state": "...",
+        "zipCode": "431003"
+      },
+      "aboutYou": "i like biryani",
+      "uploadPhoto": "C:\\fakepath\\853c4848-e613-49cd-bb61-176a840d88fb.jpg",
       "agreetc": true,
-      "role": "admin",
+      "role": "farmer",
       "id": 1
     },
     {
-      "aboutYou": "I am programmer",
+      "name": "saurabh solanke",
+      "mobNumber": "9028066793",
       "age": 25,
-      "agreetc": true,
-      "dob": "2019-12-31",
-      "email": "seller@gmail.com",
+      "dob": "1997-05-10",
+      "email": "saurabh@gmail.com",
+      "password": "12345678",
+      "language": [
+        "English"
+      ],
       "gender": "Male",
       "address": {
         "id": 0,
-        "addLine1": "Marathalli",
-        "addLine2": "Aswathnagar",
-        "city": "Bangalore",
-        "state": "Choose...",
-        "zipCode": "560037"
+        "addLine1": "wakad",
+        "addLine2": null,
+        "city": "Pune",
+        "state": "...",
+        "zipCode": "411057"
       },
-      "language": [
-        "Oriya/Odiya"
-      ],
-      "mobNumber": "0123456789",
-      "name": "Bijay",
-      "password": "123456",
-      "uploadPhoto": "C:\\fakepath\\Online Application.pdf",
-      "role": "seller",
+      "aboutYou": "Music Lover, ",
+      "uploadPhoto": "C:\\fakepath\\bd869011-097c-4a9e-bc24-4dda6d7db654.jpg",
+      "agreetc": true,
+      "role": "admin",
       "id": 2
     },
     {
-      "name": "Last user",
-      "mobNumber": "0123456789",
-      "age": 25,
-      "dob": "2017-11-30",
-      "email": "buyer@gmail.com",
-      "password": "123456",
+      "name": "nayan kawde",
+      "mobNumber": "9720276354",
+      "age": 23,
+      "dob": "1999-02-21",
+      "email": "nayan@gmail.com",
+      "password": "12345678",
+      "language": [
+        "Bengali"
+      ],
       "gender": "Male",
       "address": {
         "id": 0,
-        "addLine1": "Marathalli",
-        "addLine2": "Aswathnagar",
-        "city": "Bangalore",
-        "state": "Choose...",
-        "zipCode": "560037"
+        "addLine1": "Nashik",
+        "addLine2": null,
+        "city": "Nashik",
+        "state": "...",
+        "zipCode": "123456"
       },
-      "aboutYou": "djdhjdh",
-      "uploadPhoto": "C:\\fakepath\\Online Application.pdf",
-      "role": "buyer",
+      "aboutYou": "Dj NBK lover",
+      "uploadPhoto": "C:\\fakepath\\150-1503934_computer-icons-scalable-vector-graphics-user-profile-user.png",
+      "agreetc": true,
+      "role": "merchant",
       "id": 3
+    },
+    {
+      "name": "kunal pawar",
+      "mobNumber": "9921345678",
+      "age": 23,
+      "dob": "1999-07-04",
+      "email": "kunal@gmail.com",
+      "password": "12345678",
+      "language": [
+        "Hindi"
+      ],
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "solapur",
+        "addLine2": null,
+        "city": "solapur",
+        "state": "...",
+        "zipCode": "411234"
+      },
+      "aboutYou": "Mba studying",
+      "uploadPhoto": "C:\\fakepath\\bd869011-097c-4a9e-bc24-4dda6d7db654.jpg",
+      "agreetc": true,
+      "role": "merchant",
+      "id": 4
+    },
+    {
+      "aboutYou": "from kk wagh college",
+      "age": 22,
+      "agreetc": true,
+      "dob": "1999-05-16",
+      "email": "roshan@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "Chh. Sambhaji nagar",
+        "addLine2": null,
+        "city": "Chh. Sambhaji nagar",
+        "state": "...",
+        "zipCode": "411075"
+      },
+      "language": [
+        "English"
+      ],
+      "mobNumber": "9876543210",
+      "name": "roshan sonone",
+      "password": "12345678",
+      "uploadPhoto": "C:\\fakepath\\853c4848-e613-49cd-bb61-176a840d88fb.jpg",
+      "role": "merchant",
+      "id": 5
+    },
+    {
+      "aboutYou": "HI farmer 1",
+      "age": 25,
+      "agreetc": true,
+      "dob": "2023-04-10",
+      "email": "farmer@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "st.",
+        "addLine2": null,
+        "city": "pune",
+        "state": "...",
+        "zipCode": "411057"
+      },
+      "language": [
+        "Marathi"
+      ],
+      "mobNumber": "9028066793",
+      "name": "farmer",
+      "password": "12345678",
+      "uploadPhoto": "C:\\fakepath\\853c4848-e613-49cd-bb61-176a840d88fb.jpg",
+      "role": "farmer",
+      "id": 6
+    },
+    {
+      "aboutYou": "i am merchant",
+      "age": 24,
+      "agreetc": true,
+      "dob": "1999-08-24",
+      "email": "rucha@gmail.com",
+      "gender": "Female",
+      "address": {
+        "id": 0,
+        "addLine1": "wakad",
+        "addLine2": "",
+        "city": "pune",
+        "state": "...",
+        "zipCode": "411057"
+      },
+      "language": [
+        "Marathi"
+      ],
+      "mobNumber": "9876543210",
+      "name": "rucha muley",
+      "password": "pass1999",
+      "uploadPhoto": "C:\\fakepath\\853c4848-e613-49cd-bb61-176a840d88fb.jpg",
+      "role": "merchant",
+      "id": 7
+    },
+    {
+      "aboutYou": "merchnat",
+      "age": 23,
+      "agreetc": true,
+      "dob": "1999-08-24",
+      "email": "rucha@gmail.com",
+      "gender": "Female",
+      "address": {
+        "id": 0,
+        "addLine1": "wkad",
+        "addLine2": null,
+        "city": "pune",
+        "state": "...",
+        "zipCode": "411057"
+      },
+      "language": [
+        "Marathi"
+      ],
+      "mobNumber": "9028066793",
+      "name": "rucha",
+      "password": "12345678",
+      "uploadPhoto": "C:\\fakepath\\bd869011-097c-4a9e-bc24-4dda6d7db654.jpg",
+      "role": "merchant",
+      "id": 8
+    },
+    {
+      "aboutYou": "merchant",
+      "age": 25,
+      "agreetc": true,
+      "dob": "1997-05-31",
+      "email": "parag@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "wakad",
+        "addLine2": "N-4 South, CIDCO, Aurangabad",
+        "city": "pune",
+        "state": "...",
+        "zipCode": "431003"
+      },
+      "language": [
+        "Marathi"
+      ],
+      "mobNumber": "84408022997",
+      "name": "parag",
+      "password": "pass1997",
+      "uploadPhoto": "C:\\fakepath\\bd869011-097c-4a9e-bc24-4dda6d7db654.jpg",
+      "role": "merchant",
+      "id": 9
+    },
+    {
+      "aboutYou": "farmer",
+      "age": 27,
+      "agreetc": true,
+      "dob": "1994-08-22",
+      "email": "sudhir@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "flat no. 20, D-wing, Vivekanand Nagar",
+        "addLine2": "N-4 South, CIDCO, Aurangabad",
+        "city": "Aurangabad(Maharasht",
+        "state": "...",
+        "zipCode": "431003"
+      },
+      "language": [
+        "Marathi"
+      ],
+      "mobNumber": "+919028066793",
+      "name": "Sudhir Solanke",
+      "password": "pass1997",
+      "uploadPhoto": "C:\\fakepath\\bd869011-097c-4a9e-bc24-4dda6d7db654.jpg",
+      "role": "farmer",
+      "id": 10
     }
   ],
   "products": [
     {
       "id": 1,
-      "name": "Polyester Door Curtain",
-      "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jcf487k0/curtain/w/e/y/elegant-cream-door-curtains-set-of-2-213-soe-fsb-120-120-eyelet-original-imaffk7f9wng4v4m.jpeg",
-      "productDesc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
-      "mrp": "1000",
-      "dp": "499",
-      "status": "publish"
+      "name": "cotton",
+      "uploadPhoto": "https://media.istockphoto.com/id/589121090/photo/branch-of-ripe-cotton.jpg?s=612x612&w=0&k=20&c=eGlf6UISNaZRIKxnoesMIIpOqzevDWtb_OoU_0KVN_M=",
+      "productDesc": "this is cotton",
+      "mrp": "19000",
+      "dp": "18000",
+      "status": "inactive",
+      "addedBy": "rohit shrikhande",
+      "user_session_id": "1"
     },
     {
       "id": 2,
-      "name": "Water Bottle",
-      "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/bottle/w/5/g/1000-cello-h2o-cello-h2o-water-bottel-cello-original-imaeqtj3vyxyehmn.jpeg",
-      "productDesc": "Hygienic bottle: The bottle is made of 100% food grade material & is BPA free ensures a safe drinking. Crystal Clarity: It's sheer body helps to easily identify the contents & also adds beauty to the liquid that you put in, Leak Proof: The bottle has a liquid tight cap that prevents leakage & is unbreakable. Freezer safe: These bottles are compatible with refrigerator & not being curvy the bottle occupies less space. Looks pretty in the fridge or on the table top.",
-      "mrp": "123",
-      "dp": "99",
-      "status": "publish"
+      "name": "cotton",
+      "uploadPhoto": "https://www.the-sustainable-fashion-collective.com/img/http/assets.the-sustainable-fashion-collective.com/assets/the-swatch-book/2014/11/cotton.png/7c098280951a28c0f2aa4291f179ae42.png",
+      "productDesc": "sudhir",
+      "mrp": "333",
+      "dp": "332",
+      "status": "publish",
+      "addedBy": "Sudhir Solanke",
+      "user_session_id": "10"
     },
     {
       "id": 3,
-      "name": "Metro Living Self Design Pillows Cover",
-      "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jjsw4nk0/cushion-pillow-cover/e/z/z/epl12-metro-living-original-imaf7ah6zstjyevd.jpeg",
-      "productDesc": "Regional Speciality\nRajasthan\nFabric Care\nMachinne Wash, Do not Bleach, Wash in Cold Water\nThread Count\n104\nSales Package\nPack of 2 Pillow Cover",
-      "mrp": "500",
-      "dp": "399",
-      "status": "draft"
-    },
-    {
-      "id": 4,
-      "name": "Metro Living Self Design Pillows Cover",
-      "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jjsw4nk0/cushion-pillow-cover/e/z/z/epl12-metro-living-original-imaf7ah6zstjyevd.jpeg",
-      "productDesc": "Regional Speciality\nRajasthan\nFabric Care\nMachinne Wash, Do not Bleach, Wash in Cold Water\nThread Count\n104\nSales Package\nPack of 2 Pillow Cover",
-      "mrp": "500",
-      "dp": "399",
-      "status": "draft"
-    },
-    {
-      "id": 5,
-      "name": "TIZUM Aluminium Portable Stand",
-      "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jx0prbk0/mobile-holder/t/3/d/aluminium-portable-stand-with-convenient-charging-port-design-original-imafhkkxjvphhhgz.jpeg",
-      "productDesc": "The aluminium material used in the stand makes it sturdy and strong. Multi-angle fold-ability provides with a seamless viewing experience. The light weight of this stand allows it to be carried around everywhere conveniently. Universally designed to fit 3.5-8 inch phones and tablets without hassle. Apart from phones and tabs, the stand also holds gaming console like Nintendo play. •Aluminium Stand with Multi-Angle foldability ",
-      "mrp": "300",
-      "dp": "199",
-      "status": "inactive"
-    },
-    {
-      "id": 6,
-      "name": "Polyester Door Curtain",
-      "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jcf487k0/curtain/w/e/y/elegant-cream-door-curtains-set-of-2-213-soe-fsb-120-120-eyelet-original-imaffk7f9wng4v4m.jpeg",
-      "productDesc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
-      "mrp": "1000",
-      "dp": "499",
-      "status": "publish"
-    },
-    {
-      "id": 7,
-      "name": "Water Bottle",
-      "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/bottle/w/5/g/1000-cello-h2o-cello-h2o-water-bottel-cello-original-imaeqtj3vyxyehmn.jpeg",
-      "productDesc": "Hygienic bottle: The bottle is made of 100% food grade material & is BPA free ensures a safe drinking. Crystal Clarity: It's sheer body helps to easily identify the contents & also adds beauty to the liquid that you put in, Leak Proof: The bottle has a liquid tight cap that prevents leakage & is unbreakable. Freezer safe: These bottles are compatible with refrigerator & not being curvy the bottle occupies less space. Looks pretty in the fridge or on the table top.",
-      "mrp": "123",
-      "dp": "99",
-      "status": "publish"
-    },
-    {
-      "id": 8,
-      "name": "Metro Living Self Design Pillows Cover",
-      "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jjsw4nk0/cushion-pillow-cover/e/z/z/epl12-metro-living-original-imaf7ah6zstjyevd.jpeg",
-      "productDesc": "Regional Speciality\nRajasthan\nFabric Care\nMachinne Wash, Do not Bleach, Wash in Cold Water\nThread Count\n104\nSales Package\nPack of 2 Pillow Cover",
-      "mrp": "500",
-      "dp": "399",
-      "status": "draft"
-    },
-    {
-      "id": 9,
-      "name": "TIZUM Aluminium Portable Stand",
-      "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jx0prbk0/mobile-holder/t/3/d/aluminium-portable-stand-with-convenient-charging-port-design-original-imafhkkxjvphhhgz.jpeg",
-      "productDesc": "The aluminium material used in the stand makes it sturdy and strong. Multi-angle fold-ability provides with a seamless viewing experience. The light weight of this stand allows it to be carried around everywhere conveniently. Universally designed to fit 3.5-8 inch phones and tablets without hassle. Apart from phones and tabs, the stand also holds gaming console like Nintendo play. •Aluminium Stand with Multi-Angle foldability ",
-      "mrp": "300",
-      "dp": "199",
-      "status": "inactive"
-    },
-    {
-      "id": 10,
-      "name": "Polyester Door Curtain",
-      "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jcf487k0/curtain/w/e/y/elegant-cream-door-curtains-set-of-2-213-soe-fsb-120-120-eyelet-original-imaffk7f9wng4v4m.jpeg",
-      "productDesc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
-      "mrp": "1000",
-      "dp": "499",
-      "status": "publish"
-    },
-    {
-      "id": 11,
-      "name": "Water Bottle",
-      "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/bottle/w/5/g/1000-cello-h2o-cello-h2o-water-bottel-cello-original-imaeqtj3vyxyehmn.jpeg",
-      "productDesc": "Hygienic bottle: The bottle is made of 100% food grade material & is BPA free ensures a safe drinking. Crystal Clarity: It's sheer body helps to easily identify the contents & also adds beauty to the liquid that you put in, Leak Proof: The bottle has a liquid tight cap that prevents leakage & is unbreakable. Freezer safe: These bottles are compatible with refrigerator & not being curvy the bottle occupies less space. Looks pretty in the fridge or on the table top.",
-      "mrp": "123",
-      "dp": "99",
-      "status": "publish"
-    },
-    {
-      "id": 12,
-      "name": "Metro Living Self Design Pillows Cover",
-      "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jjsw4nk0/cushion-pillow-cover/e/z/z/epl12-metro-living-original-imaf7ah6zstjyevd.jpeg",
-      "productDesc": "Regional Speciality\nRajasthan\nFabric Care\nMachinne Wash, Do not Bleach, Wash in Cold Water\nThread Count\n104\nSales Package\nPack of 2 Pillow Cover",
-      "mrp": "500",
-      "dp": "399",
-      "status": "draft"
-    },
-    {
-      "id": 13,
-      "name": "TIZUM Aluminium Portable Stand",
-      "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jx0prbk0/mobile-holder/t/3/d/aluminium-portable-stand-with-convenient-charging-port-design-original-imafhkkxjvphhhgz.jpeg",
-      "productDesc": "The aluminium material used in the stand makes it sturdy and strong. Multi-angle fold-ability provides with a seamless viewing experience. The light weight of this stand allows it to be carried around everywhere conveniently. Universally designed to fit 3.5-8 inch phones and tablets without hassle. Apart from phones and tabs, the stand also holds gaming console like Nintendo play. •Aluminium Stand with Multi-Angle foldability ",
-      "mrp": "300",
-      "dp": "199",
-      "status": "inactive"
+      "name": "farmerr",
+      "uploadPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSicBbJdhXAz2AOhUP1LkBKk0LX0q50ZYbdNaWgHahnT94UlW1ZojdWtay5itf27eG5BKE&usqp=CAU",
+      "productDesc": "farmer",
+      "mrp": "445",
+      "dp": "444",
+      "status": "publish",
+      "addedBy": "farmer",
+      "user_session_id": "6"
     }
   ],
+  "cart": [],
   "orders": [
     {
       "id": 1,
@@ -239,6 +335,82 @@
       },
       "contact": "09040398006",
       "dateTime": "30/08/2019"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "sellerId": 2,
+      "product": {
+        "id": 2,
+        "name": "wheat",
+        "uploadPhoto": "https://cdn.britannica.com/90/94190-050-C0BA6A58/Cereal-crops-wheat-reproduction.jpg",
+        "productDesc": "100 Kg",
+        "mrp": "1000",
+        "dp": "899",
+        "status": "publish"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Nashik",
+        "addLine2": null,
+        "city": "Nashik",
+        "state": "...",
+        "zipCode": 123456
+      },
+      "contact": "9720276354",
+      "dateTime": "25/4/2023"
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "sellerId": 2,
+      "product": {
+        "id": 2,
+        "name": "COTTON",
+        "uploadPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLMvQueK0V23QcVmF_SQHgKtqmxFjBi31zYV9thXFFww&s",
+        "productDesc": "1 ton",
+        "mrp": "999",
+        "dp": "899",
+        "status": "publish",
+        "addedBy": "Sudhir Solanke",
+        "user_session_id": "10"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Nashik",
+        "addLine2": null,
+        "city": "Nashik",
+        "state": "...",
+        "zipCode": 123456
+      },
+      "contact": "9720276354",
+      "dateTime": "14/5/2023"
+    },
+    {
+      "id": 5,
+      "userId": 3,
+      "sellerId": 2,
+      "product": {
+        "id": 2,
+        "name": "COTTON",
+        "uploadPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLMvQueK0V23QcVmF_SQHgKtqmxFjBi31zYV9thXFFww&s",
+        "productDesc": "1 ton",
+        "mrp": "999",
+        "dp": "899",
+        "status": "publish",
+        "addedBy": "Sudhir Solanke",
+        "user_session_id": "10"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Nashik",
+        "addLine2": null,
+        "city": "Nashik",
+        "state": "...",
+        "zipCode": 123456
+      },
+      "contact": "9720276354",
+      "dateTime": "14/5/2023"
     }
   ]
 }

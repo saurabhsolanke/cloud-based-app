@@ -95,10 +95,10 @@
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Language You Know</label>
                         <select multiple class="form-control" formControlName="language" [ngClass]="{'is-invalid':signUpsubmitted && rf.language.errors}">
-                            <option>English</option>
+                            <option>Marathi</option>
                             <option>Hindi</option>
-                            <option>Oriya/Odiya</option>
-                            <option>Bengali</option>
+                            <option>English</option>
+
                             <option>Other</option>
                         </select>
                         <div *ngIf="signUpsubmitted && rf.language.errors" class="invalid-feedback">
@@ -154,8 +154,8 @@
                     <div class="form-group">
                         <label for="roleSelect">What You Want To Do</label>
                         <select class="form-control" formControlName="role" [ngClass]="{'is-invalid':signUpsubmitted && rf.role.errors}">
-                            <option value="seller">Shell</option>
-                            <option value="buyer">Buy</option>
+                            <option value="farmer">Farmer</option>
+                            <option value="merchant">Merchant</option>
                         </select>
                         <div *ngIf="signUpsubmitted && rf.role.errors" class="invalid-feedback">
                             <div *ngIf="rf.role.errors.required">Select one option</div>
@@ -168,7 +168,7 @@
                 <p routerLink="/sign-in" class="sim-pointer">Already have an account click here for login</p>
             </div>
             <div class="col-md-6 offset-md-3" *ngIf="!regForm">
-                <h3>Login - Angular 8 Template Driven Form With Validation</h3>
+                <h3>Cloud-based Farmer-merchant App</h3>
                 <form name="form" #tf="ngForm" (ngSubmit)="tf.form.valid && onSubmitSignIn()" novalidate>
                     <div class="form-group">
                         <label>Email</label>

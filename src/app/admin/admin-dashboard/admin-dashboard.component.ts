@@ -43,9 +43,9 @@ export class AdminDashboardComponent implements OnInit {
         // console.log(this.user_dashboard_data[status].status);
         if (this.user_dashboard_data[user].role == 'admin') {
           ++this.admin_user;
-        } else if (this.user_dashboard_data[user].role == 'seller') {
+        } else if (this.user_dashboard_data[user].role == 'farmer') {
           ++this.seller_user;
-        } else if (this.user_dashboard_data[user].role == 'buyer') {
+        } else if (this.user_dashboard_data[user].role == 'merchant') {
           ++this.buyer_user;
         }
         ++this.total_user;

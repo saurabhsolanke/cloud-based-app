@@ -32,6 +32,8 @@ export class Product {
     mrp: number;
     dp: number;
     status: boolean;
+    addedBy: string;
+    user_session_id: number
 }
 
 export class Order {

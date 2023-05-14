@@ -113,10 +113,10 @@ export class UserProfileComponent implements OnInit {
 
       if (this.user_role == 'admin') {
         this.router.navigateByUrl('/admin-dashboard');
-      } else if (this.user_role == 'seller') {
-        this.router.navigateByUrl('/seller-dashboard');
-      } else if (this.user_role == 'buyer') {
-        this.router.navigateByUrl('/buyer-dashboard');
+      } else if (this.user_role == 'farmer') {
+        this.router.navigateByUrl('/farmer-dashboard');
+      } else if (this.user_role == 'merchant') {
+        this.router.navigateByUrl('/merchant-dashboard');
       }
     }, err => {
       this.toastr.error('Some Error Occured!', 'User Profile!');

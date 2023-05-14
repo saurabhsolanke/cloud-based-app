@@ -49,7 +49,7 @@ export class CheckoutComponent implements OnInit {
     this.order_dto = {
       id: 0,
       userId: this.user_id,
-      sellerId: 2, //Now it is hard coded, we are not implimented multi seller functionlity
+      sellerId: 2, //Now it is hard coded, we are not implimented multi farmer functionlity
       product: {
         id: this.individual_product.id,
         name: this.individual_product.name,
@@ -57,7 +57,9 @@ export class CheckoutComponent implements OnInit {
         productDesc: this.individual_product.productDesc,
         mrp: this.individual_product.mrp,
         dp: this.individual_product.dp,
-        status: this.individual_product.status
+        status: this.individual_product.status,
+        addedBy: this.individual_product.addedBy,
+        user_session_id: this.individual_product.user_session_id
       },
       deliveryAddress: {
         id: 0,
@@ -74,7 +76,7 @@ export class CheckoutComponent implements OnInit {
     this.customerService.insertNewOrder(this.order_dto).subscribe(data => {
       // console.log("Order placed successfully", data);
       alert("Order places successfully")
-      this.router.navigateByUrl("/buyer-dashboard");
+      this.router.navigateByUrl("/merchant-dashboard");
     }, err => {
       alert("Some Error Occured");
     })

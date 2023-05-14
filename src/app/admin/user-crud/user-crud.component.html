@@ -1,11 +1,27 @@
 <br>
-<div class="row">
-    <div class="col-md-10">
-        <strong>All User List</strong>
+<div class="row mb-2">
+    <div class="col">
+        <strong class="lead">All User List</strong>
     </div>
-    <div class="col-md-2"><button type="button" class="btn btn-dark float-right" (click)="addUserPopup()" data-toggle="modal"
-            data-target="#addEditUserModal">Add
-            New User</button></div>
+    <div class="col">
+         <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+
+        <div class="col-auto">
+            <input type="text" class="form-control" name="name" [(ngModel)]="name"
+                (ngModelChange)="Search()" placeholder="Search here">
+            <!-- -->
+        </div>
+    </div>
+
+
+    <div class="col">
+        <button type="button" class="btn btn-dark float-right" (click)="addUserPopup()" data-toggle="modal"
+            data-target="#addEditUserModal">Add New User
+        </button>
+    </div>
 </div>
 <table class="table table-hover">
     <thead>
@@ -197,8 +213,8 @@
                                 <label for="roleSelect">Chose the rule</label>
                                 <select class="form-control" formControlName="role" [ngClass]="{'is-invalid':addEditUser && rf.role.errors}">
                                     <option value="admin">admin</option>
-                                    <option value="seller">sheller</option>
-                                    <option value="buyer">buyer</option>
+                                    <option value="farmer">sheller</option>
+                                    <option value="merchant">merchant</option>
                                 </select>
                                 <div *ngIf="addEditUser && rf.role.errors" class="invalid-feedback">
                                     <div *ngIf="rf.role.errors.required">Select one option</div>

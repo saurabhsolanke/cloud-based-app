@@ -1,8 +1,8 @@
 <br>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Buyer</a></li>
-        <li class="breadcrumb-item"><a routerLink="/buyer-dashboard">Products</a></li>
+        <li class="breadcrumb-item"><a>merchant</a></li>
+        <li class="breadcrumb-item"><a routerLink="/merchant-dashboard">Products</a></li>
     </ol>
 </nav>
 <div class="row">
@@ -15,8 +15,9 @@
                         {{product.dp}}</span></p>
                 <br>
                 <p class="card-text product-desc">{{product.productDesc}}</p>
-                <a class="btn btn-primary float-left" (click)="addToCart()">Add to Cart</a>
-                <a class="btn btn-primary float-right" (click)="buyProduct(product.id)">Buy Now</a>
+                <p>Added by:- {{product.addedBy}}</p>
+                <a class="btn btn-primary text-light float-left" (click)="addToCart()">Add to Cart</a>
+                <a class="btn btn-primary text-light float-right" (click)="buyProduct(product.id)">Buy Now</a>
             </div>
         </div>
     </div>
