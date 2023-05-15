@@ -13,7 +13,7 @@ export class ProductService {
 
   constructor(private apiService: ApiService, private http: HttpClient) { }
 
-  allProduct(): Observable<any> {
+  allProduct(user_session_id): Observable<any> {
     return this.apiService.get(this.product_url)
   }
   addNewProduct(product_dto): Observable<any> {
