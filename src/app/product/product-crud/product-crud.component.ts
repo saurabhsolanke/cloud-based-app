@@ -12,6 +12,7 @@ declare var jQuery: any;
 })
 export class ProductCrudComponent implements OnInit {
   all_product_data;
+  my_product_data;
   addEditProductForm: FormGroup;
   addEditProduct: boolean = false; //for form validation
   popup_header: string;
@@ -45,6 +46,7 @@ export class ProductCrudComponent implements OnInit {
       status: ["", Validators.required],
     });
     this.getAllProduct();
+    this.getmyProduct()
   }
 
   get rf() {
@@ -52,21 +54,25 @@ export class ProductCrudComponent implements OnInit {
   }
 
   getAllProduct() {
-    this.product_service.allProduct(this.user_session_id).subscribe(
-      (data) => {
-        this.all_product_data = data.filter(
-          (product) => product.user_session_id == this.user_session_id
-        );
+      this.product_service.allProduct(this.user_session_id).subscribe(data => {
+        this.all_product_data = data;
+      }, error => {
+        console.log("My error", error);
       }
-      // this.product_service.allProduct().subscribe(data => {
-      //   // this.all_product_data = data.filter(product => product.userId == this.user_session_id);
-      //   // this.all_product_data = data;
-      // }, error => {
-      //   console.log("My error", error);
-      // }
     );
   }
 
+  getmyProduct() {
+    this.product_service.allProduct(this.user_session_id).subscribe(
+      (data) => {
+        this.my_product_data = data.filter(
+          (product) => product.user_session_id == this.user_session_id
+        );
+      }
+    );
+  }
+
+  
   Search() {
     if (this.name == "") {
       this.ngOnInit();
