@@ -61,7 +61,7 @@
             </li>
             
         </ul>
-        <li *ngIf="logged_in" class="text-light badge bg-secondary">
+        <li *ngIf="logged_in && user_role == 'merchant' 'farmer' " class="text-light badge bg-secondary">
         {{name}}
         </li>
         <!-- <form class="form-inline my-2 my-lg-0">
