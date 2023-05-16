@@ -284,6 +284,39 @@
       "status": "publish",
       "addedBy": "farmer",
       "user_session_id": "6"
+    },
+    {
+      "id": 4,
+      "name": "cotton",
+      "uploadPhoto": "https://media.istockphoto.com/id/589121090/photo/branch-of-ripe-cotton.jpg?s=612x612&w=0&k=20&c=eGlf6UISNaZRIKxnoesMIIpOqzevDWtb_OoU_0KVN_M=",
+      "productDesc": "this is cotton",
+      "mrp": "19000",
+      "dp": "18000",
+      "status": "inactive",
+      "addedBy": "rohit shrikhande",
+      "user_session_id": "1"
+    },
+    {
+      "id": 5,
+      "name": "cotton",
+      "uploadPhoto": "https://www.the-sustainable-fashion-collective.com/img/http/assets.the-sustainable-fashion-collective.com/assets/the-swatch-book/2014/11/cotton.png/7c098280951a28c0f2aa4291f179ae42.png",
+      "productDesc": "sudhir",
+      "mrp": "333",
+      "dp": "332",
+      "status": "publish",
+      "addedBy": "Sudhir Solanke",
+      "user_session_id": "10"
+    },
+    {
+      "id": 6,
+      "name": "farmerr",
+      "uploadPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSicBbJdhXAz2AOhUP1LkBKk0LX0q50ZYbdNaWgHahnT94UlW1ZojdWtay5itf27eG5BKE&usqp=CAU",
+      "productDesc": "farmer",
+      "mrp": "445",
+      "dp": "444",
+      "status": "publish",
+      "addedBy": "farmer",
+      "user_session_id": "6"
     }
   ],
   "cart": [],

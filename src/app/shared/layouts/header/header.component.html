@@ -53,8 +53,11 @@
             <li class="nav-item">
                     <a class="nav-link" routerLink="/contact-us">{{'header.contact_us' | translate}}</a>
             </li>
-            <li class="nav-item badge">
-                <!-- <a class="nav-link badge-danger">{{user_role}}</a> -->
+            <li class="nav-item " *ngIf="user_role == 'merchant'">
+                <a class="nav-link">Farmers List</a>
+            </li>
+            <li class="nav-item " *ngIf="user_role == 'merchant'">
+                <a class="nav-link">ChatBot</a>
             </li>
             
         </ul>
