@@ -13,6 +13,12 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { BuyerDashboardComponent } from './customer/buyer/buyer-dashboard/buyer-dashboard.component';
 import { CheckoutComponent } from './customer/buyer/checkout/checkout.component';
 import { SellerDashboardComponent } from './customer/seller/seller-dashboard/seller-dashboard.component';
+import { AddcropComponent } from './product/product-crud/addcrop/addcrop.component';
+import { PesticidesSeedsComponent } from './product/product-crud/pesticides-seeds/pesticides-seeds.component';
+import { CartComponent } from './product/product-crud/cart/cart.component';
+import { PurchaserequestComponent } from './product/product-crud/purchaserequest/purchaserequest.component';
+import { MerchantSellingComponent } from './merchant-selling/merchant-selling.component';
+import { FarmerlistComponent } from './farmerlist/farmerlist.component';
 const routes: Routes = [
   { path: "", redirectTo: "/", pathMatch: "full" },
   { path: "", component: HomeComponent },
@@ -46,6 +52,11 @@ const routes: Routes = [
     path: '', canActivate: [SellerAuthGaurdService], children: [
       { path: "farmer-dashboard", component: SellerDashboardComponent },
       { path: "farmer/product", component: ProductCrudComponent },
+      { path: "farmer/addcrop", component: AddcropComponent },
+      { path: "farmer/seeds-pesticides", component: PesticidesSeedsComponent },
+      { path: "farmer/cart", component: CartComponent },
+      { path: "farmer/merchant-selling", component: MerchantSellingComponent },
+      { path: "farmer/purchaserequest", component: PurchaserequestComponent },
     ]
   },
 
@@ -53,7 +64,9 @@ const routes: Routes = [
   {
     path: '', canActivate: [BuyerAuthGaurdService], children: [
       { path: "merchant-dashboard", component: BuyerDashboardComponent },
-      { path: "checkout", component: CheckoutComponent }
+      { path: "checkout", component: CheckoutComponent },
+      { path: "merchant/farmer-list", component: FarmerlistComponent }
+
     ]
   },
   { path: "**", component: PageNotFoundErrorComponent }

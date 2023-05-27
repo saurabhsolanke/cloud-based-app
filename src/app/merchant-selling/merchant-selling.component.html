@@ -1,0 +1,31 @@
+<div class="row mt-5 container">
+    <div class="col-3">
+
+    </div>
+    <div class="col ml-3">
+        <p class="lead">Merchant List</p>
+        <p>List of all Merchants</p>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name of merchant</th>
+            <th scope="col">required crop</th>
+            <th scope="col">buying rate</th>
+            <th scope="col">address</th>
+            <th scope="col">contact</th>
+            <th scope="col">action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let merchant of all_merchants">
+            <th scope="row"></th>
+            <td>{{merchant.name}}</td>
+            <td>{{merchant.address}}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+</div>

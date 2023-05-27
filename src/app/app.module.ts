@@ -21,6 +21,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { SearchFilterPipe } from './search-filter.pipe';
+import { AddcropComponent } from './product/product-crud/addcrop/addcrop.component';
+import { PurchaserequestComponent } from './product/product-crud/purchaserequest/purchaserequest.component';
+import { CartComponent } from './product/product-crud/cart/cart.component';
+import { PesticidesSeedsComponent } from './product/product-crud/pesticides-seeds/pesticides-seeds.component';
+import { MerchantSellingComponent } from './merchant-selling/merchant-selling.component';
+import { FarmerlistComponent } from './farmerlist/farmerlist.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -33,7 +39,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProductCrudComponent,
     UserProfileComponent,
     ContactUsComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    AddcropComponent,
+    PurchaserequestComponent,
+    CartComponent,
+    PesticidesSeedsComponent,
+    MerchantSellingComponent,
+    FarmerlistComponent
+
   ],
   imports: [
     CommonModule,

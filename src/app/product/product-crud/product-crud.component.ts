@@ -27,6 +27,7 @@ export class ProductCrudComponent implements OnInit {
   user_session_id: any;
   name: any;
   loggedinname = "";
+  user_role = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -35,6 +36,7 @@ export class ProductCrudComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.user_role = sessionStorage.getItem("role");
     this.loggedinname = sessionStorage.getItem("name");
     this.user_session_id = sessionStorage.getItem("user_session_id");
     this.addEditProductForm = this.formBuilder.group({

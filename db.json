@@ -249,6 +249,31 @@
       "uploadPhoto": "C:\\fakepath\\bd869011-097c-4a9e-bc24-4dda6d7db654.jpg",
       "role": "farmer",
       "id": 10
+    },
+    {
+      "aboutYou": "sdjhbwsd",
+      "age": 22,
+      "agreetc": true,
+      "dob": "2000-10-25",
+      "email": "roshan@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "Chh. Sambhaji Nagar",
+        "addLine2": null,
+        "city": "Chh. Sambhaji Nagar",
+        "state": "...",
+        "zipCode": "431003"
+      },
+      "language": [
+        "Marathi"
+      ],
+      "mobNumber": "987654321",
+      "name": "roshan",
+      "password": "password",
+      "uploadPhoto": "C:\\fakepath\\bd869011-097c-4a9e-bc24-4dda6d7db654.jpg",
+      "role": "farmer",
+      "id": 11
     }
   ],
   "products": [
@@ -267,7 +292,7 @@
       "id": 2,
       "name": "cotton",
       "uploadPhoto": "https://www.the-sustainable-fashion-collective.com/img/http/assets.the-sustainable-fashion-collective.com/assets/the-swatch-book/2014/11/cotton.png/7c098280951a28c0f2aa4291f179ae42.png",
-      "productDesc": "sudhir",
+      "productDesc": "100Kg Cotton",
       "mrp": "333",
       "dp": "332",
       "status": "publish",
@@ -297,17 +322,6 @@
       "user_session_id": "1"
     },
     {
-      "id": 5,
-      "name": "cotton",
-      "uploadPhoto": "https://www.the-sustainable-fashion-collective.com/img/http/assets.the-sustainable-fashion-collective.com/assets/the-swatch-book/2014/11/cotton.png/7c098280951a28c0f2aa4291f179ae42.png",
-      "productDesc": "sudhir",
-      "mrp": "333",
-      "dp": "332",
-      "status": "publish",
-      "addedBy": "Sudhir Solanke",
-      "user_session_id": "10"
-    },
-    {
       "id": 6,
       "name": "farmerr",
       "uploadPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSicBbJdhXAz2AOhUP1LkBKk0LX0q50ZYbdNaWgHahnT94UlW1ZojdWtay5itf27eG5BKE&usqp=CAU",
@@ -317,6 +331,72 @@
       "status": "publish",
       "addedBy": "farmer",
       "user_session_id": "6"
+    },
+    {
+      "id": 7,
+      "name": "sugarcane111",
+      "uploadPhoto": "https://cdn-blog.credihealth.com/wp-content/uploads/2022/11/close-up-sugarcane-witn-leaf-wood-table-scaled.jpg",
+      "productDesc": "100 ton",
+      "mrp": "400000",
+      "dp": "399999",
+      "status": "publish",
+      "addedBy": "roshan",
+      "user_session_id": "11"
+    },
+    {
+      "id": 8,
+      "name": "wefwefwe",
+      "uploadPhoto": "wef",
+      "productDesc": "efwefw",
+      "mrp": "23",
+      "dp": "123",
+      "status": "publish",
+      "addedBy": "Sudhir Solanke",
+      "user_session_id": "10"
+    },
+    {
+      "id": 9,
+      "name": "wefwefwe",
+      "uploadPhoto": "wef",
+      "productDesc": "efwefw",
+      "mrp": "23",
+      "dp": "123",
+      "status": "publish",
+      "addedBy": "Sudhir Solanke",
+      "user_session_id": "10"
+    },
+    {
+      "id": 10,
+      "name": "wewe",
+      "uploadPhoto": "wewew",
+      "productDesc": "1232",
+      "mrp": "1",
+      "dp": "2",
+      "status": "publish",
+      "addedBy": "Sudhir Solanke",
+      "user_session_id": "10"
+    },
+    {
+      "id": 11,
+      "name": "wefwe",
+      "uploadPhoto": "wefwef`",
+      "productDesc": "werfer",
+      "mrp": "223",
+      "dp": "23",
+      "status": "publish",
+      "addedBy": "Sudhir Solanke",
+      "user_session_id": "10"
+    },
+    {
+      "id": 12,
+      "name": "wewe",
+      "uploadPhoto": "qwefwef",
+      "productDesc": "wefwef",
+      "mrp": "23",
+      "dp": "23",
+      "status": "publish",
+      "addedBy": "Sudhir Solanke",
+      "user_session_id": "10"
     }
   ],
   "cart": [],
@@ -344,106 +424,8 @@
       },
       "contact": "09040398006",
       "dateTime": "18/07/2019"
-    },
-    {
-      "id": 2,
-      "userId": 3,
-      "sellerId": 2,
-      "product": {
-        "id": 1,
-        "name": "Polyester Door Curtain",
-        "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jcf487k0/curtain/w/e/y/elegant-cream-door-curtains-set-of-2-213-soe-fsb-120-120-eyelet-original-imaffk7f9wng4v4m.jpeg",
-        "productDesc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
-        "mrp": "1000",
-        "dp": "499",
-        "status": "publish"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Marathalli",
-        "addLine2": "Aswathnagar",
-        "city": "Bangalore",
-        "state": "Choose...",
-        "zipCode": 560037
-      },
-      "contact": "09040398006",
-      "dateTime": "30/08/2019"
-    },
-    {
-      "id": 3,
-      "userId": 3,
-      "sellerId": 2,
-      "product": {
-        "id": 2,
-        "name": "wheat",
-        "uploadPhoto": "https://cdn.britannica.com/90/94190-050-C0BA6A58/Cereal-crops-wheat-reproduction.jpg",
-        "productDesc": "100 Kg",
-        "mrp": "1000",
-        "dp": "899",
-        "status": "publish"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Nashik",
-        "addLine2": null,
-        "city": "Nashik",
-        "state": "...",
-        "zipCode": 123456
-      },
-      "contact": "9720276354",
-      "dateTime": "25/4/2023"
-    },
-    {
-      "id": 4,
-      "userId": 3,
-      "sellerId": 2,
-      "product": {
-        "id": 2,
-        "name": "COTTON",
-        "uploadPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLMvQueK0V23QcVmF_SQHgKtqmxFjBi31zYV9thXFFww&s",
-        "productDesc": "1 ton",
-        "mrp": "999",
-        "dp": "899",
-        "status": "publish",
-        "addedBy": "Sudhir Solanke",
-        "user_session_id": "10"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Nashik",
-        "addLine2": null,
-        "city": "Nashik",
-        "state": "...",
-        "zipCode": 123456
-      },
-      "contact": "9720276354",
-      "dateTime": "14/5/2023"
-    },
-    {
-      "id": 5,
-      "userId": 3,
-      "sellerId": 2,
-      "product": {
-        "id": 2,
-        "name": "COTTON",
-        "uploadPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLMvQueK0V23QcVmF_SQHgKtqmxFjBi31zYV9thXFFww&s",
-        "productDesc": "1 ton",
-        "mrp": "999",
-        "dp": "899",
-        "status": "publish",
-        "addedBy": "Sudhir Solanke",
-        "user_session_id": "10"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Nashik",
-        "addLine2": null,
-        "city": "Nashik",
-        "state": "...",
-        "zipCode": 123456
-      },
-      "contact": "9720276354",
-      "dateTime": "14/5/2023"
     }
-  ]
+  ],
+  "pendingOrders": [],
+  "declineOrders": []
 }
