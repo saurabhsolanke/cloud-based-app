@@ -115,7 +115,7 @@ export class SigninSignupComponent implements OnInit {
           sessionStorage.setItem("user_session_id", this.user_data[0].id);
           sessionStorage.setItem("role", this.user_data[0].role);
           sessionStorage.setItem("name", this.user_data[0].name);
-          this.router.navigateByUrl('/farmer-dashboard');
+          this.router.navigateByUrl('/farmer/addcrop');
         } else if (this.user_data[0].role == "merchant") {
           sessionStorage.setItem("user_session_id", this.user_data[0].id);
           sessionStorage.setItem("role", this.user_data[0].role);

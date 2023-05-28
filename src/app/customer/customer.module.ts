@@ -13,7 +13,7 @@ import { SellerDashboardComponent } from './seller/seller-dashboard/seller-dashb
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
   ]
 })
 export class CustomerModule { }

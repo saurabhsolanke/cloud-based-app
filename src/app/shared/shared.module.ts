@@ -17,13 +17,13 @@ import { NumberOnlyDirective } from './directives/number-only.directive';
   imports: [
     CommonModule,
     TranslateModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     TranslateModule,
-    NumberOnlyDirective
+    NumberOnlyDirective,
   ]
 })
 export class SharedModule { }

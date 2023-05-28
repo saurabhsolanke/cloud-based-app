@@ -1,0 +1,113 @@
+<div class="row">
+    <div class="col-3">    </div>
+    <div class="col container mt-3">
+        <h1 class="display-5">Cart / Selling</h1>
+        <div class="row">
+            <div class="d-flex justify-content-center">
+                <p>this option is for the details about the selling requests from farmer to merchant</p>
+                <!-- <h2 class="mt-3">YOUR TOTAL BAG IS ₹ {{total}}</h2> -->
+            </div>
+            <!-- <div class="col-md-7">
+            <div class="card mt-3" *ngFor="let cartitems of cart">
+                    <h5 class="card-header"> {{cartitems.name}}</h5>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <div class="card-text">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img [src]="cartitems.img" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col">
+                                    <h3><b> </b><span class="rounded-pill text-dark">{{cartitems.price}}</span></h3>
+                                    {{cartitems.ram}}
+                                    {{cartitems.storage}}
+                                    {{cartitems.processor}}
+                                    {{cartitems.display}}
+                                </div>
+                                <div class="col">
+                                    <a class="btn btn-primary" (click)="deletecartitems(cartitems.id)">Remove</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="container-fluid mt-5">
+                    <div class="card" *ngFor="let cartitems of cart">
+                        <div class="card-body">
+                            <div class="row d-flex justify-content-between">
+                                <div class="col-md-6">
+                                    <h5 class="card-title">{{cartitems.name}}</h5>
+                                </div>
+                                <div class="col-md-3">
+                                    <p class="card-text">{{cartitems.price}}</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="d-flex justify-content-end"> <a class=""
+                                            (click)="deletecartitems(cartitems.id)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                fill="currentColor" class="bi bi-file-minus" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M5.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z" />
+                                                <path
+                                                    d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
+                                            </svg>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row mt-5 justify-content-between">
+                            <hr>
+                            <div class="col-md-6 d-flex justify-content-start">
+                                <p class="">Total</p>
+                            </div>
+                            <div class="col mt-2 d-flex justify-content-end">
+                                <p class=""> ₹ {{total}} </p>
+                            </div>
+                        </div>
+                        <hr>
+                        Total Items : {{count}}
+                        <div class="row justify-content-end">
+                            <div class="col-md-1">
+                                <button class="btn btn-primary ">Checkout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <table class="table table-hover">
+                <thead>
+                    <tr class="text-muted">
+                        <th scope="col">#</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">MRP</th>
+                        <th scope="col">DP</th>
+                        <!-- <th scope="col">Description</th> -->
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product_data of my_product_data; let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{product_data.name}}</td>
+                        <!-- <td>{{product_data.uploadPhoto}}</td> -->
+                        <td>{{product_data.productDesc}}</td>
+                        <td>{{product_data.mrp}}</td>
+                        <td>{{product_data.dp}}</td>
+                        <!-- <td>{{product_data.productDesc}}</td> -->
+                        <td>{{product_data.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

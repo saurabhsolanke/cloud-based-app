@@ -3,6 +3,7 @@ import { environment } from '../../../environments/environment';
 import { ApiService } from '../../core/services/api.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from 'src/app/core/models/object-model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,14 @@ export class ProductService {
     return this.apiService.post(this.product_url, product_dto);
   }
 
+  getAllusers(){
+    return this.apiService.get(environment.server_url + "/user")
+  }
+
+  getAllorders(){
+    return this.apiService.get(environment.server_url + "/orders")
+  }
+
   singleProduct(id) {
     return this.apiService.get(this.product_url + id)
   }
@@ -29,4 +38,19 @@ export class ProductService {
   deleteProduct(id): Observable<any> {
     return this.apiService.delete(this.product_url + id);
   }
+  cartitems(){
+    let resp: any = this.http.get(this.product_url+"/cart");
+    return resp;
+  }
+
+  deleteCartItem(id:any){
+    let resp:any=this.http.delete(this.product_url+"/cart/"+id);
+    return resp;
+  }
+
+  cartcount(productslist){
+    let resp: any = this.http.get(productslist);
+    return resp;
+  }
+
 }

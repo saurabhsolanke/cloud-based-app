@@ -249,168 +249,227 @@
       "uploadPhoto": "C:\\fakepath\\bd869011-097c-4a9e-bc24-4dda6d7db654.jpg",
       "role": "farmer",
       "id": 10
+    },
+    {
+      "aboutYou": "sdjhbwsd",
+      "age": 22,
+      "agreetc": true,
+      "dob": "2000-10-25",
+      "email": "roshan@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "Chh. Sambhaji Nagar",
+        "addLine2": null,
+        "city": "Chh. Sambhaji Nagar",
+        "state": "...",
+        "zipCode": "431003"
+      },
+      "language": [
+        "Marathi"
+      ],
+      "mobNumber": "987654321",
+      "name": "roshan",
+      "password": "password",
+      "uploadPhoto": "C:\\fakepath\\bd869011-097c-4a9e-bc24-4dda6d7db654.jpg",
+      "role": "farmer",
+      "id": 11
     }
   ],
   "products": [
     {
       "id": 1,
-      "name": "cotton",
-      "uploadPhoto": "https://media.istockphoto.com/id/589121090/photo/branch-of-ripe-cotton.jpg?s=612x612&w=0&k=20&c=eGlf6UISNaZRIKxnoesMIIpOqzevDWtb_OoU_0KVN_M=",
-      "productDesc": "this is cotton",
-      "mrp": "19000",
-      "dp": "18000",
-      "status": "inactive",
+      "name": "Cotton",
+      "uploadPhoto": "data:image/jpeg;base64,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",
+      "productDesc": "Cotton 100Kg",
+      "mrp": "8000",
+      "dp": "5000",
+      "status": "publish",
       "addedBy": "rohit shrikhande",
       "user_session_id": "1"
     },
     {
       "id": 2,
-      "name": "cotton",
-      "uploadPhoto": "https://www.the-sustainable-fashion-collective.com/img/http/assets.the-sustainable-fashion-collective.com/assets/the-swatch-book/2014/11/cotton.png/7c098280951a28c0f2aa4291f179ae42.png",
-      "productDesc": "sudhir",
-      "mrp": "333",
-      "dp": "332",
+      "name": "corp",
+      "uploadPhoto": "ksjdncksjdnckjsdkcnknn",
+      "productDesc": "ksjdnvkjsnd",
+      "mrp": "8000",
+      "dp": "5000",
+      "status": "publish",
+      "addedBy": "rohit shrikhande",
+      "user_session_id": "1"
+    },
+    {
+      "id": 3,
+      "name": "sugarcane1",
+      "uploadPhoto": "1111",
+      "productDesc": "100 kg",
+      "mrp": "7000",
+      "dp": "6000",
       "status": "publish",
       "addedBy": "Sudhir Solanke",
       "user_session_id": "10"
+    }
+  ],
+  "orders": [
+    {
+      "userId": 3,
+      "product": {
+        "id": 2,
+        "name": "corp",
+        "uploadPhoto": "ksjdncksjdnckjsdkcnknn",
+        "productDesc": "ksjdnvkjsnd",
+        "mrp": "8000",
+        "dp": "5000",
+        "status": "publish",
+        "addedBy": "rohit shrikhande",
+        "user_session_id": "1"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Nashik",
+        "addLine2": null,
+        "city": "Nashik",
+        "state": "...",
+        "zipCode": 123456
+      },
+      "status": "requested",
+      "contact": "9720276354",
+      "dateTime": "27/05/2023",
+      "id": 1
     },
     {
-      "id": 3,
-      "name": "farmerr",
-      "uploadPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSicBbJdhXAz2AOhUP1LkBKk0LX0q50ZYbdNaWgHahnT94UlW1ZojdWtay5itf27eG5BKE&usqp=CAU",
-      "productDesc": "farmer",
-      "mrp": "445",
-      "dp": "444",
-      "status": "publish",
-      "addedBy": "farmer",
-      "user_session_id": "6"
+      "userId": 5,
+      "product": {
+        "id": 2,
+        "name": "corp",
+        "uploadPhoto": "ksjdncksjdnckjsdkcnknn",
+        "productDesc": "ksjdnvkjsnd",
+        "mrp": "8000",
+        "dp": "5000",
+        "status": "publish",
+        "addedBy": "rohit shrikhande",
+        "user_session_id": "1"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Chh. Sambhaji nagar",
+        "addLine2": null,
+        "city": "Chh. Sambhaji nagar",
+        "state": "...",
+        "zipCode": 411075
+      },
+      "status": "requested",
+      "contact": "9876543210",
+      "dateTime": "27/05/2023",
+      "id": 2
+    },
+    {
+      "userId": 4,
+      "product": {
+        "id": 3,
+        "name": "sugarcane1",
+        "uploadPhoto": "1111",
+        "productDesc": "100 kg",
+        "mrp": "7000",
+        "dp": "6000",
+        "status": "publish",
+        "addedBy": "Sudhir Solanke",
+        "user_session_id": "10"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "solapur",
+        "addLine2": null,
+        "city": "solapur",
+        "state": "...",
+        "zipCode": 411234
+      },
+      "status": "requested",
+      "contact": "9921345678",
+      "dateTime": "28/05/2023",
+      "id": 3
+    },
+    {
+      "userId": 4,
+      "product": {
+        "id": 3,
+        "name": "sugarcane1",
+        "uploadPhoto": "1111",
+        "productDesc": "100 kg",
+        "mrp": "7000",
+        "dp": "6000",
+        "status": "publish",
+        "addedBy": "Sudhir Solanke",
+        "user_session_id": "10"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "solapur",
+        "addLine2": null,
+        "city": "solapur",
+        "state": "...",
+        "zipCode": 411234
+      },
+      "status": "requested",
+      "contact": "9921345678",
+      "dateTime": "28/05/2023",
+      "id": 4
+    },
+    {
+      "userId": 4,
+      "product": {
+        "id": 3,
+        "name": "sugarcane1",
+        "uploadPhoto": "1111",
+        "productDesc": "100 kg",
+        "mrp": "7000",
+        "dp": "6000",
+        "status": "publish",
+        "addedBy": "Sudhir Solanke",
+        "user_session_id": "10"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "solapur",
+        "addLine2": null,
+        "city": "solapur",
+        "state": "...",
+        "zipCode": 411234
+      },
+      "status": "requested",
+      "contact": "9921345678",
+      "dateTime": "28/05/2023",
+      "id": 5
+    },
+    {
+      "userId": 4,
+      "product": {
+        "id": 3,
+        "name": "sugarcane1",
+        "uploadPhoto": "1111",
+        "productDesc": "100 kg",
+        "mrp": "7000",
+        "dp": "6000",
+        "status": "publish",
+        "addedBy": "Sudhir Solanke",
+        "user_session_id": "10"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "solapur",
+        "addLine2": null,
+        "city": "solapur",
+        "state": "...",
+        "zipCode": 411234
+      },
+      "status": "requested",
+      "contact": "9921345678",
+      "dateTime": "28/05/2023",
+      "id": 6
     }
   ],
   "cart": [],
-  "orders": [
-    {
-      "id": 1,
-      "userId": 3,
-      "sellerId": 2,
-      "product": {
-        "id": 1,
-        "name": "Polyester Door Curtain",
-        "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jcf487k0/curtain/w/e/y/elegant-cream-door-curtains-set-of-2-213-soe-fsb-120-120-eyelet-original-imaffk7f9wng4v4m.jpeg",
-        "productDesc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
-        "mrp": "1000",
-        "dp": "499",
-        "status": "publish"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Marathalli",
-        "addLine2": "Aswathnagar",
-        "city": "Bangalore",
-        "state": "Choose...",
-        "zipCode": 560037
-      },
-      "contact": "09040398006",
-      "dateTime": "18/07/2019"
-    },
-    {
-      "id": 2,
-      "userId": 3,
-      "sellerId": 2,
-      "product": {
-        "id": 1,
-        "name": "Polyester Door Curtain",
-        "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jcf487k0/curtain/w/e/y/elegant-cream-door-curtains-set-of-2-213-soe-fsb-120-120-eyelet-original-imaffk7f9wng4v4m.jpeg",
-        "productDesc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
-        "mrp": "1000",
-        "dp": "499",
-        "status": "publish"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Marathalli",
-        "addLine2": "Aswathnagar",
-        "city": "Bangalore",
-        "state": "Choose...",
-        "zipCode": 560037
-      },
-      "contact": "09040398006",
-      "dateTime": "30/08/2019"
-    },
-    {
-      "id": 3,
-      "userId": 3,
-      "sellerId": 2,
-      "product": {
-        "id": 2,
-        "name": "wheat",
-        "uploadPhoto": "https://cdn.britannica.com/90/94190-050-C0BA6A58/Cereal-crops-wheat-reproduction.jpg",
-        "productDesc": "100 Kg",
-        "mrp": "1000",
-        "dp": "899",
-        "status": "publish"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Nashik",
-        "addLine2": null,
-        "city": "Nashik",
-        "state": "...",
-        "zipCode": 123456
-      },
-      "contact": "9720276354",
-      "dateTime": "25/4/2023"
-    },
-    {
-      "id": 4,
-      "userId": 3,
-      "sellerId": 2,
-      "product": {
-        "id": 2,
-        "name": "COTTON",
-        "uploadPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLMvQueK0V23QcVmF_SQHgKtqmxFjBi31zYV9thXFFww&s",
-        "productDesc": "1 ton",
-        "mrp": "999",
-        "dp": "899",
-        "status": "publish",
-        "addedBy": "Sudhir Solanke",
-        "user_session_id": "10"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Nashik",
-        "addLine2": null,
-        "city": "Nashik",
-        "state": "...",
-        "zipCode": 123456
-      },
-      "contact": "9720276354",
-      "dateTime": "14/5/2023"
-    },
-    {
-      "id": 5,
-      "userId": 3,
-      "sellerId": 2,
-      "product": {
-        "id": 2,
-        "name": "COTTON",
-        "uploadPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLMvQueK0V23QcVmF_SQHgKtqmxFjBi31zYV9thXFFww&s",
-        "productDesc": "1 ton",
-        "mrp": "999",
-        "dp": "899",
-        "status": "publish",
-        "addedBy": "Sudhir Solanke",
-        "user_session_id": "10"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Nashik",
-        "addLine2": null,
-        "city": "Nashik",
-        "state": "...",
-        "zipCode": 123456
-      },
-      "contact": "9720276354",
-      "dateTime": "14/5/2023"
-    }
-  ]
+  "pendingOrders": [],
+  "declineOrders": []
 }
