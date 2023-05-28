@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
 
-  title = 'angular-ecommerce';
+  title = 'Cloud-Based-Farmer-merchant';
 
   screenHeight: any;
   screenWidth: any;

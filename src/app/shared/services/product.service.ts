@@ -25,6 +25,10 @@ export class ProductService {
     return this.apiService.get(environment.server_url + "/user")
   }
 
+  getAllorders(){
+    return this.apiService.get(environment.server_url + "/orders")
+  }
+
   singleProduct(id) {
     return this.apiService.get(this.product_url + id)
   }

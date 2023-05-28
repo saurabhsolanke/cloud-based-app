@@ -40,7 +40,7 @@
       </li>
 
       <li class="nav-item" *ngIf="user_role == 'merchant'">
-        <a class="nav-link" routerLink="/my-order">{{'header.order' | translate}}</a>
+        <a class="nav-link" routerLink="/merchant/merchant-orders">{{'header.order' | translate}}</a>
       </li>
       <li class="nav-item" *ngIf="user_role == 'admin'">
         <a class="nav-link" routerLink="/all-order">{{'header.order' | translate}}</a>
@@ -94,10 +94,12 @@
 
 <aside id="sidebar" class="sidebar" *ngIf="logged_in">
   <ul class="sidebar-nav" id="sidebar-nav">
+    
     <li class="nav-item">
       <a class="nav-link">
         <i class="bi bi-grid"></i>
-        <span routerLink="/farmer/addcrop">Crop Registration</span>
+        <span *ngIf="user_role == 'farmer'" routerLink="/farmer/addcrop">Crop Registration</span>
+        <span *ngIf="user_role == 'merchant'"  routerLink="/farmer/addcrop">Crop Registration for purchase</span>
       </a>
     </li>
     <li class="nav-item">
@@ -126,14 +128,14 @@
     <li class="nav-item">
       <a class="nav-link collapsed">
         <i class="bi bi-layout-text-window-reverse"></i>
-        <span routerLink="/farmer/purchaserequest">Purchaing Request (From Merchant)</span><i class="bi bi-chevron-down ms-auto"></i>
+        <span routerLink="/farmer/purchaserequest">Purchasing Requests</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="user_role == 'farmer'">
       <a class="nav-link collapsed">
         <i class="bi bi-bar-chart"></i>
-        <span routerLink="/farmer/seeds-pesticides">Seeds/ Insecticides Buying</span><i class="bi bi-chevron-down ms-auto"></i>
+        <span  routerLink="/farmer/seeds-pesticides">Seeds/ Insecticides Buying</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
     </li>
 
@@ -147,7 +149,8 @@
     <li class="nav-item">
       <a class="nav-link collapsed">
         <i class="bi bi-gem"></i>
-        <span routerLink="/farmer/cart">Cart (selling)</span><i class="bi bi-chevron-down ms-auto"></i>
+        <span *ngIf="user_role == 'farmer' "  routerLink="/farmer/cart">Orders</span><i class="bi bi-chevron-down ms-auto"></i>
+        <span *ngIf="user_role == 'merchant' " routerLink="/merchant/merchant-orders">Orders</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
     </li>
   </ul>

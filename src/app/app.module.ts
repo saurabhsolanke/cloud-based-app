@@ -27,6 +27,7 @@ import { CartComponent } from './product/product-crud/cart/cart.component';
 import { PesticidesSeedsComponent } from './product/product-crud/pesticides-seeds/pesticides-seeds.component';
 import { MerchantSellingComponent } from './merchant-selling/merchant-selling.component';
 import { FarmerlistComponent } from './farmerlist/farmerlist.component';
+import { MerchantOrdersComponent } from './merchant-orders/merchant-orders.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -45,7 +46,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     CartComponent,
     PesticidesSeedsComponent,
     MerchantSellingComponent,
-    FarmerlistComponent
+    FarmerlistComponent,
+    MerchantOrdersComponent
 
   ],
   imports: [

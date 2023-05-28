@@ -39,9 +39,12 @@ export class Product {
 export class Order {
     id: number;
     userId: number;
-    sellerId: number;
+    // sellerId: number;
     product: Product;
     deliveryAddress: Address;
     contact: Number;
     dateTime: string;
+    status: string;
+    is_negotiation:boolean;
+    negotiation_price: number;
 }

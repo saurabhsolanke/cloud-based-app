@@ -1,32 +1,37 @@
 <div class="row mt-5 container">
     <div class="col-3">
-
+        <p></p>
     </div>
-    <div class="col ml-3">
+    <div class="col ml-3 border">
         <p class="lead">Purchacing Request</p>
         <p>Request created by Merchant to farmer</p>
+        <p class="lead">orders</p>
 
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name of merchant</th>
-                    <th scope="col">required crop</th>
-                    <th scope="col">buying rate</th>
-                    <th scope="col">address</th>
-                    <th scope="col">contact</th>
-                    <th scope="col">action</th>
+                    <th>orderId</th>
+                    <th>Name</th>
+                    <th>Product Description</th>
+                    <th>buying rate</th>
+                    <th>contact</th>
+                    <th>time</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="">
-                    <th scope="row"></th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                <tr *ngFor="let order of orders">
+                    <th scope="row">{{order.id}}</th>
+                    <td>{{order.product.name}}</td>
+                    <td>{{order.product.productDesc}}</td>
+                    <td>{{order.product.dp}}</td>
+                    <td>{{order.contact}}</td>
+                    <td>{{order.dateTime}}</td>
+                    <td>{{order.status}} </td>
+                    <td><button class="btn btn-sm btn-primary" (click)="accept()" >+</button>
+                    <button class="btn btn-sm btn-success">-</button></td>
                 </tr>
             </tbody>
         </table>
-
     </div>
 </div>

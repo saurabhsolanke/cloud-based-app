@@ -19,6 +19,7 @@ import { CartComponent } from './product/product-crud/cart/cart.component';
 import { PurchaserequestComponent } from './product/product-crud/purchaserequest/purchaserequest.component';
 import { MerchantSellingComponent } from './merchant-selling/merchant-selling.component';
 import { FarmerlistComponent } from './farmerlist/farmerlist.component';
+import { MerchantOrdersComponent } from './merchant-orders/merchant-orders.component';
 const routes: Routes = [
   { path: "", redirectTo: "/", pathMatch: "full" },
   { path: "", component: HomeComponent },
@@ -50,7 +51,7 @@ const routes: Routes = [
   //Path/component you want to access after customer(farmer) login/signin
   {
     path: '', canActivate: [SellerAuthGaurdService], children: [
-      { path: "farmer-dashboard", component: SellerDashboardComponent },
+      { path: "farmer-dashboard", component: AddcropComponent },
       { path: "farmer/product", component: ProductCrudComponent },
       { path: "farmer/addcrop", component: AddcropComponent },
       { path: "farmer/seeds-pesticides", component: PesticidesSeedsComponent },
@@ -65,7 +66,8 @@ const routes: Routes = [
     path: '', canActivate: [BuyerAuthGaurdService], children: [
       { path: "merchant-dashboard", component: BuyerDashboardComponent },
       { path: "checkout", component: CheckoutComponent },
-      { path: "merchant/farmer-list", component: FarmerlistComponent }
+      { path: "merchant/farmer-list", component: FarmerlistComponent },
+      { path: "merchant/merchant-orders", component: MerchantOrdersComponent }
 
     ]
   },
