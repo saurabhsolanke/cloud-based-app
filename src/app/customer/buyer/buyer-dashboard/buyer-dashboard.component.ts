@@ -11,6 +11,7 @@ export class BuyerDashboardComponent implements OnInit {
 
   all_products;
   show_checkout: Boolean = false;
+  isshopowner:boolean;
 
   constructor(private router: Router, private customerService: CustomerService) { }
 
@@ -22,8 +23,6 @@ export class BuyerDashboardComponent implements OnInit {
     this.customerService.allProduct().subscribe(data => {
       this.all_products = data;
       // console.log("ALl Product", this.all_products);
-    }, error => {
-      console.log("My error", error);
     })
   }
 

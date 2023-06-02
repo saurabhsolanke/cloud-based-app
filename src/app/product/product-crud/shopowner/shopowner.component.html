@@ -7,20 +7,20 @@
         
         <div class="row">
             <div class="col-md-4">
-                <strong>All Crops List</strong>
+                <strong>All Products List</strong>
             </div>
             <div class="col">
                 <input type="text" class="form-control" name="name" [(ngModel)]="name" (ngModelChange)="Search()"
                     placeholder="Search here">
             </div>
             <div class="col">
-                <!-- <button type="button" class="btn btn-dark float-right" (click)="addProductPopup()" data-toggle="modal"
+                <button type="button" class="btn btn-dark float-right" (click)="addProductPopup()" data-toggle="modal"
                     data-target="#addEditProductModal">
                     Add New Product
-                </button> -->
-                <button type="button" class="btn btn-dark float-right" routerLink="/farmer/addcrop">
-                    Add New crop
                 </button>
+                <!-- <button type="button" class="btn btn-dark float-right" routerLink="/farmer/addcrop">
+                    Add New Product
+                </button> -->
             </div>
         </div>
         <div class="row mt-5 justify-content-center">
@@ -50,14 +50,14 @@
                 </div>
             </div> -->
 
-            <div class="col-11 shadow " *ngIf="user_role == 'farmer'">
-                <p class="lead">My Crops</p>
+            <div class="col-11 shadow " *ngIf="user_role == 'shopowner'">
+                <p class="lead">My Products</p>
 
                 <table class="table table-hover">
                     <thead>
                         <tr class="text-muted">
                             <th scope="col">#</th>
-                            <th scope="col">Crop Name</th>
+                            <th scope="col">Product Name</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">MRP</th>
                             <th scope="col">DP</th>
@@ -96,8 +96,8 @@
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">{{popup_header}}</h5>
-                        <button type="button" (click)="getmyProduct()" class="close" data-dismiss="modal" aria-label="Close">
+                        <h5 class="modal-title">Add product</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>

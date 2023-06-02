@@ -11,7 +11,7 @@
         </nav>
         <div class="row">
             <div class="col-sm-4 product" *ngFor="let product of all_products;">
-                <div class="card shadow">
+                <div class="card shadow" *ngIf="!product.isshopowner">
                     <img src="{{product.uploadPhoto}}" class="card-img-top" alt="{{product.name}}">
                     <div class="card-body">
                         <h4 class="card-title">{{product.name}}</h4>

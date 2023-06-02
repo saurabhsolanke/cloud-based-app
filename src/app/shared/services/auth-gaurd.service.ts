@@ -73,6 +73,23 @@ export class SellerAuthGaurdService {
   }
 }
 
+//shopowner(seller) after login
+@Injectable({
+  providedIn: 'root'
+})
+export class ShopownerGaurdService {
+  constructor(private router: Router) { }
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    let role = sessionStorage.getItem("role");
+    if (role == 'shopowner') {
+      return true;
+    } else {
+      this.router.navigate(["/sign-in"]);
+      return false;
+    }
+  }
+}
+
 //merchant(Customer) after login
 @Injectable({
   providedIn: 'root'

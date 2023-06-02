@@ -129,9 +129,9 @@
                             [ngClass]="{'is-invalid':signUpsubmitted && rf.gender.errors}">
                         <label class="form-check-label" for="inlineRadio3">Other (disabled)</label>
                     </div>
-                    <!-- <div *ngIf="signUpsubmitted && rf.gender.errors" class="invalid-feedback">
+                    <div *ngIf="signUpsubmitted && rf.gender.errors" class="invalid-feedback">
               <div *ngIf="rf.gender.errors.required">Select gender</div>
-            </div> -->
+            </div>
                 </div>
                 <!-- <div class="form-group">
                     <label for="exampleFormControlTextarea1">Something About You</label>
@@ -167,7 +167,7 @@
                         [ngClass]="{'is-invalid':signUpsubmitted && rf.role.errors}">
                         <option value="farmer">Farmer</option>
                         <option value="merchant">Merchant</option>
-                        <option value="merchant">ShopOwner</option>
+                        <option value="shopowner">ShopOwner</option>
 
                     </select>
                     <div *ngIf="signUpsubmitted && rf.role.errors" class="invalid-feedback">
@@ -175,7 +175,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary">Register</button>
+                    <button type="submit" class="btn btn-primary">Register</button>
                 </div>
             </form>
             <p routerLink="/sign-in" class="sim-pointer">Already have an account click here for login</p>

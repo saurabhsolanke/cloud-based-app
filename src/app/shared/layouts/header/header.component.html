@@ -102,7 +102,7 @@
         <span *ngIf="user_role == 'merchant'"  routerLink="/farmer/addcrop">Crop Registration for purchase</span>
       </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item"  *ngIf="user_role == 'farmer' || user_role == 'merchant' ">
       <a class="nav-link collapsed">
         <i class="bi bi-menu-button-wide"></i>
         <span routerLink="/farmer/product">Registered Crops</span>
@@ -125,7 +125,7 @@
       </a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="user_role == 'farmer' || user_role == 'merchant' ">
       <a class="nav-link collapsed">
         <i class="bi bi-layout-text-window-reverse"></i>
         <span routerLink="/farmer/purchaserequest">Purchasing Requests</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -139,10 +139,29 @@
       </a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="user_role == 'farmer' || user_role == 'merchant' ">
       <a class="nav-link collapsed">
         <i class="bi bi-gem"></i>
         <span routerLink="/farmer/product">Government Schemes</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+    </li>
+
+    <li class="nav-item" *ngIf="user_role == 'shopowner' ">
+      <a class="nav-link collapsed">
+        <i class="bi bi-gem"></i>
+        <span data-toggle="modal" data-target="#addEditProductModal" >Add Products</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+    </li>
+    <li class="nav-item" *ngIf="user_role == 'shopowner' ">
+      <a class="nav-link collapsed">
+        <i class="bi bi-gem"></i>
+        <span routerLink="/shopowner">Products</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+    </li>
+    <li class="nav-item" *ngIf="user_role == 'shopowner' ">
+      <a class="nav-link collapsed">
+        <i class="bi bi-gem"></i>
+        <span routerLink="/shopowner/orders">Orders</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
     </li>
 

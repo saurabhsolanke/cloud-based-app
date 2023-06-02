@@ -1,16 +1,18 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
-import { ProductService } from "../../shared/services/product.service";
-import { Product } from "../../core/models/object-model";
+import { Product } from 'src/app/core/models/object-model';
+import { ProductService } from 'src/app/shared/services/product.service';
 declare var jQuery: any;
 
+
 @Component({
-  selector: "app-product-crud",
-  templateUrl: "./product-crud.component.html",
-  styleUrls: ["./product-crud.component.scss"],
+  selector: 'app-shopowner',
+  templateUrl: './shopowner.component.html',
+  styleUrls: ['./shopowner.component.scss']
 })
-export class ProductCrudComponent implements OnInit {
+export class ShopownerComponent implements OnInit {
+
   all_product_data;
   my_product_data;
   addEditProductForm: FormGroup;
@@ -59,8 +61,6 @@ export class ProductCrudComponent implements OnInit {
   getAllProduct() {
       this.product_service.allProduct(this.user_session_id).subscribe(data => {
         this.all_product_data = data;
-      }, error => {
-        console.log("My error", error);
       }
     );
   }
@@ -106,6 +106,7 @@ export class ProductCrudComponent implements OnInit {
 
   addNewProduct() {
     this.addEditProduct = true;
+    this.isshopowner = true;
     if (this.addEditProductForm.invalid) {
       // alert('Error!! :-)\n\n' + JSON.stringify(this.addEditUserForm.value))
       return;
@@ -120,8 +121,8 @@ export class ProductCrudComponent implements OnInit {
       dp: this.product_data.dp,
       status: this.product_data.status,
       addedBy: this.loggedinname,
-      user_session_id: this.user_session_id,
       isshopowner: this.isshopowner,
+      user_session_id: this.user_session_id,
     };
     this.product_service.addNewProduct(this.product_dto).subscribe(
       (data) => {
@@ -182,6 +183,9 @@ export class ProductCrudComponent implements OnInit {
           // console.log(data);
           jQuery("#addEditProductModal").modal("toggle");
           this.getAllProduct();
+        },
+        (err) => {
+          alert("Some Error Occured");
         }
       );
   }
@@ -202,4 +206,5 @@ export class ProductCrudComponent implements OnInit {
       alert("You pressed Cancel!");
     }
   }
+
 }

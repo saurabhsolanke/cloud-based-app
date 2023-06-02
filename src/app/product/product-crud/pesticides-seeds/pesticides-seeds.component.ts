@@ -11,6 +11,7 @@ export class PesticidesSeedsComponent implements OnInit {
 
   all_products;
   show_checkout: Boolean = false;
+  isshopowner:boolean;
 
   constructor(private router: Router, private customerService: CustomerService) { }
 
@@ -22,15 +23,13 @@ export class PesticidesSeedsComponent implements OnInit {
     this.customerService.allProduct().subscribe(data => {
       this.all_products = data;
       // console.log("ALl Product", this.all_products);
-    }, error => {
-      console.log("My error", error);
     })
   }
 
   buyProduct(id) {
     this.show_checkout = true;
     this.customerService.quickBuyProduct(id) //We pass to serice from service we can access in another component
-    this.router.navigateByUrl("/checkout");
+    this.router.navigateByUrl("/farmer/checkout");
   }
 
   addToCart() {

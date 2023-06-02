@@ -44,10 +44,10 @@ export class SigninSignupComponent implements OnInit {
       city: ['', Validators.required],
       state: ['', Validators.required],
       zipCode: ['', Validators.required],
-      language: ['', Validators.required],
+      // language: ['', Validators.required],
       gender: ['', Validators.required],
-      aboutYou: ['', Validators.required],
-      uploadPhoto: ['', Validators.required],
+      // aboutYou: ['', Validators.required],
+      // uploadPhoto: ['', Validators.required],
       agreetc: ['', Validators.required],
       role: ['', Validators.required],
 
@@ -121,7 +121,13 @@ export class SigninSignupComponent implements OnInit {
           sessionStorage.setItem("role", this.user_data[0].role);
           sessionStorage.setItem("name", this.user_data[0].name);
           this.router.navigateByUrl('/merchant-dashboard');
-        } else {
+        }else if (this.user_data[0].role == "shopowner") {
+          sessionStorage.setItem("user_session_id", this.user_data[0].id);
+          sessionStorage.setItem("role", this.user_data[0].role);
+          sessionStorage.setItem("name", this.user_data[0].name);
+          this.router.navigateByUrl('/shopowner');
+        }  
+        else {
           alert("Invalid-user-role")
         }
       } else {

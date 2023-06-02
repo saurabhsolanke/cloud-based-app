@@ -1,14 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { CustomerService } from "../../services/customer.service";
-import { Product, User, Order } from "../../../core/models/object-model";
-
+import { Product, User, Order } from "../core/models/object-model";
+import { CustomerService } from "../customer/services/customer.service";
 @Component({
-  selector: "app-checkout",
-  templateUrl: "./checkout.component.html",
-  styleUrls: ["./checkout.component.scss"],
+  selector: "app-famercheckout",
+  templateUrl: "./famercheckout.component.html",
+  styleUrls: ["./famercheckout.component.scss"],
 })
-export class CheckoutComponent implements OnInit {
+export class FamercheckoutComponent implements OnInit {
   single_product_id: number;
   user_id: number;
   individual_product: Product;
@@ -17,7 +16,7 @@ export class CheckoutComponent implements OnInit {
   user_contact_no: Number;
   order_dto: Order;
   id: number;
-  status = "requested";
+  status = "Ordered";
   is_negotiation: boolean;
   negotiation_price: number;
   isshopowner: boolean;
@@ -96,7 +95,7 @@ export class CheckoutComponent implements OnInit {
       // console.log("Order placed successfully", data);
       alert("Order places successfully");
       // this.router.navigateByUrl("/merchant/merchant-orders");
-      this.router.navigateByUrl("/farmer/purchaserequest");
+      this.router.navigateByUrl("/farmer/orders");
     });
   }
 

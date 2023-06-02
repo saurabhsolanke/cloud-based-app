@@ -33,6 +33,7 @@ export class Product {
     dp: number;
     status: boolean;
     addedBy: string;
+    isshopowner: boolean;
     user_session_id: number
 }
 

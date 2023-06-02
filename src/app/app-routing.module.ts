@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundErrorComponent } from './shared/layouts/page-not-found-error/page-not-found-error.component';
-import { AdminAuthGuardLogin, AdminAuthGaurdService, SellerBuyerAuthGuardLogin, SellerAuthGaurdService, BuyerAuthGaurdService } from './shared/services/auth-gaurd.service';
+import { AdminAuthGuardLogin, AdminAuthGaurdService, SellerBuyerAuthGuardLogin, SellerAuthGaurdService, BuyerAuthGaurdService, ShopownerGaurdService } from './shared/services/auth-gaurd.service';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { SigninSignupComponent } from './customer/signin-signup/signin-signup.component';
@@ -20,6 +20,11 @@ import { PurchaserequestComponent } from './product/product-crud/purchaserequest
 import { MerchantSellingComponent } from './merchant-selling/merchant-selling.component';
 import { FarmerlistComponent } from './farmerlist/farmerlist.component';
 import { MerchantOrdersComponent } from './merchant-orders/merchant-orders.component';
+import { OrderViewComponent } from './order-view/order-view.component';
+import { ShopownerComponent } from './product/product-crud/shopowner/shopowner.component';
+import { ShopOrdersComponent } from './product/product-crud/shop-orders/shop-orders.component';
+import { FamercheckoutComponent } from './famercheckout/famercheckout.component';
+import { FarmerOrdersComponent } from './farmer-orders/farmer-orders.component';
 const routes: Routes = [
   { path: "", redirectTo: "/", pathMatch: "full" },
   { path: "", component: HomeComponent },
@@ -58,6 +63,20 @@ const routes: Routes = [
       { path: "farmer/cart", component: CartComponent },
       { path: "farmer/merchant-selling", component: MerchantSellingComponent },
       { path: "farmer/purchaserequest", component: PurchaserequestComponent },
+      { path: "farmer/order/:id", component: OrderViewComponent },
+      { path: "farmer/checkout", component: FamercheckoutComponent },
+      { path: "farmer/orders", component: FarmerOrdersComponent },
+
+
+    ]
+  },
+
+  {
+    path: '', canActivate: [ShopownerGaurdService], children: [
+      { path: "shopowner", component: ShopownerComponent },
+      { path: "shopowner/orders", component: ShopOrdersComponent },
+      { path: "shopowner/orders/:id", component: OrderViewComponent },
+
     ]
   },
 
@@ -65,7 +84,7 @@ const routes: Routes = [
   {
     path: '', canActivate: [BuyerAuthGaurdService], children: [
       { path: "merchant-dashboard", component: BuyerDashboardComponent },
-      { path: "checkout", component: CheckoutComponent },
+      { path: "merchant/checkout", component: CheckoutComponent },
       { path: "merchant/farmer-list", component: FarmerlistComponent },
       { path: "merchant/merchant-orders", component: MerchantOrdersComponent }
 
