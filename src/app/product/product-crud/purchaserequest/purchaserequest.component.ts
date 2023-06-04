@@ -34,7 +34,7 @@ export class PurchaserequestComponent implements OnInit {
   name: any;
   loggedinname = "";
   user_role = "";
-  singleOrder: any;
+  singleOrder;
   id: any;
   addEditorderForm1: any;
   individual_product: any;
@@ -60,10 +60,10 @@ export class PurchaserequestComponent implements OnInit {
     this.loggedinname = sessionStorage.getItem("name");
     this.user_session_id = sessionStorage.getItem("user_session_id");
     this.addEditProductForm1 = this.formBuilder.group({
-      // name: ["", Validators.required],
-      // uploadPhoto: ["", Validators.required],
-      // productDesc: ["", Validators.required],
-      // mrp: ["", Validators.required],
+      name: ["", Validators.required],
+      uploadPhoto: ["", Validators.required],
+      productDesc: ["", Validators.required],
+      mrp: ["", Validators.required],
       contact: ["", Validators.required],
       status: ["", Validators.required],
     });
@@ -116,43 +116,48 @@ export class PurchaserequestComponent implements OnInit {
     return "hello";
   }
 
-  editProductPopup1(order) {
-    this.current_order_id = order.id;
-    this.user_contact_no = order.contact;
-    this.status = order.status;
-    const saurabh = this.addEditProductForm1.value;
-    console.log(saurabh);
-    this.newFunction();
-    this.popup_header = "Edit Product : " + order.id;
-    this;
-    // this.addEditProductForm1.reset();
-    // this.customerService.singleOrder(id).subscribe((data) => {
-    //   console.log("edit order id :-",id);
+  // editProductPopup1(id) {
+  //   // this.current_order_id = order.id;
+  //   // this.user_contact_no = order.contact;
+  //   // this.status = order.status;
+  //   // const saurabh = this.addEditProductForm1.value;
+  //   // console.log(saurabh);
+  //   // this.newFunction();
+  //   this.popup_header = "Edit Product : ";
+  //   // this;
+  //   // this.addEditProductForm1.reset();
+  //   // this.customerService.singleOrder(id).subscribe((data) => {
+  //   //   console.log("edit order id :-",id);
 
-    //   this.singleOrder = data;
-    //   console.log("single order data",data);
-    //   this.edit_order_id = data.id;
-    //   console.log("single_data", this.singleOrder)
-    //   this.addEditProductForm1.setValue({
-    //     status: this.singleOrder.status,
-    //   });
-    // });
-  }
-  editProductPopup(order) {
-    this.current_order_id = order.id;
-    this.user_contact_no = order.contact;
-    this.status = order.status;
-    this.newFunction();
-    this.popup_header = "Edit Product : " + order.id;
-    this;
+  //   //   this.singleOrder = data;
+  //   //   console.log("single order data",data);
+  //   //   this.edit_order_id = data.id;
+  //   //   console.log("single_data", this.singleOrder)
+  //   //   this.addEditProductForm1.setValue({
+  //   //     status: this.singleOrder.status,
+  //   //   });
+  //   // });
+  // }
+
+  editProductPopup(id) {
+    // this.current_order_id = order.id;
+    // this.user_contact_no = order.contact;
+    // this.status = order.status;
+    this.popup_header = "Edit Product : " ;
     this.addEditProductForm1.reset();
-    this.customerService.singleOrder(this.id).subscribe((data) => {
+    this.customerService.singleOrder(id).subscribe((data) => {
       console.log("edit order id :-", this.id);
       this.singleOrder = data;
       console.log("single order data", data);
       this.edit_order_id = data.id;
       console.log("single_data", this.singleOrder);
       this.addEditProductForm1.setValue({
+        name: this.singleOrder.name,
+        // uploadPhoto: '',
+        uploadPhoto: this.singleOrder.uploadPhoto,
+        productDesc: this.singleOrder.productDesc,
+        mrp: this.singleOrder.mrp,
+        dp: this.singleOrder.dp,
         status: this.singleOrder.status,
       });
     });

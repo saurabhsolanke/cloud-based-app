@@ -6,10 +6,12 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a>Farmer</a></li>
-                <li class="breadcrumb-item"><a routerLink="/">Seeds and Pesticides</a></li>
+                <li class="breadcrumb-item"><a routerLink="/farmer/seeds-pesticides">Krushi Kendra</a></li>
+                <li class="breadcrumb-item"><a routerLink="/farmer/cart">Cart</a></li>
+                <li class="breadcrumb-item"><a routerLink="/farmer/krishi">Order History</a></li>
             </ol>
         </nav>
-        <h4 class="display-6 justify-content-center">Shopowner- Pesticide page</h4>
+        <h4 class="display-6 justify-content-center">Krushi Kendra Page</h4>
         <div class="row">
             <div class="col-sm-4 product" *ngFor="let product of all_products;">
                 <div class="card shadow" *ngIf="product.isshopowner">

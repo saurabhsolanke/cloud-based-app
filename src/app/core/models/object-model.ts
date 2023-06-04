@@ -13,6 +13,7 @@ export class User {
     // uploadPhoto: Image;
     uploadPhoto: string;
     role: string;
+    isshopowner: string;
 }
 
 export class Address {

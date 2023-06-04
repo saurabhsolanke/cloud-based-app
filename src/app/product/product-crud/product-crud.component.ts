@@ -99,12 +99,13 @@ export class ProductCrudComponent implements OnInit {
   addProductPopup() {
     this.add_product = true;
     this.edit_product = false;
-    this.popup_header = "Add New Product";
+    this.popup_header = "Add New Crop";
     this.addEditProductForm.reset();
   }
 
   addNewProduct() {
     this.addEditProduct = true;
+    this.isshopowner=false;
     if (this.addEditProductForm.invalid) {
       // alert('Error!! :-)\n\n' + JSON.stringify(this.addEditUserForm.value))
       return;

@@ -33,6 +33,8 @@ import { ShopownerComponent } from './product/product-crud/shopowner/shopowner.c
 import { ShopOrdersComponent } from './product/product-crud/shop-orders/shop-orders.component';
 import { FamercheckoutComponent } from './famercheckout/famercheckout.component';
 import { FarmerOrdersComponent } from './farmer-orders/farmer-orders.component';
+import { KrishiOrdersComponent } from './krishi-orders/krishi-orders.component';
+import { KrishiCheckoutComponent } from './krishi-checkout/krishi-checkout.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -58,6 +60,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ShopOrdersComponent,
     FamercheckoutComponent,
     FarmerOrdersComponent,
+    KrishiOrdersComponent,
+    KrishiCheckoutComponent,
 
   ],
   imports: [

@@ -26,6 +26,9 @@ import { ShopOrdersComponent } from './product/product-crud/shop-orders/shop-ord
 import { FamercheckoutComponent } from './famercheckout/famercheckout.component';
 import { FarmerOrdersComponent } from './farmer-orders/farmer-orders.component';
 import { SchemesComponent } from './admin/admin-dashboard/schemes/schemes.component';
+import { KrishiOrdersComponent } from './krishi-orders/krishi-orders.component';
+import { KrishiCheckoutComponent } from './krishi-checkout/krishi-checkout.component';
+
 const routes: Routes = [
   { path: "", redirectTo: "/", pathMatch: "full" },
   { path: "", component: HomeComponent },
@@ -41,6 +44,7 @@ const routes: Routes = [
   {
     path: '', canActivate: [AdminAuthGaurdService], children: [
       { path: "admin-dashboard", component: AdminDashboardComponent },
+      { path: "my-profile", component: UserProfileComponent },
       { path: "admin/user", component: UserCrudComponent },
       { path: "admin/product", component: ProductCrudComponent },
       { path: "admin/govSchemes", component: SchemesComponent }
@@ -68,8 +72,9 @@ const routes: Routes = [
       { path: "farmer/order/:id", component: OrderViewComponent },
       { path: "farmer/checkout", component: FamercheckoutComponent },
       { path: "farmer/orders", component: FarmerOrdersComponent },
-
-
+      { path: "farmer/krishi", component: KrishiOrdersComponent },
+      { path: "farmer/krishi-checkout", component: KrishiCheckoutComponent },
+      // { path: "my-profile", component: UserProfileComponent },
     ]
   },
 
@@ -78,7 +83,7 @@ const routes: Routes = [
       { path: "shopowner", component: ShopownerComponent },
       { path: "shopowner/orders", component: ShopOrdersComponent },
       { path: "shopowner/orders/:id", component: OrderViewComponent },
-
+      // { path: "my-profile", component: UserProfileComponent },
     ]
   },
 
@@ -88,8 +93,8 @@ const routes: Routes = [
       { path: "merchant-dashboard", component: BuyerDashboardComponent },
       { path: "merchant/checkout", component: CheckoutComponent },
       { path: "merchant/farmer-list", component: FarmerlistComponent },
-      { path: "merchant/merchant-orders", component: MerchantOrdersComponent }
-
+      { path: "merchant/merchant-orders", component: MerchantOrdersComponent },
+      // { path: "my-profile", component: UserProfileComponent }
     ]
   },
   { path: "**", component: PageNotFoundErrorComponent }

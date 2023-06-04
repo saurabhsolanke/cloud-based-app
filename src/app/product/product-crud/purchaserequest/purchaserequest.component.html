@@ -48,7 +48,6 @@
             <thead>
                 <tr class="text-muted">
                     <th>sr.no</th>
-                    <th>orderId</th>
                     <th>Name</th>
                     <th>Product Description</th>
                     <th>buying rate</th>
@@ -60,8 +59,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let order of orders; let i = index">
-                    <td>{{i+1}}</td>
-                    <th scope="row">{{order.id}}</th>
+                    <th scope="row">{{i+1}}</th>
                     <td>{{order.product.name}}</td>
                     <td>{{order.product.productDesc}}</td>
                     <td>{{order.product.dp}}</td>
@@ -69,7 +67,7 @@
                     <td>{{order.dateTime}}</td>
                     <td>{{order.status}} </td>
                     <td>
-                        <span class="sim-pointer" (click)="editProductPopup(order)" data-toggle="modal"
+                        <span class="sim-pointer" (click)="editProductPopup(order.id)" data-toggle="modal"
                             data-target="#addEditProductModal"><i class="fa fa-pencil-square-o"
                                 aria-hidden="true"></i></span>
                         &nbsp;&nbsp;&nbsp;
@@ -89,7 +87,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">{{popup_header}}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" (click)="getOrders()" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -98,19 +96,26 @@
                     <div class="col-md-10 offset-md-1">
                         <form [formGroup]="addEditProductForm1">
                             <div class="form-group">
-                                <label for="contact">contact</label>
-                                <input type="text" class="form-control" formControlName="contact" />
-
+                                <label for="productName">Product Name</label>
+                                <input type="text" class="form-control" name="name" formControlName="name" />
                             </div>
                             <div class="form-group">
-                                <label for="productStatus">Status</label> {{current_order_id}} {{status}}
-                                <select class="form-control" formControlName="status">
-                                    <option value="requested">Requested</option>
-                                    <option value="approved">Approved</option>
-                                    <option value="declined">Declined</option>
-                                </select>
-
+                                <label for="productImage">Product Image URL</label>
+                                <input type="url" class="form-control" name="uploadPhoto" formControlName="uploadPhoto">
                             </div>
+
+                            <div class="form-group">
+                                <label for="productDescription">Quantity</label>
+                                <input class="form-control" rows="3" name="productDesc" formControlName="productDesc">
+                            </div>
+                            <div class="form-group">
+                                <label for="productMRP">MRP</label>
+                                <input type="text" class="form-control" name="mrp" formControlName="mrp">
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="productDP">DP</label>
+                                <input type="text" class="form-control" name="dp" formControlName="dp">
+                            </div> -->
                             <div class="form-group">
                                 <button class="btn btn-primary" (click)="updateProduct()">Update</button>
                             </div>

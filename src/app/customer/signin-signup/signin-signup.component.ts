@@ -94,7 +94,8 @@ export class SigninSignupComponent implements OnInit {
       // state: this.user_reg_data.state,
       uploadPhoto: this.user_reg_data.uploadPhoto,
       // zipCode: this.user_reg_data.zipCode,
-      role: this.user_reg_data.role
+      role: this.user_reg_data.role,
+      isshopowner: this.user_reg_data.isshopowner
     }
     this.logsign_service.userRegister(this.user_dto).subscribe(data => {
       // console.log(data);
@@ -115,17 +116,17 @@ export class SigninSignupComponent implements OnInit {
           sessionStorage.setItem("user_session_id", this.user_data[0].id);
           sessionStorage.setItem("role", this.user_data[0].role);
           sessionStorage.setItem("name", this.user_data[0].name);
-          this.router.navigateByUrl('/farmer/addcrop');
+          this.router.navigateByUrl('/my-profile');
         } else if (this.user_data[0].role == "merchant") {
           sessionStorage.setItem("user_session_id", this.user_data[0].id);
           sessionStorage.setItem("role", this.user_data[0].role);
           sessionStorage.setItem("name", this.user_data[0].name);
-          this.router.navigateByUrl('/merchant-dashboard');
+          this.router.navigateByUrl('/my-profile');
         }else if (this.user_data[0].role == "shopowner") {
           sessionStorage.setItem("user_session_id", this.user_data[0].id);
           sessionStorage.setItem("role", this.user_data[0].role);
           sessionStorage.setItem("name", this.user_data[0].name);
-          this.router.navigateByUrl('/shopowner');
+          this.router.navigateByUrl('/my-profile');
         }  
         else {
           alert("Invalid-user-role")

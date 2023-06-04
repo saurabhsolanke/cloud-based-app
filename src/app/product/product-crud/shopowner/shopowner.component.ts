@@ -50,7 +50,7 @@ export class ShopownerComponent implements OnInit {
       dp: ["", Validators.required],
       status: ["", Validators.required],
     });
-    this.getAllProduct();
+    // this.getAllProduct();
     this.getmyProduct()
   }
 
@@ -69,7 +69,7 @@ export class ShopownerComponent implements OnInit {
     this.product_service.allProduct(this.user_session_id).subscribe(
       (data) => {
         this.my_product_data = data.filter(
-          (product) => product.user_session_id == this.user_session_id
+          (product) => product.user_session_id == this.user_session_id  && product.isshopowner === true
         );
       }
     );

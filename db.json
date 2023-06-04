@@ -11,9 +11,9 @@
       "address": {
         "id": 0,
         "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": null,
+        "addLine2": "Chhatrapati Sambhaji Nagar1",
         "city": "Chhatrapati Sambhaji Nagar",
-        "state": "...",
+        "state": "Maharashtra",
         "zipCode": "431003"
       },
       "aboutYou": "i like biry11",
@@ -53,21 +53,17 @@
       "dob": "1999-02-21",
       "email": "nayan@gmail.com",
       "password": "12345678",
-      "language": [
-        "Bengali"
-      ],
       "gender": "Male",
       "address": {
         "id": 0,
         "addLine1": "Nashik",
         "addLine2": null,
         "city": "Nashik",
-        "state": "...",
+        "state": "Maharashtra",
         "zipCode": "123456"
       },
       "aboutYou": "Dj NBK lover",
       "uploadPhoto": "C:\\fakepath\\150-1503934_computer-icons-scalable-vector-graphics-user-profile-user.png",
-      "agreetc": true,
       "role": "merchant",
       "id": 3
     },
@@ -375,44 +371,64 @@
       "password": "12345678",
       "role": "farmer",
       "id": 16
+    },
+    {
+      "age": 23,
+      "agreetc": true,
+      "dob": "1997-05-22",
+      "email": "su@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "bajaj nagar",
+        "addLine2": "pune",
+        "city": "pune",
+        "state": "...",
+        "zipCode": "411057"
+      },
+      "mobNumber": "999990111",
+      "name": "swapnil ukhle",
+      "password": "12345678",
+      "role": "farmer",
+      "id": 17
     }
   ],
   "products": [
     {
       "id": 1,
-      "name": "eqwwef",
-      "uploadPhoto": "wefwdef",
-      "productDesc": "wefr",
-      "mrp": "wef",
-      "dp": "wef",
-      "status": "publish",
-      "addedBy": "krishna naik",
-      "isshopowner": true,
-      "user_session_id": "15"
+      "name": "crop1 ",
+      "uploadPhoto": "khvkjv",
+      "productDesc": "1kg",
+      "mrp": "100",
+      "dp": "90",
+      "status": "active",
+      "addedBy": "rohit shrikhande",
+      "user_session_id": "1"
     },
     {
       "id": 2,
-      "name": "crop",
-      "uploadPhoto": "cro image",
-      "productDesc": "sdfvdef",
-      "mrp": "41",
-      "dp": "331",
-      "status": "publish",
-      "addedBy": "rohit shrikhande",
-      "user_session_id": "1"
+      "name": "seed1",
+      "uploadPhoto": "dsvsdvsdv",
+      "productDesc": "1kg",
+      "mrp": "100",
+      "dp": "90",
+      "status": "active",
+      "addedBy": "krishna naik",
+      "isshopowner": true,
+      "user_session_id": "15"
     }
   ],
   "orders": [
     {
       "userId": 3,
       "product": {
-        "id": 2,
-        "name": "crop",
-        "uploadPhoto": "cro image",
-        "productDesc": "sdfvdef",
-        "mrp": "44",
-        "dp": "33",
-        "status": "publish",
+        "id": 1,
+        "name": "crop1 ",
+        "uploadPhoto": "khvkjv",
+        "productDesc": "1kg",
+        "mrp": "100",
+        "dp": "90",
+        "status": "active",
         "addedBy": "rohit shrikhande",
         "user_session_id": "1"
       },
@@ -421,247 +437,40 @@
         "addLine1": "Nashik",
         "addLine2": null,
         "city": "Nashik",
-        "state": "...",
+        "state": "Maharashtra",
         "zipCode": 123456
       },
       "status": "requested",
       "contact": "9720276354",
-      "dateTime": "31/5/2023",
+      "dateTime": "04/06/2023",
       "id": 1
     },
     {
       "userId": 1,
       "product": {
-        "id": 1,
-        "name": "eqwwef",
-        "uploadPhoto": "wefwdef",
-        "productDesc": "wefr",
-        "mrp": "wef",
-        "dp": "wef",
-        "status": "publish",
+        "id": 2,
+        "name": "seed1",
+        "uploadPhoto": "dsvsdvsdv",
+        "productDesc": "1kg",
+        "mrp": "100",
+        "dp": "90",
+        "status": "active",
         "addedBy": "krishna naik",
-        "user_session_id": "15"
+        "user_session_id": "15",
+        "isshopowner": true
       },
       "deliveryAddress": {
         "id": 0,
         "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": null,
+        "addLine2": "Chhatrapati Sambhaji Nagar1",
         "city": "Chhatrapati Sambhaji Nagar",
-        "state": "...",
-        "zipCode": 431003
-      },
-      "status": "requested",
-      "contact": "9876543210",
-      "dateTime": "01/06/2023",
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "product": {
-        "id": 1,
-        "name": "eqwwef",
-        "uploadPhoto": "wefwdef",
-        "productDesc": "wefr",
-        "mrp": "wef",
-        "dp": "wef",
-        "status": "publish",
-        "addedBy": "krishna naik",
-        "user_session_id": "15"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": null,
-        "city": "Chhatrapati Sambhaji Nagar",
-        "state": "...",
-        "zipCode": 431003
-      },
-      "status": "requested",
-      "contact": "9876543210",
-      "dateTime": "01/06/2023",
-      "id": 3
-    },
-    {
-      "userId": 1,
-      "product": {
-        "id": 1,
-        "name": "eqwwef",
-        "uploadPhoto": "wefwdef",
-        "productDesc": "wefr",
-        "mrp": "wef",
-        "dp": "wef",
-        "status": "publish",
-        "addedBy": "krishna naik",
-        "user_session_id": "15"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": null,
-        "city": "Chhatrapati Sambhaji Nagar",
-        "state": "...",
-        "zipCode": 431003
-      },
-      "status": "requested",
-      "contact": "9876543210",
-      "dateTime": "01/06/2023",
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "product": {
-        "id": 1,
-        "name": "eqwwef",
-        "uploadPhoto": "wefwdef",
-        "productDesc": "wefr",
-        "mrp": "wef",
-        "dp": "wef",
-        "status": "publish",
-        "addedBy": "krishna naik",
-        "user_session_id": "15"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": null,
-        "city": "Chhatrapati Sambhaji Nagar",
-        "state": "...",
-        "zipCode": 431003
-      },
-      "status": "requested",
-      "contact": "9876543210",
-      "dateTime": "01/06/2023",
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "product": {
-        "id": 1,
-        "name": "eqwwef",
-        "uploadPhoto": "wefwdef",
-        "productDesc": "wefr",
-        "mrp": "wef",
-        "dp": "wef",
-        "status": "publish",
-        "addedBy": "krishna naik",
-        "user_session_id": "15"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": null,
-        "city": "Chhatrapati Sambhaji Nagar",
-        "state": "...",
-        "zipCode": 431003
-      },
-      "status": "requested",
-      "contact": "9876543210",
-      "dateTime": "01/06/2023",
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "product": {
-        "id": 1,
-        "name": "eqwwef",
-        "uploadPhoto": "wefwdef",
-        "productDesc": "wefr",
-        "mrp": "wef",
-        "dp": "wef",
-        "status": "publish",
-        "addedBy": "krishna naik",
-        "user_session_id": "15"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": null,
-        "city": "Chhatrapati Sambhaji Nagar",
-        "state": "...",
-        "zipCode": 431003
-      },
-      "status": "requested",
-      "contact": "9876543210",
-      "dateTime": "02/06/2023",
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "product": {
-        "id": 1,
-        "name": "eqwwef",
-        "uploadPhoto": "wefwdef",
-        "productDesc": "wefr",
-        "mrp": "wef",
-        "dp": "wef",
-        "status": "publish",
-        "addedBy": "krishna naik",
-        "user_session_id": "15"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": null,
-        "city": "Chhatrapati Sambhaji Nagar",
-        "state": "...",
-        "zipCode": 431003
-      },
-      "status": "requested",
-      "contact": "9876543210",
-      "dateTime": "02/06/2023",
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "product": {
-        "id": 1,
-        "name": "eqwwef",
-        "uploadPhoto": "wefwdef",
-        "productDesc": "wefr",
-        "mrp": "wef",
-        "dp": "wef",
-        "status": "publish",
-        "addedBy": "krishna naik",
-        "user_session_id": "15"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": null,
-        "city": "Chhatrapati Sambhaji Nagar",
-        "state": "...",
-        "zipCode": 431003
-      },
-      "status": "requested",
-      "contact": "9876543210",
-      "dateTime": "02/06/2023",
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "product": {
-        "id": 1,
-        "name": "eqwwef",
-        "uploadPhoto": "wefwdef",
-        "productDesc": "wefr",
-        "mrp": "wef",
-        "dp": "wef",
-        "status": "publish",
-        "addedBy": "krishna naik",
-        "user_session_id": "15"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": null,
-        "city": "Chhatrapati Sambhaji Nagar",
-        "state": "...",
+        "state": "Maharashtra",
         "zipCode": 431003
       },
       "status": "Ordered",
       "contact": "9876543210",
-      "dateTime": "02/06/2023",
-      "id": 10
+      "dateTime": "04/06/2023",
+      "id": 2
     }
   ],
   "cart": [],

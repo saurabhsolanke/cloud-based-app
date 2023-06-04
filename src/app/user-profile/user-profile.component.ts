@@ -24,6 +24,8 @@ export class UserProfileComponent implements OnInit {
   user_profile_pic;
   user_language;
   user_role;
+  editProfile:boolean=false;
+
 
 
   constructor(private formBuilder: FormBuilder, private router: Router, private user_service: UserService, private toastr: ToastrService) { }
@@ -47,6 +49,10 @@ export class UserProfileComponent implements OnInit {
       uploadPhoto: [],
     })
     this.editUserData(this.user_id);
+  }
+
+  update(){
+    this.editProfile=true;
   }
 
   get rf() { return this.userProfileForm.controls; }
@@ -106,17 +112,22 @@ export class UserProfileComponent implements OnInit {
       aboutYou: this.user_updated_data.aboutYou,
       uploadPhoto: (this.user_updated_data.uploadPhoto == "" ? this.user_profile_pic : this.user_updated_data.uploadPhoto),
       agreetc: this.user_updated_data.agreetc,
-      role: this.user_role
+      role: this.user_role,
+      isshopowner: this.user_updated_data.isshopowner
+
     }
     this.user_service.updateUserData(this.user_id, this.user_dto).subscribe(data => {
       this.toastr.success('Profile Updated Successfully!', 'User Profile!');
 
       if (this.user_role == 'admin') {
-        this.router.navigateByUrl('/admin-dashboard');
+        this.router.navigateByUrl('/my-profile');
+        this.editProfile=false
       } else if (this.user_role == 'farmer') {
-        this.router.navigateByUrl('/farmer-dashboard');
+        this.editProfile=false
+        this.router.navigateByUrl('/my-profile');
       } else if (this.user_role == 'merchant') {
-        this.router.navigateByUrl('/merchant-dashboard');
+        this.editProfile=false
+        this.router.navigateByUrl('/my-profile');
       }
     }, err => {
       this.toastr.error('Some Error Occured!', 'User Profile!');

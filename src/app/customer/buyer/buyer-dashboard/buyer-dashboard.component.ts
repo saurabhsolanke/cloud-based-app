@@ -28,8 +28,9 @@ export class BuyerDashboardComponent implements OnInit {
 
   buyProduct(id) {
     this.show_checkout = true;
+    this.isshopowner = false;
     this.customerService.quickBuyProduct(id) //We pass to serice from service we can access in another component
-    this.router.navigateByUrl("/checkout");
+    this.router.navigateByUrl("/merchant/checkout");
   }
 
   addToCart() {
