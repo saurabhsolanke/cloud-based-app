@@ -7,17 +7,20 @@
         
         <div class="row">
             <div class="col-md-4">
-                <strong>All Crops List</strong>
+                <strong>All Schemes</strong>
             </div>
             <div class="col">
                 <input type="text" class="form-control" name="name" [(ngModel)]="name" (ngModelChange)="Search()"
                     placeholder="Search here">
             </div>
             <div class="col">
-                <button type="button" class="btn btn-dark float-right" (click)="addProductPopup()" data-toggle="modal"
-                    data-target="#addEditProductModal">
+                <!-- <button type="button" class="btn btn-dark float-right" (click)="addProductPopup()" data-toggle="modal"
+                    data-target="#addEditProductModal1">
                     Add New Product
-                </button>
+                </button> -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Schemes">
+                    Add Scheme
+                  </button>
                 <!-- <button type="button" class="btn btn-dark float-right" routerLink="/farmer/addcrop">
                     Add New crop
                 </button> -->
@@ -27,15 +30,15 @@
 
             <div class="col shadow" *ngIf=" user_role === 'admin'">
                 <div class="container">
-                    <h2>List of all products <small>by other farmers</small></h2>
+                    <h2>Scheme <small></small></h2>
                     <ul class="responsive-table">
                         <li class="table-header">
                             <div class="col">#</div>
-                            <div class="col">Product Name</div>
-                            <div class="col">Quantity</div>
-                            <div class="col">Mrp</div>
-                            <div class="col">dp</div>
-                            <div class="col">Status</div>
+                            <div class="col">Scheme Name</div>
+                            <div class="col">Total Benifits</div>
+                            <div class="col">Scheme for Merchant/ Farmer</div>
+                            <div class="col">Gov. Link</div>
+                            <!-- <div class="col">Status</div> -->
                         </li>
                         <li class="table-row" *ngFor="let product_data of all_product_data; let i = index">
                             <div class="col" data-label="Job Id">{{i+1}}</div>
@@ -44,54 +47,20 @@
                             <div class="col" data-label="Payment Status">{{product_data.mrp}}</div>
                             <div class="col" data-label="Amount">{{product_data.dp}}</div>
                             <div class="col" data-label="Payment Status">{{product_data.status}}</div>
+                            <span class="sim-pointer" (click)="editProductPopup(product_data.id)"
+                            data-toggle="modal" data-target="#Schemes"><i
+                                class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                        &nbsp;&nbsp;&nbsp;
+                        <span class="sim-pointer" (click)="deleteProduct(product_data.id)"><i
+                                class="fa fa-trash" aria-hidden="true"></i></span>
                         </li>
-    
                     </ul>
                 </div>
-            </div>
-
-            <div class="col-11 shadow " *ngIf="user_role == 'farmer' ">
-                <p class="lead">My Crops</p>
-
-                <table class="table table-hover">
-                    <thead>
-                        <tr class="text-muted">
-                            <th scope="col">#</th>
-                            <th scope="col">Crop Name</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">MRP</th>
-                            <th scope="col">DP</th>
-                            <!-- <th scope="col">Description</th> -->
-                            <th scope="col">Status</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let product_data of my_product_data; let i = index">
-                            <th scope="row">{{i+1}}</th>
-                            <td>{{product_data.name}}</td>
-                            <!-- <td>{{product_data.uploadPhoto}}</td> -->
-                            <td>{{product_data.productDesc}}</td>
-                            <td>{{product_data.mrp}}</td>
-                            <td>{{product_data.dp}}</td>
-                            <!-- <td>{{product_data.productDesc}}</td> -->
-                            <td>{{product_data.status}}</td>
-                            <td>
-                                <span class="sim-pointer" (click)="editProductPopup(product_data.id)"
-                                    data-toggle="modal" data-target="#addEditProductModal"><i
-                                        class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-                                &nbsp;&nbsp;&nbsp;
-                                <span class="sim-pointer" (click)="deleteProduct(product_data.id)"><i
-                                        class="fa fa-trash" aria-hidden="true"></i></span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
 
         <!-- Modal for add and edit user  -->
-        <div class="modal fade" id="addEditProductModal" tabindex="-1" role="dialog" aria-labelledby="addEditUserTitle"
+        <div class="modal fade" id="Schemes" tabindex="-1" role="dialog" aria-labelledby="addEditUserTitle"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">

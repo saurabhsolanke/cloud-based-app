@@ -57,7 +57,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ShopownerComponent,
     ShopOrdersComponent,
     FamercheckoutComponent,
-    FarmerOrdersComponent
+    FarmerOrdersComponent,
 
   ],
   imports: [

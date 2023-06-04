@@ -165,6 +165,31 @@
       </a>
     </li>
 
+    <li class="nav-item" *ngIf="user_role == 'admin' ">
+      <a class="nav-link collapsed">
+        <i class="bi bi-gem"></i>
+        <span data-toggle="modal" data-target="#addEditProductModal" >Add Scheme</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+    </li>
+    <li class="nav-item" *ngIf="user_role == 'admin' ">
+      <a class="nav-link collapsed">
+        <i class="bi bi-gem"></i>
+        <span routerLink="/admin/govSchemes">Gov. Schemes</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+    </li>
+    <li class="nav-item" *ngIf="user_role == 'admin' ">
+      <a class="nav-link collapsed">
+        <i class="bi bi-gem"></i>
+        <span routerLink="/admin/user">User Management</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+    </li>
+    <li class="nav-item" *ngIf="user_role == 'admin' ">
+      <a class="nav-link collapsed">
+        <i class="bi bi-gem"></i>
+        <span routerLink="/admin/product">Product Management</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+    </li>
+
     <li class="nav-item">
       <a class="nav-link collapsed">
         <i class="bi bi-gem"></i>

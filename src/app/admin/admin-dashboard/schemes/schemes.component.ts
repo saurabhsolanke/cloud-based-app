@@ -1,16 +1,17 @@
-import { Component, OnInit } from "@angular/core";
-import { FormBuilder, Validators, FormGroup } from "@angular/forms";
-import { Router } from "@angular/router";
-import { ProductService } from "../../shared/services/product.service";
-import { Product } from "../../core/models/object-model";
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Product } from 'src/app/core/models/object-model';
+import { ProductService } from 'src/app/shared/services/product.service';
 declare var jQuery: any;
 
 @Component({
-  selector: "app-product-crud",
-  templateUrl: "./product-crud.component.html",
-  styleUrls: ["./product-crud.component.scss"],
+  selector: 'app-schemes',
+  templateUrl: './schemes.component.html',
+  styleUrls: ['./schemes.component.scss']
 })
-export class ProductCrudComponent implements OnInit {
+export class SchemesComponent implements OnInit {
+
   all_product_data;
   my_product_data;
   addEditProductForm: FormGroup;
@@ -48,7 +49,7 @@ export class ProductCrudComponent implements OnInit {
       dp: ["", Validators.required],
       status: ["", Validators.required],
     });
-    this.getAllProduct();
+    this.getAllScheme();
     this.getmyProduct()
   }
 
@@ -56,7 +57,7 @@ export class ProductCrudComponent implements OnInit {
     return this.addEditProductForm.controls;
   }
 
-  getAllProduct() {
+  getAllScheme() {
       this.product_service.allProduct(this.user_session_id).subscribe(data => {
         this.all_product_data = data;
         console.log(data);
@@ -126,7 +127,7 @@ export class ProductCrudComponent implements OnInit {
       (data) => {
         // console.log(data);
         jQuery("#addEditProductModal").modal("toggle");
-        this.getAllProduct();
+        this.getAllScheme();
       },
       (err) => {
         alert("Some Error Occured");
@@ -180,7 +181,7 @@ export class ProductCrudComponent implements OnInit {
         (data) => {
           // console.log(data);
           jQuery("#addEditProductModal").modal("toggle");
-          this.getAllProduct();
+          this.getAllScheme();
         }
       );
   }
@@ -191,7 +192,7 @@ export class ProductCrudComponent implements OnInit {
       this.product_service.deleteProduct(id).subscribe(
         (data) => {
           console.log("deleted successfully", data);
-          this.getAllProduct();
+          this.getAllScheme();
         },
         (err) => {
           alert("Some Error Occured");
@@ -201,4 +202,5 @@ export class ProductCrudComponent implements OnInit {
       alert("You pressed Cancel!");
     }
   }
+
 }

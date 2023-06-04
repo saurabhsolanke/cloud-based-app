@@ -25,6 +25,7 @@ import { ShopownerComponent } from './product/product-crud/shopowner/shopowner.c
 import { ShopOrdersComponent } from './product/product-crud/shop-orders/shop-orders.component';
 import { FamercheckoutComponent } from './famercheckout/famercheckout.component';
 import { FarmerOrdersComponent } from './farmer-orders/farmer-orders.component';
+import { SchemesComponent } from './admin/admin-dashboard/schemes/schemes.component';
 const routes: Routes = [
   { path: "", redirectTo: "/", pathMatch: "full" },
   { path: "", component: HomeComponent },
@@ -41,7 +42,8 @@ const routes: Routes = [
     path: '', canActivate: [AdminAuthGaurdService], children: [
       { path: "admin-dashboard", component: AdminDashboardComponent },
       { path: "admin/user", component: UserCrudComponent },
-      { path: "admin/product", component: ProductCrudComponent }
+      { path: "admin/product", component: ProductCrudComponent },
+      { path: "admin/govSchemes", component: SchemesComponent }
     ]
   },
 
