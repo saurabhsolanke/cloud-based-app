@@ -1,8 +1,112 @@
 <div class="container mt-5 px-5">
     <div class="container mt-3">
         <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto shadow shadow-5 p-5">
-                <h2 class="text-center">Update User Profile</h2>
+            <div class="col-3">
+
+            </div>
+            <div class="col">
+
+                <div class="div" *ngIf="!editProfile">
+                    <div class="card p-5">
+                        <h4 class="dispaly-6 d-flex justify-content-center">My Profile</h4>
+    
+                        <div class="form-group mt-5 row">
+                            <div class="col-2 d-flex justify-content-end">
+                                <label for="Name"> Name </label>
+                            </div>
+                            <div class="col">
+                                <label for="">{{user_data.name}}</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-2 d-flex justify-content-end">
+                                <label for="Name">Phone </label>
+                            </div>
+                            <div class="col">
+                                <label for="">{{user_data.mobNumber}}</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-2 d-flex justify-content-end">
+                                <label for="Name">Age </label>
+                            </div>
+                            <div class="col">
+                                <label for="">{{user_data.age}}</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-2 d-flex justify-content-end">
+                                <label for="Name">DOB </label>
+                            </div>
+                            <div class="col">
+                                <label for="">{{user_data.dob}}</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-2 d-flex justify-content-end">
+                                <label for="Name">Email </label>
+                            </div>
+                            <div class="col">
+                                <label for="">{{user_data.email}}</label>
+                            </div>
+                        </div>
+    
+                        <div class="form-group row">
+                            <div class="col-2 d-flex justify-content-end">
+                                <label for="Name">Address </label>
+                            </div>
+                            <div class="col">
+                                <label for="">{{user_data.addressline1}}</label>
+                            </div>
+                        </div>
+    
+                        <div class="form-group row">
+                            <div class="col-2 d-flex justify-content-end">
+                                <label for="Name">City </label>
+                            </div>
+                            <div class="col">
+                                <label for="">{{user_data.address.city}}</label>
+                            </div>
+                        </div>
+    
+                        <div class="form-group row">
+                            <div class="col-2 d-flex justify-content-end">
+                                <label for="Name">State </label>
+                            </div>
+                            <div class="col">
+                                <label for="">{{user_data.address.state}}</label>
+                            </div>
+                        </div>
+    
+                        <div class="form-group row">
+                            <div class="col-2 d-flex justify-content-end">
+                                <label for="Name">Zip Code </label>
+                            </div>
+                            <div class="col">
+                                <label for="">{{user_data.address.zipCode}}</label>
+                            </div>
+                        </div>
+    
+                        <div class="form-group row">
+                            <div class="col-2 d-flex justify-content-end">
+                                <label for="Name">Gender </label>
+                            </div>
+                            <div class="col">
+                                <label for="">{{user_data.gender}}</label>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row mt-2 d-flex justify-content-center">
+                        <div class="col-3">
+                            <button type="button" class="btn btn-primary" (click)="update()">
+                                Update Profile
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            <div class=" mx-auto shadow shadow-5 p-5" *ngIf="editProfile">
                 <form [formGroup]="userProfileForm" (ngSubmit)="updateProfile()">
                     <div class="form-group">
                         <label>Name</label>
@@ -29,7 +133,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>ENter Your DOB</label>
+                        <label>Enter Your DOB</label>
                         <input type="date" class="form-control" formControlName="dob"
                             [ngClass]="{'is-invalid':userProfile && rf.dob.errors}" />
                         <div *ngIf="userProfile && rf.dob.errors" class="invalid-feedback"
@@ -53,7 +157,8 @@
                                 formControlName="password" [ngClass]="{'is-invalid':userProfile && rf.password.errors}">
                             <div *ngIf="userProfile && rf.password.errors" class="invalid-feedback">
                                 <div *ngIf="rf.password.errors.required">Password is required</div>
-                                <div *ngIf="rf.password.errors.minlength">Name must be at least 6 characters</div>
+                                <div *ngIf="rf.password.errors.minlength">Name must be at least 6
+                                    characters</div>
                             </div>
                         </div>
                     </div>
@@ -81,12 +186,13 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputState">State</label>
-                            <select id="inputState" class="form-control" formControlName="state"
+                            <!-- <select id="inputState" class="form-control" formControlName="state"
                                 [ngClass]="{'is-invalid':userProfile && rf.state.errors}">
                                 <option selected>Choose...</option>
                                 <option>...</option>
-                            </select>
-                            <div *ngIf="userProfile && rf.state.errors" class="invalid-feedback">
+                            </select> -->
+                            <input type="text" class="form-control" formControlName="state"
+                            [ngClass]="{'is-invalid':userProfile && rf.state.errors}">                            <div *ngIf="userProfile && rf.state.errors" class="invalid-feedback">
                                 <div *ngIf="rf.state.errors.required">Select one option</div>
                             </div>
                         </div>
@@ -117,27 +223,33 @@
                             <label class="form-check-label" for="inlineRadio3">Other (disabled)</label>
                         </div>
                     </div>
+                    <!-- <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Something About You</label>
+                                        <textarea class="form-control" rows="3" formControlName="aboutYou"
+                                            [ngClass]="{'is-invalid':userProfile && rf.aboutYou.errors}"></textarea>
+                                        <div *ngIf="userProfile && rf.aboutYou.errors" class="invalid-feedback">
+                                            <div *ngIf="rf.aboutYou.errors.required">Write something about you</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Upload Your Photo</label>
+                                        <input type="file" class="form-control-file" formControlName="uploadPhoto"
+                                            [ngClass]="{'is-invalid':userProfile && rf.uploadPhoto.errors}">
+                                        <div *ngIf="userProfile && rf.uploadPhoto.errors" class="invalid-feedback">
+                                            <div *ngIf="rf.uploadPhoto.errors.required">Please upload file</div>
+                                        </div>
+                                    </div> -->
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Something About You</label>
-                        <textarea class="form-control" rows="3" formControlName="aboutYou"
-                            [ngClass]="{'is-invalid':userProfile && rf.aboutYou.errors}"></textarea>
-                        <div *ngIf="userProfile && rf.aboutYou.errors" class="invalid-feedback">
-                            <div *ngIf="rf.aboutYou.errors.required">Write something about you</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlFile1">Upload Your Photo</label>
-                        <input type="file" class="form-control-file" formControlName="uploadPhoto"
-                            [ngClass]="{'is-invalid':userProfile && rf.uploadPhoto.errors}">
-                        <div *ngIf="userProfile && rf.uploadPhoto.errors" class="invalid-feedback">
-                            <div *ngIf="rf.uploadPhoto.errors.required">Please upload file</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary">Update Your Profile</button>
+                        <button class="btn btn-primary" data-bs-dismiss="modal">Update Your Profile</button>
                     </div>
                 </form>
             </div>
-        </div>
-    </div>
+
 </div>
+
+        </div>
+        <!-- <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> -->
+    </div>

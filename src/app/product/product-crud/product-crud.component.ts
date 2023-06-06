@@ -28,6 +28,7 @@ export class ProductCrudComponent implements OnInit {
   name: any;
   loggedinname = "";
   user_role = '';
+  isshopowner: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -58,8 +59,7 @@ export class ProductCrudComponent implements OnInit {
   getAllProduct() {
       this.product_service.allProduct(this.user_session_id).subscribe(data => {
         this.all_product_data = data;
-      }, error => {
-        console.log("My error", error);
+        console.log(data);
       }
     );
   }
@@ -99,12 +99,13 @@ export class ProductCrudComponent implements OnInit {
   addProductPopup() {
     this.add_product = true;
     this.edit_product = false;
-    this.popup_header = "Add New Product";
+    this.popup_header = "Add New Crop";
     this.addEditProductForm.reset();
   }
 
   addNewProduct() {
     this.addEditProduct = true;
+    this.isshopowner=false;
     if (this.addEditProductForm.invalid) {
       // alert('Error!! :-)\n\n' + JSON.stringify(this.addEditUserForm.value))
       return;
@@ -120,6 +121,7 @@ export class ProductCrudComponent implements OnInit {
       status: this.product_data.status,
       addedBy: this.loggedinname,
       user_session_id: this.user_session_id,
+      isshopowner: this.isshopowner,
     };
     this.product_service.addNewProduct(this.product_dto).subscribe(
       (data) => {
@@ -171,6 +173,7 @@ export class ProductCrudComponent implements OnInit {
       status: this.product_data.status,
       addedBy: this.loggedinname,
       user_session_id: this.user_session_id,
+      isshopowner: this.isshopowner
     };
     this.product_service
       .updateProduct(this.edit_product_id, this.product_dto)
@@ -179,9 +182,6 @@ export class ProductCrudComponent implements OnInit {
           // console.log(data);
           jQuery("#addEditProductModal").modal("toggle");
           this.getAllProduct();
-        },
-        (err) => {
-          alert("Some Error Occured");
         }
       );
   }

@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
   logOut() {
     sessionStorage.removeItem("user_session_id");
     sessionStorage.removeItem("role");
-    this.router.navigateByUrl('/sign-in');
+    this.router.navigateByUrl('/');
     location.reload()
   }
 

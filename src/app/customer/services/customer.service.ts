@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ApiService } from '../../core/services/api.service';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { Order } from 'src/app/core/models/object-model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,10 @@ export class CustomerService {
     return this.apiService.get(this.product_url)
   }
 
+  allorder(): Observable<any> {
+    return this.apiService.get(this.order_url)
+  }
+
   quickBuyProduct(product_id: number) {
     this.single_product_id.next(product_id)
   }
@@ -32,6 +37,37 @@ export class CustomerService {
   }
   insertNewOrder(order_dto): Observable<any> {
     return this.apiService.post(this.order_url, order_dto);
+  }
+
+  singleOrder(id) {
+    return this.apiService.get(this.order_url + id)
+  }
+
+  update(id: number,transactions: any){
+    return this.apiService.put(this.order_url + id)
+  }
+
+  updateorder(id, order_dto): Observable<any> {
+    return this.apiService.put(this.order_url + id, order_dto);
+  }
+
+  find(id){
+    return this.apiService.get(this.order_url + id)
+  }
+
+  individualOrder(id) {
+    return this.apiService.get(this.order_url + id)
+  }
+
+  single_order_data(id) {
+    return this.apiService.get(this.order_url + id)
+  }
+  updateOrder1(id, order_dto): Observable<any> {
+    return this.apiService.post(this.order_url + id, order_dto);
+  }
+
+  deleteorder(id): Observable<any> {
+    return this.apiService.delete(this.order_url + id);
   }
 
   orderDashboardData(): Observable<any> {

@@ -20,6 +20,7 @@ export class CheckoutComponent implements OnInit {
   status = "requested";
   is_negotiation: boolean;
   negotiation_price: number;
+  isshopowner: boolean;
 
   constructor(
     private customerService: CustomerService,
@@ -27,7 +28,9 @@ export class CheckoutComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.customerService.currentProduct.subscribe(product => this.single_product_id = product)
+    this.customerService.currentProduct.subscribe(
+      (product) => (this.single_product_id = product)
+    );
     this.user_id = Number(sessionStorage.getItem("user_session_id"));
     this.productDetail(this.single_product_id);
     this.userAddress(this.user_id);
@@ -72,6 +75,7 @@ export class CheckoutComponent implements OnInit {
         status: this.individual_product.status,
         addedBy: this.individual_product.addedBy,
         user_session_id: this.individual_product.user_session_id,
+        isshopowner: this.isshopowner,
       },
       deliveryAddress: {
         id: 0,
@@ -88,24 +92,19 @@ export class CheckoutComponent implements OnInit {
       dateTime: new Date().toLocaleDateString(),
     };
     // console.log("Place order dto", this.order_dto);
-    this.customerService.insertNewOrder(this.order_dto).subscribe(
-      (data) => {
-        // console.log("Order placed successfully", data);
-        alert("Order places successfully");
-        // this.router.navigateByUrl("/merchant/merchant-orders");
-        this.router.navigateByUrl("/farmer/purchaserequest");
-      },
-      (err) => {
-        alert("Some Error Occured");
-      }
-    );
+    this.customerService.insertNewOrder(this.order_dto).subscribe((data) => {
+      // console.log("Order placed successfully", data);
+      alert("Order places successfully");
+      // this.router.navigateByUrl("/merchant/merchant-orders");
+      this.router.navigateByUrl("/farmer/purchaserequest");
+    });
   }
 
   negotiatedOrder() {
     this.order_dto = {
       id: this.id,
       userId: this.user_id,
-      is_negotiation: this.is_negotiation,
+      is_negotiation: true,
       negotiation_price: this.negotiation_price,
       // sellerId: 2, //Now it is hard coded, we are not implimented multi farmer functionlity
       product: {
@@ -118,6 +117,7 @@ export class CheckoutComponent implements OnInit {
         status: this.individual_product.status,
         addedBy: this.individual_product.addedBy,
         user_session_id: this.individual_product.user_session_id,
+        isshopowner: this.isshopowner,
       },
       deliveryAddress: {
         id: 0,

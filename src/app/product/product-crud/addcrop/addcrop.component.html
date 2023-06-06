@@ -19,9 +19,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="productDescription">Description</label>
-                <textarea class="form-control" rows="3" formControlName="productDesc"
-                    [ngClass]="{'is-invalid':addEditProduct && rf.productDesc.errors}"></textarea>
+                <label for="productDescription">Quantity</label>
+                <input class="form-control" rows="3" formControlName="productDesc"
+                    [ngClass]="{'is-invalid':addEditProduct && rf.productDesc.errors}">
                 <div *ngIf="addEditProduct && rf.productDesc.errors" class="invalid-feedback">
                     <div *ngIf="rf.productDesc.errors.required">Write something about product</div>
                 </div>
@@ -46,8 +46,7 @@
                 <label for="productStatus">Status</label>
                 <select class="form-control" formControlName="status"
                     [ngClass]="{'is-invalid':addEditProduct && rf.status.errors}">
-                    <option value="draft">Draft</option>
-                    <option value="publish">Publish</option>
+                    <option value="active">Active</option>
                     <option value="inactive">Inactive</option>
                 </select>
                 <div *ngIf="addEditProduct && rf.status.errors" class="invalid-feedback">

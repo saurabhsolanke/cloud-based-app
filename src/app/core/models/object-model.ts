@@ -13,6 +13,7 @@ export class User {
     // uploadPhoto: Image;
     uploadPhoto: string;
     role: string;
+    isshopowner: string;
 }
 
 export class Address {
@@ -33,6 +34,7 @@ export class Product {
     dp: number;
     status: boolean;
     addedBy: string;
+    isshopowner: boolean;
     user_session_id: number
 }
 

@@ -14,18 +14,18 @@
                     placeholder="Search here">
             </div>
             <div class="col">
-                <!-- <button type="button" class="btn btn-dark float-right" (click)="addProductPopup()" data-toggle="modal"
+                <button type="button" class="btn btn-dark float-right" (click)="addProductPopup()" data-toggle="modal"
                     data-target="#addEditProductModal">
-                    Add New Product
-                </button> -->
-                <button type="button" class="btn btn-dark float-right" routerLink="/farmer/addcrop">
-                    Add New crop
+                    Add New Crop
                 </button>
+                <!-- <button type="button" class="btn btn-dark float-right" routerLink="/farmer/addcrop">
+                    Add New crop
+                </button> -->
             </div>
         </div>
         <div class="row mt-5 justify-content-center">
 
-            <!-- <div class="col shadow">
+            <div class="col shadow" *ngIf=" user_role === 'admin'">
                 <div class="container">
                     <h2>List of all products <small>by other farmers</small></h2>
                     <ul class="responsive-table">
@@ -48,9 +48,9 @@
     
                     </ul>
                 </div>
-            </div> -->
+            </div>
 
-            <div class="col-11 shadow " *ngIf="user_role == 'farmer'">
+            <div class="col-11 shadow " *ngIf="user_role == 'farmer' ">
                 <p class="lead">My Crops</p>
 
                 <table class="table table-hover">
@@ -97,7 +97,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">{{popup_header}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" (click)="getmyProduct()" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -121,10 +121,18 @@
                                             <div *ngIf="rf.uploadPhoto.errors.required">Please upload file</div>
                                         </div>
                                     </div>
+                                    <!-- <div class="form-group">
+                                        <label for="productImage">Product Image</label>
+                                        <input type="file" class="form-control" formControlName="uploadPhoto"
+                                            [ngClass]="{'is-invalid':addEditProduct && rf.uploadPhoto.errors}">
+                                        <div *ngIf="addEditProduct && rf.uploadPhoto.errors" class="invalid-feedback">
+                                            <div *ngIf="rf.uploadPhoto.errors.required">Please upload file</div>
+                                        </div>
+                                    </div> -->
                                     <div class="form-group">
-                                        <label for="productDescription">Description</label>
-                                        <textarea class="form-control" rows="3" formControlName="productDesc"
-                                            [ngClass]="{'is-invalid':addEditProduct && rf.productDesc.errors}"></textarea>
+                                        <label for="productDescription">Quantity</label>
+                                        <input class="form-control" rows="3" formControlName="productDesc"
+                                            [ngClass]="{'is-invalid':addEditProduct && rf.productDesc.errors}">
                                         <div *ngIf="addEditProduct && rf.productDesc.errors" class="invalid-feedback">
                                             <div *ngIf="rf.productDesc.errors.required">Write something about product
                                             </div>
@@ -150,8 +158,7 @@
                                         <label for="productStatus">Status</label>
                                         <select class="form-control" formControlName="status"
                                             [ngClass]="{'is-invalid':addEditProduct && rf.status.errors}">
-                                            <option value="draft">Draft</option>
-                                            <option value="publish">Publish</option>
+                                            <option value="active">Active</option>
                                             <option value="inactive">Inactive</option>
                                         </select>
                                         <div *ngIf="addEditProduct && rf.status.errors" class="invalid-feedback">

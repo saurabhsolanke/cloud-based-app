@@ -9,7 +9,7 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Name of merchant</th>
+            <th scope="col">Name of Farmer</th>
             <th scope="col">required crop</th>
             <th scope="col">buying rate</th>
             <th scope="col">address</th>
@@ -21,6 +21,7 @@
           <tr *ngFor="let farmer of all_farmers">
             <th scope="row"></th>
             <td>{{farmer.name}}</td>
+            <td>{{farmer.address.city}}</td>
             <td>{{farmer.address}}</td>
             <td></td>
           </tr>

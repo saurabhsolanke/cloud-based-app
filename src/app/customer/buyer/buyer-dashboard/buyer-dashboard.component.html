@@ -11,18 +11,21 @@
         </nav>
         <div class="row">
             <div class="col-sm-4 product" *ngFor="let product of all_products;">
-                <div class="card shadow">
-                    <img src="{{product.uploadPhoto}}" class="card-img-top" alt="{{product.name}}">
-                    <div class="card-body">
-                        <h4 class="card-title">{{product.name}}</h4>
-                        <p><span class="float-left"><strong>MRP</strong>: <del>{{product.mrp}}</del></span> <span
-                                class="float-right"><strong>DP</strong>:
-                                {{product.dp}}</span></p>
-                        <br>
-                        <p class="card-text product-desc">{{product.productDesc}}</p>
-                        <p>Added by:- {{product.addedBy}}</p>
-                        <!-- <a class="btn btn-primary text-light float-left" (click)="addToCart()">Request to buy</a> -->
-                        <a class="btn btn-primary text-light float-right" (click)="buyProduct(product.id)">Request to Buy Now</a>
+                <div class="div" *ngIf="product.status === 'active' ">
+                    <div class="card shadow" *ngIf="!product.isshopowner">
+                        <img src="{{product.uploadPhoto}}" class="card-img-top" alt="{{product.name}}">
+                        <div class="card-body">
+                            <h4 class="card-title">{{product.name}}</h4>
+                            <p><span class="float-left"><strong>MRP</strong>: <del>{{product.mrp}}</del></span> <span
+                                    class="float-right"><strong>DP</strong>:
+                                    {{product.dp}}</span></p>
+                            <br>
+                            <p class="card-text product-desc">{{product.productDesc}}</p>
+                            <p>Added by:- {{product.addedBy}}</p>
+                            <!-- <a class="btn btn-primary text-light float-left" (click)="addToCart()">Request to buy</a> -->
+                            <a class="btn btn-primary text-light float-right" (click)="buyProduct(product.id)">Request
+                                to Buy Now</a>
+                        </div>
                     </div>
                 </div>
             </div>

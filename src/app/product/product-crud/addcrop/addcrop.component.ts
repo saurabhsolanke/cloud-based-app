@@ -29,6 +29,7 @@ export class AddcropComponent implements OnInit {
   loggedinname = "";
   user_role = "";
   addEditUserForm: any;
+  isshopowner: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -73,6 +74,8 @@ export class AddcropComponent implements OnInit {
       status: this.product_data.status,
       addedBy: this.loggedinname,
       user_session_id: this.user_session_id,
+      isshopowner:this.isshopowner,
+
     };
     this.product_service.addNewProduct(this.product_dto).subscribe((data) => {
       console.log(data);
@@ -98,6 +101,8 @@ export class AddcropComponent implements OnInit {
       status: this.product_data.status,
       addedBy: this.loggedinname,
       user_session_id: this.user_session_id,
+      isshopowner:this.isshopowner,
+
     };
     this.product_service
       .updateProduct(this.edit_product_id, this.product_dto)
