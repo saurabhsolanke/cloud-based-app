@@ -39,7 +39,7 @@ export class Product {
 }
 
 export class Order {
-    id: number;
+    orderid: number;
     userId: number;
     // sellerId: number;
     product: Product;
@@ -49,4 +49,5 @@ export class Order {
     status: string;
     is_negotiation:boolean;
     negotiation_price: number;
+  static id: any;
 }

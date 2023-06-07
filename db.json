@@ -442,35 +442,8 @@
       },
       "status": "requested",
       "contact": "9720276354",
-      "dateTime": "04/06/2023",
+      "dateTime": "07/06/2023",
       "id": 1
-    },
-    {
-      "userId": 1,
-      "product": {
-        "id": 2,
-        "name": "seed1",
-        "uploadPhoto": "dsvsdvsdv",
-        "productDesc": "1kg",
-        "mrp": "100",
-        "dp": "90",
-        "status": "active",
-        "addedBy": "krishna naik",
-        "user_session_id": "15",
-        "isshopowner": true
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": "Chhatrapati Sambhaji Nagar1",
-        "city": "Chhatrapati Sambhaji Nagar",
-        "state": "Maharashtra",
-        "zipCode": 431003
-      },
-      "status": "Ordered",
-      "contact": "9876543210",
-      "dateTime": "04/06/2023",
-      "id": 2
     }
   ],
   "cart": [],

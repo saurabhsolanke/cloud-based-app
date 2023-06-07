@@ -61,7 +61,7 @@ export class FamercheckoutComponent implements OnInit {
 
   placeOrder() {
     this.order_dto = {
-      id: this.id,
+      orderid: this.id,
       userId: this.user_id,
       // sellerId: 2, //Now it is hard coded, we are not implimented multi farmer functionlity
       product: {
@@ -101,7 +101,7 @@ export class FamercheckoutComponent implements OnInit {
 
   negotiatedOrder() {
     this.order_dto = {
-      id: this.id,
+      orderid: this.id,
       userId: this.user_id,
       is_negotiation: true,
       negotiation_price: this.negotiation_price,
