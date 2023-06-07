@@ -99,15 +99,25 @@
       <a class="nav-link">
         <i class="bi bi-grid"></i>
         <span *ngIf="user_role == 'farmer'" routerLink="/farmer/addcrop">Crop Registration</span>
-        <span *ngIf="user_role == 'merchant'"  routerLink="/farmer/addcrop">Crop Registration</span>
+        <span *ngIf="user_role == 'merchant'"  routerLink="/merchant/addcrop">Crop Registration</span>
       </a>
     </li>
-    <li class="nav-item"  *ngIf="user_role === 'farmer' || user_role === 'merchant' ">
+    <li class="nav-item"  *ngIf="user_role === 'farmer' ">
       <a class="nav-link collapsed">
         <i class="bi bi-menu-button-wide"></i>
         <span routerLink="/farmer/product">My Crops</span>
       </a>
     </li>
+
+    <li class="nav-item"  *ngIf="user_role === 'merchant' ">
+      <a class="nav-link collapsed">
+        <i class="bi bi-menu-button-wide"></i>
+        <span routerLink="/merchant/product">My Crops</span>
+      </a>
+    </li>
+
+
+ 
 
     <li class="nav-item" *ngIf="user_role == 'farmer'">
       <a class="nav-link collapsed">

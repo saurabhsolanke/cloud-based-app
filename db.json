@@ -416,6 +416,29 @@
       "addedBy": "krishna naik",
       "isshopowner": true,
       "user_session_id": "15"
+    },
+    {
+      "id": 3,
+      "name": "efdf",
+      "uploadPhoto": "wef",
+      "productDesc": "wef",
+      "mrp": "wef",
+      "dp": "wfe",
+      "status": "inactive",
+      "addedBy": "nayan kawde",
+      "user_session_id": "3"
+    },
+    {
+      "id": 4,
+      "name": "ef",
+      "uploadPhoto": "fe",
+      "productDesc": "fe",
+      "mrp": "fe",
+      "dp": "ef",
+      "status": "active",
+      "addedBy": "nayan kawde",
+      "user_session_id": "3",
+      "isshopowner": false
     }
   ],
   "orders": [

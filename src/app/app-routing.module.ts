@@ -28,6 +28,7 @@ import { FarmerOrdersComponent } from './farmer-orders/farmer-orders.component';
 import { SchemesComponent } from './admin/admin-dashboard/schemes/schemes.component';
 import { KrishiOrdersComponent } from './krishi-orders/krishi-orders.component';
 import { KrishiCheckoutComponent } from './krishi-checkout/krishi-checkout.component';
+import { MerchantCropregComponent } from './merchant-cropreg/merchant-cropreg.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/", pathMatch: "full" },
@@ -90,6 +91,8 @@ const routes: Routes = [
   //Path/component you want to access after customer(merchant) login/signin
   {
     path: '', canActivate: [BuyerAuthGaurdService], children: [
+      { path: "merchant/addcrop", component: MerchantCropregComponent },
+      { path: "merchant/product", component: ProductCrudComponent },
       { path: "merchant-dashboard", component: BuyerDashboardComponent },
       { path: "merchant/checkout", component: CheckoutComponent },
       { path: "merchant/farmer-list", component: FarmerlistComponent },
