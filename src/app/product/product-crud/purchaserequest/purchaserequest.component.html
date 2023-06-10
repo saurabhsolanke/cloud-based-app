@@ -43,51 +43,52 @@
             </tbody>
         </table> -->
 
-
-        <table class="table table-hover">
-            <thead>
-                <tr class="text-muted">
-                    <th>sr.no</th>
-                    <th>Name</th>
-                    <th>Product Description</th>
-                    <th>buying rate</th>
-                    <th>contact</th>
-                    <th>time</th>
-                    <th>Status</th>
-                    <th>action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let order of orders; let i = index">
-                    <th scope="row">{{i+1}}</th>
-                    <td>{{order.product.name}}</td>
-                    <td>{{order.product.productDesc}}</td>
-                    <td>{{order.product.dp}}</td>
-                    <td>{{order.contact}}</td>
-                    <td>{{order.dateTime}}</td>
-                    <td>{{order.status}} </td>
-                    <td>
-                        <span class="sim-pointer" (click)="editProductPopup(order.id)" data-toggle="modal"
-                            data-target="#addEditProductModal"><i class="fa fa-pencil-square-o"
-                                aria-hidden="true"></i></span>
-                        &nbsp;&nbsp;&nbsp;
-                        <span class="sim-pointer" (click)="deleteProduct(order.id)"><i class="fa fa-trash"
-                                aria-hidden="true"></i></span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="div">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="text-muted">
+                        <th>sr.no</th>
+                        <th>Name</th>
+                        <th>Product Description</th>
+                        <th>buying rate</th>
+                        <th>contact</th>
+                        <th>time</th>
+                        <th>Status</th>
+                        <th>action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let order of orders; let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{order.product.name}}AAA</td>
+                        <td>{{order.product.productDesc}}</td>
+                        <td>{{order.product.dp}}</td>
+                        <td>{{order.contact}}</td>
+                        <td>{{order.dateTime}}</td>
+                        <td>{{order.status}}</td>
+                        <td>
+                            <span class="sim-pointer" data-toggle="modal" data-target="#addEditProductModal"
+                                (click)="editProductPopup(order.id)"><i class="fa fa-pencil-square-o"
+                                    aria-hidden="true"></i></span>
+                            &nbsp;&nbsp;&nbsp;
+                            <span class="sim-pointer" (click)="deleteProduct(order.id)"><i class="fa fa-trash"
+                                    aria-hidden="true"></i></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
-<!-- Modal for add and edit user  -->
+<!-- Modal for add and edit user -->
 <div class="modal fade" id="addEditProductModal" tabindex="-1" role="dialog" aria-labelledby="addEditUserTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">{{popup_header}}</h5>
-                <button type="button" (click)="getOrders()" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -96,26 +97,64 @@
                     <div class="col-md-10 offset-md-1">
                         <form [formGroup]="addEditProductForm1">
                             <div class="form-group">
-                                <label for="productName">Product Name</label>
-                                <input type="text" class="form-control" name="name" formControlName="name" />
+                                <label for="productName">name</label>
+                                <input type="text" class="form-control" readonly formControlName="name"/>
                             </div>
                             <div class="form-group">
                                 <label for="productImage">Product Image URL</label>
-                                <input type="url" class="form-control" name="uploadPhoto" formControlName="uploadPhoto">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="productDescription">Quantity</label>
-                                <input class="form-control" rows="3" name="productDesc" formControlName="productDesc">
+                                <input type="url" class="form-control" readonly formControlName="uploadPhoto">
                             </div>
                             <div class="form-group">
-                                <label for="productMRP">MRP</label>
-                                <input type="text" class="form-control" name="mrp" formControlName="mrp">
+                                <label for="productImage">Product Desc</label>
+                                <input type="url" class="form-control" readonly formControlName="productDesc">
                             </div>
-                            <!-- <div class="form-group">
-                                <label for="productDP">DP</label>
-                                <input type="text" class="form-control" name="dp" formControlName="dp">
-                            </div> -->
+                            <div class="form-group">
+                                <label for="productImage">mrp</label>
+                                <input type="text" class="form-control" readonly formControlName="mrp">
+                            </div>
+                            <div class="form-group">
+                                <label for="productImage">dp</label>
+                                <input type="text" class="form-control" readonly formControlName="dp">
+                            </div>
+                            <div class="form-group">
+                                <label for="productImage">addedBy</label>
+                                <input type="text" class="form-control" readonly formControlName="addedBy">
+                            </div>
+                            <div class="form-group">
+                                <label for="productName">Contact</label>
+                                <input type="text" class="form-control" readonly formControlName="contact"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="productName">addLine1</label>
+                                <input type="text" class="form-control" readonly formControlName="addLine1"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="productName">addLine2</label>
+                                <input type="text" class="form-control" readonly formControlName="addLine2"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="productName">city</label>
+                                <input type="text" class="form-control" readonly formControlName="city"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="productName">state</label>
+                                <input type="text" class="form-control"readonly formControlName="state"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="productName">Zip</label>
+                                <input type="text" class="form-control" readonly formControlName="zipCode"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="productImage">date</label>
+                                <input type="text" class="form-control" readonly formControlName="dateTime">
+                            </div>
+                            <div class="form-group">
+                                <label for="status">Status</label>
+                                <select class="form-control" formControlName="status">
+                                    <option value="requested">Requested</option>
+                                    <option value="Ordered">Accept Order</option>
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <button class="btn btn-primary" (click)="updateProduct()">Update</button>
                             </div>
@@ -124,6 +163,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>

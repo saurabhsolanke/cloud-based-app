@@ -4,7 +4,7 @@
 
     </div>
     <div class="col">
-        
+
         <div class="row">
             <div class="col-md-4">
                 <strong>All Schemes</strong>
@@ -18,41 +18,48 @@
                     data-target="#addEditProductModal1">
                     Add New Product
                 </button> -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Schemes">
+                <button type="button" *ngIf="this.user_role === 'admin' " class="btn btn-primary" (click)="addProductPopup()" data-toggle="modal"
+                    data-target="#Schemes">
                     Add Scheme
-                  </button>
+                </button>
                 <!-- <button type="button" class="btn btn-dark float-right" routerLink="/farmer/addcrop">
                     Add New crop
                 </button> -->
             </div>
         </div>
-        <div class="row mt-5 justify-content-center">
 
-            <div class="col shadow" *ngIf=" user_role === 'admin'">
+        <div class="row mt-5 justify-content-center">
+            <div class="col shadow">
                 <div class="container">
                     <h2>Scheme <small></small></h2>
                     <ul class="responsive-table">
-                        <li class="table-header">
-                            <div class="col">#</div>
-                            <div class="col">Scheme Name</div>
-                            <div class="col">Total Benifits</div>
-                            <div class="col">Scheme for Merchant/ Farmer</div>
-                            <div class="col">Gov. Link</div>
-                            <!-- <div class="col">Status</div> -->
+                        <li class="table-header border">
+                            <div class="col-1  d-flex justify-content-center">Sr no.</div>
+                            <div class="col-2  d-flex justify-content-center">Scheme Name</div>
+                            <div class="col-2  d-flex justify-content-center">Total Benifits</div>
+                            <div class="col-2  d-flex justify-content-center">Date of publish</div>
+                            <div class="col-2  d-flex justify-content-center">Scheme for Merchant/ Farmer</div>
+                            <div class="col-2  d-flex justify-content-center">Gov. Link</div>
+                            <div class="col-1  d-flex justify-content-center" *ngIf="this.user_role === 'admin' ">Action
+                            </div>
                         </li>
-                        <li class="table-row" *ngFor="let product_data of all_product_data; let i = index">
-                            <div class="col" data-label="Job Id">{{i+1}}</div>
-                            <div class="col" data-label="Customer Name">{{product_data.name}}</div>
-                            <div class="col" data-label="Amount">{{product_data.productDesc}}</div>
-                            <div class="col" data-label="Payment Status">{{product_data.mrp}}</div>
-                            <div class="col" data-label="Amount">{{product_data.dp}}</div>
-                            <div class="col" data-label="Payment Status">{{product_data.status}}</div>
-                            <span class="sim-pointer" (click)="editProductPopup(product_data.id)"
-                            data-toggle="modal" data-target="#Schemes"><i
-                                class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-                        &nbsp;&nbsp;&nbsp;
-                        <span class="sim-pointer" (click)="deleteProduct(product_data.id)"><i
-                                class="fa fa-trash" aria-hidden="true"></i></span>
+                        <li class="table-row border" *ngFor="let product_data of all_scheme_data; let i = index">
+                            <div class="col-1  d-flex justify-content-center">{{i+1}}</div>
+                            <div class="col-2  d-flex justify-content-center">{{product_data.name}}</div>
+                            <div class="col-2  d-flex justify-content-center">{{product_data.total_benifits}}</div>
+                            <div class="col-2  d-flex justify-content-center">{{product_data.date}}</div>
+                            <div class="col  d-flex justify-content-center">{{product_data.schemeFor}}</div>
+                            <div class="col  d-flex justify-content-center"><a href="{{product_data.links}}">Link</a>
+                            </div>
+                            <div class="col-1 d-flex justify-content-center" *ngIf="this.user_role === 'admin' ">
+                                <span class="sim-pointer" (click)="editProductPopup(product_data.id)"
+                                    data-toggle="modal" data-target="#Schemes">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                                &nbsp;&nbsp;&nbsp;
+                                <span class="sim-pointer" (click)="deleteProduct(product_data.id)">
+                                    <i class="fa fa-trash" aria-hidden="true"></i></span>
+                            </div>
+
                         </li>
                     </ul>
                 </div>
@@ -66,16 +73,17 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">{{popup_header}}</h5>
-                        <button type="button" (click)="getmyProduct()" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" (click)="getmyProduct()" class="close" data-dismiss="modal"
+                            aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-10 offset-md-1">
-                                <form [formGroup]="addEditProductForm">
+                                <form [formGroup]="addEditProductForm2">
                                     <div class="form-group">
-                                        <label for="productName">Product Name</label>
+                                        <label for="productName">Scheme Name</label>
                                         <input type="text" class="form-control" formControlName="name"
                                             [ngClass]="{'is-invalid':addEditProduct && rf.name.errors}" />
                                         <div *ngIf="addEditProduct && rf.name.errors" class="invalid-feedback">
@@ -83,56 +91,51 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="productImage">Product Image URL</label>
-                                        <input type="url" class="form-control" formControlName="uploadPhoto"
-                                            [ngClass]="{'is-invalid':addEditProduct && rf.uploadPhoto.errors}">
-                                        <div *ngIf="addEditProduct && rf.uploadPhoto.errors" class="invalid-feedback">
-                                            <div *ngIf="rf.uploadPhoto.errors.required">Please upload file</div>
+                                        <label for="productImage">total_benifits</label>
+                                        <input type="url" class="form-control" formControlName="total_benifits"
+                                            [ngClass]="{'is-invalid':addEditProduct && rf.total_benifits.errors}">
+                                        <div *ngIf="addEditProduct && rf.total_benifits.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="rf.total_benifits.errors.required">Please upload file</div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="productDescription">Description</label>
-                                        <textarea class="form-control" rows="3" formControlName="productDesc"
-                                            [ngClass]="{'is-invalid':addEditProduct && rf.productDesc.errors}"></textarea>
-                                        <div *ngIf="addEditProduct && rf.productDesc.errors" class="invalid-feedback">
-                                            <div *ngIf="rf.productDesc.errors.required">Write something about product
+                                        <label for="date">date</label>
+                                        <input type="date" class="form-control" rows="3" formControlName="date"
+                                            [ngClass]="{'is-invalid':addEditProduct && rf.date.errors}">
+                                        <div *ngIf="addEditProduct && rf.date.errors" class="invalid-feedback">
+                                            <div *ngIf="rf.date.errors.required">Write something about product
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="productMRP">MRP</label>
-                                        <input type="text" class="form-control" formControlName="mrp"
-                                            [ngClass]="{'is-invalid':addEditProduct && rf.mrp.errors}" />
-                                        <div *ngIf="addEditProduct && rf.mrp.errors" class="invalid-feedback">
-                                            <div *ngIf="rf.mrp.errors.required">MRP is required</div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="productDP">DP</label>
-                                        <input type="text" class="form-control" formControlName="dp"
-                                            [ngClass]="{'is-invalid':addEditProduct && rf.dp.errors}" />
-                                        <div *ngIf="addEditProduct && rf.dp.errors" class="invalid-feedback">
-                                            <div *ngIf="rf.dp.errors.required">DP is required</div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="productStatus">Status</label>
-                                        <select class="form-control" formControlName="status"
-                                            [ngClass]="{'is-invalid':addEditProduct && rf.status.errors}">
-                                            <option value="draft">Draft</option>
-                                            <option value="publish">Publish</option>
-                                            <option value="inactive">Inactive</option>
+                                        <label for="schemeFor">schemeFor</label>
+                                        <select name="" id="" class="form-control" formControlName="schemeFor"
+                                            [ngClass]="{'is-invalid':addEditProduct && rf.schemeFor.errors}">
+                                            <option value=""></option>
+                                            <option value="farmer">Farmer</option>
+                                            <option value="merchant">Merchant</option>
                                         </select>
-                                        <div *ngIf="addEditProduct && rf.status.errors" class="invalid-feedback">
-                                            <div *ngIf="rf.status.errors.required">Select one option</div>
+                                        <!-- <input type="text" class="form-control" formControlName="schemeFor"
+                                            [ngClass]="{'is-invalid':addEditProduct && rf.schemeFor.errors}" />
+                                      -->
+                                        <div *ngIf="addEditProduct && rf.schemeFor.errors" class="invalid-feedback">
+                                            <div *ngIf="rf.schemeFor.errors.required">MRP is required</div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <button class="btn btn-primary" (click)="addNewProduct()"
-                                            *ngIf="add_product">Add
-                                            New</button>
-                                        <button class="btn btn-primary" (click)="updateProduct()"
-                                            *ngIf="edit_product">Update</button>
+                                        <label for="productDP">links</label>
+                                        <input type="text" class="form-control" formControlName="links"
+                                            [ngClass]="{'is-invalid':addEditProduct && rf.links.errors}" />
+                                        <div *ngIf="addEditProduct && rf.links.errors" class="invalid-feedback">
+                                            <div *ngIf="rf.links.errors.required">DP is required</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-primary" (click)="addNewProduct()" data-dismiss="modal"
+                                            data-target="modal" *ngIf="add_product">Add New</button>
+                                        <button class="btn btn-primary" (click)="updateProduct()" data-dismiss="modal"
+                                            data-target="modal" *ngIf="edit_product">Update</button>
                                     </div>
                                 </form>
                             </div>

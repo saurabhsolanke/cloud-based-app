@@ -26,8 +26,44 @@
                 </button>
             </div>
         </div>
-        <table class="table table-hover">
+
+        <!-- <table class="responsive-table">
             <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Mob</th>
+                <th scope="col">Email</th>
+                <th scope="col">DOB</th>
+                <th scope="col">CIty</th>
+                <th scope="col">Role</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let user_data of all_user_data; let i = index">
+                  <th scope="row"{{i+1}}></th>
+                  <td data-title="Released">{{user_data.name}}</td>
+                  <td data-title="Studio">{{user_data.mobNumber}}</td>
+                  <td data-title="Worldwide Gross" data-type="currency">{{user_data.email}}</td>
+                  <td data-title="Domestic Gross" data-type="currency">{{user_data.dob}}</td>
+                  <td data-title="International Gross" data-type="currency">{{user_data.address.city}}</td>
+                  <td data-title="Budget" data-type="currency"> 
+                        {{user_data.role}}</td>
+                  <td><span class="sim-pointer" (click)="editUserPopup(user_data.id)" data-toggle="modal"
+                    data-target="#addEditUserModal"><i class="fa fa-pencil-square-o"
+                        aria-hidden="true"></i></span>
+                &nbsp;&nbsp;&nbsp;
+                <span class="sim-pointer" (click)="deleteUser(user_data.id)"><i class="fa fa-trash"
+                        aria-hidden="true"></i></span> </td>
+                </tr>
+            </tbody>
+        </table> -->
+
+
+        <table class="table table-hover table-striped">
+            <thead class="table-dark">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
@@ -39,7 +75,7 @@
                     <th scope="col">Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="table-light">
                 <tr *ngFor="let user_data of all_user_data; let i = index">
                     <th scope="row">{{i+1}}</th>
                     <td>{{user_data.name}}</td>

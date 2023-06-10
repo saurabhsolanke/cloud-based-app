@@ -41,9 +41,6 @@ export class KrishiCheckoutComponent implements OnInit {
       (data) => {
         this.individual_product = data;
         // console.log("One Product", this.individual_product);
-      },
-      (error) => {
-        console.log("My error", error);
       }
     );
   }
@@ -62,7 +59,7 @@ export class KrishiCheckoutComponent implements OnInit {
 
   placeOrder() {
     this.order_dto = {
-      id: this.id,
+      orderid: this.id,
       userId: this.user_id,
       // sellerId: 2, //Now it is hard coded, we are not implimented multi farmer functionlity
       product: {

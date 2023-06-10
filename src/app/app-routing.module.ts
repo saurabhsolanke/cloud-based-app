@@ -28,12 +28,16 @@ import { FarmerOrdersComponent } from './farmer-orders/farmer-orders.component';
 import { SchemesComponent } from './admin/admin-dashboard/schemes/schemes.component';
 import { KrishiOrdersComponent } from './krishi-orders/krishi-orders.component';
 import { KrishiCheckoutComponent } from './krishi-checkout/krishi-checkout.component';
+import { MerchantCropregComponent } from './merchant-cropreg/merchant-cropreg.component';
+import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/", pathMatch: "full" },
   { path: "", component: HomeComponent },
   { path: "my-profile", component: UserProfileComponent },
   { path: "contact-us", component:ContactUsComponent},
+  { path: "payment-gateway", component:PaymentGatewayComponent},
+
   //Path/component you want to access before admin login/signin
   {
     path: '', canActivate: [AdminAuthGuardLogin], children: [
@@ -74,6 +78,8 @@ const routes: Routes = [
       { path: "farmer/orders", component: FarmerOrdersComponent },
       { path: "farmer/krishi", component: KrishiOrdersComponent },
       { path: "farmer/krishi-checkout", component: KrishiCheckoutComponent },
+      { path: "farmer/govSchemes", component: SchemesComponent },
+
       // { path: "my-profile", component: UserProfileComponent },
     ]
   },
@@ -90,10 +96,13 @@ const routes: Routes = [
   //Path/component you want to access after customer(merchant) login/signin
   {
     path: '', canActivate: [BuyerAuthGaurdService], children: [
+      { path: "merchant/addcrop", component: MerchantCropregComponent },
+      { path: "merchant/product", component: ProductCrudComponent },
       { path: "merchant-dashboard", component: BuyerDashboardComponent },
       { path: "merchant/checkout", component: CheckoutComponent },
       { path: "merchant/farmer-list", component: FarmerlistComponent },
       { path: "merchant/merchant-orders", component: MerchantOrdersComponent },
+      { path: "merchant/govSchemes", component: SchemesComponent },
       // { path: "my-profile", component: UserProfileComponent }
     ]
   },

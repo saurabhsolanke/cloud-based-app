@@ -14,6 +14,8 @@ export class CustomerService {
   public product_url = environment.server_url + '/products/';
   public user_url = environment.server_url + '/user/';
   public order_url = environment.server_url + '/orders/';
+  apiUrl: any;
+  http: any;
 
   constructor(private apiService: ApiService) { }
 
@@ -51,6 +53,13 @@ export class CustomerService {
     return this.apiService.put(this.order_url + id, order_dto);
   }
 
+  updateOrder(id, order_dto): Observable<any> {
+    // const url = `${this.apiService}/${order.id}`;
+    // return this.http.put(this.order_url, order);
+    return this.apiService.put(this.order_url + id, order_dto);
+
+  }
+
   find(id){
     return this.apiService.get(this.order_url + id)
   }
@@ -62,9 +71,9 @@ export class CustomerService {
   single_order_data(id) {
     return this.apiService.get(this.order_url + id)
   }
-  updateOrder1(id, order_dto): Observable<any> {
-    return this.apiService.post(this.order_url + id, order_dto);
-  }
+  // updateOrder1(id, order_dto): Observable<any> {
+  //   return this.apiService.post(this.order_url + id, order_dto);
+  // }
 
   deleteorder(id): Observable<any> {
     return this.apiService.delete(this.order_url + id);
@@ -76,4 +85,9 @@ export class CustomerService {
   productDashboardData(): Observable<any> {
     return this.apiService.get(this.product_url)
   }
+
+  // updateOrder(orderId: number, updatedOrderData: any): Observable<any> {
+  //   const url = `${this.apiService}/${orderId}`;
+  //   return this.http.put(url, updatedOrderData);
+  // }
 }

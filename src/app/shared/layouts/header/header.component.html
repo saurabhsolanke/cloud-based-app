@@ -27,19 +27,21 @@
           translate}}</a>
         <a class="nav-link" *ngIf="user_role == 'merchant'" routerLink="/merchant-dashboard">{{'header.home' |
           translate}}</a>
+          <a class="nav-link" *ngIf="user_role == 'shopowner'" routerLink="/shopowner">{{'header.home' |
+            translate}}</a>
         <a class="nav-link" *ngIf="user_role == 'admin'" routerLink="/admin-dashboard">{{'header.home' | translate}}</a>
       </li>
       <!-- <li class="nav-item">
                 <a class="nav-link" href="#">{{'header.service' | translate}}</a>
             </li> -->
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
           {{'header.about_us' | translate}}
         </a>
-      </li>
+      </li> -->
 
-      <li class="nav-item" *ngIf="user_role == 'merchant'">
+      <!-- <li class="nav-item" *ngIf="user_role == 'merchant'">
         <a class="nav-link" routerLink="/merchant/merchant-orders">{{'header.order' | translate}}</a>
       </li>
       <li class="nav-item" *ngIf="user_role == 'admin'">
@@ -55,8 +57,8 @@
         <a class="nav-link" routerLink="/admin/user">{{'header.user' | translate}}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/contact-us">{{'header.contact_us' | translate}}</a>
-      </li>
+        <a class="nav-link" routerLink="/contact-us">{{'header.contact_us' | translate}}</a> -->
+      <!-- </li> -->
       <!-- <li class="nav-item " *ngIf="user_role == 'merchant'">
         <a class="nav-link">Farmers List</a>
       </li>
@@ -99,15 +101,25 @@
       <a class="nav-link">
         <i class="bi bi-grid"></i>
         <span *ngIf="user_role == 'farmer'" routerLink="/farmer/addcrop">Crop Registration</span>
-        <span *ngIf="user_role == 'merchant'"  routerLink="/farmer/addcrop">Crop Registration</span>
+        <span *ngIf="user_role == 'merchant'"  routerLink="/merchant/addcrop">Crop Registration</span>
       </a>
     </li>
-    <li class="nav-item"  *ngIf="user_role === 'farmer' || user_role === 'merchant' ">
+    <li class="nav-item"  *ngIf="user_role === 'farmer' ">
       <a class="nav-link collapsed">
         <i class="bi bi-menu-button-wide"></i>
         <span routerLink="/farmer/product">My Crops</span>
       </a>
     </li>
+
+    <li class="nav-item"  *ngIf="user_role === 'merchant' ">
+      <a class="nav-link collapsed">
+        <i class="bi bi-menu-button-wide"></i>
+        <span routerLink="/merchant/product">My Crops</span>
+      </a>
+    </li>
+
+
+ 
 
     <li class="nav-item" *ngIf="user_role == 'farmer'">
       <a class="nav-link collapsed">
@@ -139,12 +151,20 @@
       </a>
     </li>
 
-    <li class="nav-item" *ngIf="user_role == 'farmer' || user_role == 'merchant' ">
+    <li class="nav-item" *ngIf="user_role == 'merchant' ">
       <a class="nav-link collapsed">
         <i class="bi bi-gem"></i>
-        <span routerLink="/farmer/product">Government Schemes</span><i class="bi bi-chevron-down ms-auto"></i>
+        <span routerLink="/merchant/govSchemes">Government Schemes</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
     </li>
+
+    <li class="nav-item" *ngIf="user_role == 'farmer'">
+      <a class="nav-link collapsed">
+        <i class="bi bi-gem"></i>
+        <span routerLink="/farmer/govSchemes">Government Schemes</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+    </li>
+
 
     <li class="nav-item" *ngIf="user_role == 'shopowner' ">
       <a class="nav-link collapsed">
@@ -165,12 +185,12 @@
       </a>
     </li>
 
-    <li class="nav-item" *ngIf="user_role == 'admin' ">
+    <!-- <li class="nav-item" *ngIf="user_role == 'admin' ">
       <a class="nav-link collapsed">
         <i class="bi bi-gem"></i>
         <span data-toggle="modal" data-target="#addEditProductModal" >Add Scheme</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
-    </li>
+    </li> -->
     <li class="nav-item" *ngIf="user_role == 'admin' ">
       <a class="nav-link collapsed">
         <i class="bi bi-gem"></i>

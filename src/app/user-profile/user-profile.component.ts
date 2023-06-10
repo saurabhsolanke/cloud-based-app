@@ -18,7 +18,6 @@ export class UserProfileComponent implements OnInit {
   user_data;
   user_updated_data;
   user_dto: User;
-
   //data not available on form
   // upload_file_name;
   user_profile_pic;

@@ -4,13 +4,15 @@
 
     </div>
     <div class="col">
-        
+
         <div class="row">
             <div class="col-md-4">
                 <strong>All Crops List</strong>
             </div>
             <div class="col">
-                <input type="text" class="form-control" name="name" [(ngModel)]="name" (ngModelChange)="Search()"
+                <input  *ngIf=" user_role === 'farmer' || user_role === 'merchant'" type="text" class="form-control" name="name" [(ngModel)]="name" (ngModelChange)="Search()"
+                    placeholder="Search here">
+                <input *ngIf=" user_role === 'admin'" type="text" class="form-control" name="name" [(ngModel)]="name" (ngModelChange)="Search1()"
                     placeholder="Search here">
             </div>
             <div class="col">
@@ -26,18 +28,20 @@
         <div class="row mt-5 justify-content-center">
 
             <div class="col shadow" *ngIf=" user_role === 'admin'">
+
+                <p class="lead">All Crops- Product Management</p>
                 <div class="container">
                     <h2>List of all products <small>by other farmers</small></h2>
                     <ul class="responsive-table">
                         <li class="table-header">
                             <div class="col">#</div>
-                            <div class="col">Product Name</div>
+                            <div class="col" (click)="sort('first_name')">Product Name</div>
                             <div class="col">Quantity</div>
                             <div class="col">Mrp</div>
                             <div class="col">dp</div>
                             <div class="col">Status</div>
                         </li>
-                        <li class="table-row" *ngFor="let product_data of all_product_data; let i = index">
+                        <li class="table-row" *ngFor="let product_data of all_product_data ; let i = index ">
                             <div class="col" data-label="Job Id">{{i+1}}</div>
                             <div class="col" data-label="Customer Name">{{product_data.name}}</div>
                             <div class="col" data-label="Amount">{{product_data.productDesc}}</div>
@@ -45,12 +49,12 @@
                             <div class="col" data-label="Amount">{{product_data.dp}}</div>
                             <div class="col" data-label="Payment Status">{{product_data.status}}</div>
                         </li>
-    
+
                     </ul>
                 </div>
             </div>
 
-            <div class="col-11 shadow " *ngIf="user_role == 'farmer' ">
+            <div class="col-11 shadow " *ngIf="user_role == 'farmer' || user_role =='merchant' ">
                 <p class="lead">My Crops</p>
 
                 <table class="table table-hover">
@@ -67,7 +71,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let product_data of my_product_data; let i = index">
+                        <tr *ngFor="let product_data of my_product_data;  let i = index">
                             <th scope="row">{{i+1}}</th>
                             <td>{{product_data.name}}</td>
                             <!-- <td>{{product_data.uploadPhoto}}</td> -->
@@ -97,7 +101,8 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">{{popup_header}}</h5>
-                        <button type="button" (click)="getmyProduct()" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" (click)="getmyProduct()" class="close" data-dismiss="modal"
+                            aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>

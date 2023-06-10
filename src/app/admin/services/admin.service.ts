@@ -1,21 +1,17 @@
-import { Injectable } from '@angular/core';
-import { environment } from '../../../environments/environment';
-import { ApiService } from '../../core/services/api.service';
-import { Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { environment } from "../../../environments/environment";
+import { ApiService } from "../../core/services/api.service";
+import { Observable } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class AdminService {
-
   public user_url = environment.server_url + "/user/";
   public product_url = environment.server_url + "/products/";
+  public all_orders = environment.server_url + "/orders/";
 
-  public all_user = environment.server_url + "/user";
-
-
-  constructor(private apiService: ApiService) { }
-
+  constructor(private apiService: ApiService) {}
 
   userDashboardData() {
     return this.apiService.get(this.user_url);
@@ -24,8 +20,15 @@ export class AdminService {
     return this.apiService.get(this.product_url);
   }
   allUser(): Observable<any> {
-    return this.apiService.get(this.all_user);
+    return this.apiService.get(this.user_url);
   }
+
+  allOrders(): Observable<any> {
+    return this.apiService.get(this.all_orders);
+  }
+  // allProducts(): Observable<any> {
+  //   return this.apiService.get(this.all_user);
+  // }
 
   addUser(user_dto): Observable<any> {
     return this.apiService.post(this.user_url, user_dto);

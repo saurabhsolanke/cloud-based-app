@@ -59,15 +59,15 @@ export class UserCrudComponent implements OnInit {
     });
   }
 
-  Search() {
-    if (this.name == "") {
+  Search(): void {
+    if (this.name === "") {
       this.ngOnInit();
     } else {
-      this.User = this.User.filter((res: { name: string }) => {
-        return res.name
-          .toLocaleLowerCase()
-          .match(this.name.toLocaleLowerCase());
-      });
+      this.all_user_data = this.all_user_data.filter(
+        (res: { name: string, role: string } ) => {
+          return res.name.toLowerCase().includes(this.name.toLowerCase() );
+        }
+      );
     }
   }
 
@@ -136,9 +136,6 @@ export class UserCrudComponent implements OnInit {
       (data) => {
         this.getAllUser();
         jQuery("#addEditUserModal").modal("toggle");
-      },
-      (err) => {
-        alert("Some Error Occured");
       }
     );
   }
@@ -174,9 +171,6 @@ export class UserCrudComponent implements OnInit {
           role: this.single_user_data.role,
         });
         // console.log("Individual User", this.single_user_data);
-      },
-      (error) => {
-        console.log("My error", error);
       }
     );
   }
@@ -218,9 +212,6 @@ export class UserCrudComponent implements OnInit {
       (data) => {
         this.getAllUser();
         jQuery("#addEditUserModal").modal("toggle");
-      },
-      (err) => {
-        alert("Some Error Occured");
       }
     );
   }

@@ -128,7 +128,7 @@ export class ShopownerComponent implements OnInit {
       (data) => {
         // console.log(data);
         jQuery("#addEditProductModal").modal("toggle");
-        this.getAllProduct();
+        this.getmyProduct();
       },
       (err) => {
         alert("Some Error Occured");
@@ -174,7 +174,7 @@ export class ShopownerComponent implements OnInit {
       status: this.product_data.status,
       addedBy: this.loggedinname,
       user_session_id: this.user_session_id,
-      isshopowner: this.isshopowner
+      isshopowner: true,
     };
     this.product_service
       .updateProduct(this.edit_product_id, this.product_dto)
@@ -182,7 +182,7 @@ export class ShopownerComponent implements OnInit {
         (data) => {
           // console.log(data);
           jQuery("#addEditProductModal").modal("toggle");
-          this.getAllProduct();
+          this.getmyProduct();
         },
         (err) => {
           alert("Some Error Occured");
@@ -196,7 +196,7 @@ export class ShopownerComponent implements OnInit {
       this.product_service.deleteProduct(id).subscribe(
         (data) => {
           console.log("deleted successfully", data);
-          this.getAllProduct();
+          this.getmyProduct();
         },
         (err) => {
           alert("Some Error Occured");

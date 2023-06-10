@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/core/models/object-model';
 import { CustomerService } from '../../services/customer.service';
 
 @Component({
@@ -21,8 +22,11 @@ export class BuyerDashboardComponent implements OnInit {
 
   getAllProduct() {
     this.customerService.allProduct().subscribe(data => {
-      this.all_products = data;
+      // this.all_products = data;
       // console.log("ALl Product", this.all_products);
+      this.all_products = data.filter(
+        (product) => product.status === 'active'
+      );
     })
   }
 
