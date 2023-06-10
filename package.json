@@ -31,6 +31,7 @@
     "ngx-pagination": "^6.0.3",
     "ngx-toastr": "^10.0.4",
     "rxjs": "~6.4.0",
+    "sort-by": "^1.2.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },

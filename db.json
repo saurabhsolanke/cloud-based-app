@@ -11,7 +11,7 @@
       "address": {
         "id": 0,
         "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": "Chhatrapati Sambhaji Nagar1",
+        "addLine2": "Chhatrapati Sambhaji Nagar11",
         "city": "Chhatrapati Sambhaji Nagar",
         "state": "Maharashtra",
         "zipCode": "431003"
@@ -49,7 +49,7 @@
     {
       "name": "nayan kawde",
       "mobNumber": "9720276354",
-      "age": 23,
+      "age": 25,
       "dob": "1999-02-21",
       "email": "nayan@gmail.com",
       "password": "12345678",
@@ -58,7 +58,7 @@
         "id": 0,
         "addLine1": "Nashik",
         "addLine2": null,
-        "city": "Nashik",
+        "city": "Nashik1",
         "state": "Maharashtra",
         "zipCode": "123456"
       },
@@ -313,26 +313,6 @@
       "id": 13
     },
     {
-      "age": 24,
-      "agreetc": true,
-      "dob": "1999-03-20",
-      "email": "kn@gmail.com",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "flat no. 20, D-wing, Vivekanand Nagar",
-        "addLine2": "N-4 South, CIDCO, Aurangabad",
-        "city": "AURANGABAD",
-        "state": "...",
-        "zipCode": "431003"
-      },
-      "mobNumber": "9027077653",
-      "name": "krishna naik",
-      "password": "password",
-      "role": "merchant",
-      "id": 14
-    },
-    {
       "age": 56,
       "agreetc": true,
       "dob": "1999-09-12",
@@ -391,66 +371,190 @@
       "password": "12345678",
       "role": "farmer",
       "id": 17
+    },
+    {
+      "age": 23,
+      "agreetc": true,
+      "dob": "1997-06-05",
+      "email": "shopowner@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "flat no. 20, D-wing, Vivekanand Nagar",
+        "addLine2": "N-4 South, CIDCO, Aurangabad",
+        "city": "Aurangabad(Maharasht",
+        "state": "...",
+        "zipCode": "431003"
+      },
+      "mobNumber": "1234567890",
+      "name": "shopowner1",
+      "password": "12345678",
+      "role": "shopowner",
+      "id": 18
     }
   ],
   "products": [
     {
-      "id": 1,
-      "name": "crop1 ",
-      "uploadPhoto": "khvkjv",
-      "productDesc": "1kg",
-      "mrp": "100",
-      "dp": "90",
-      "status": "active",
-      "addedBy": "rohit shrikhande",
-      "user_session_id": "1"
-    },
-    {
       "id": 2,
-      "name": "seed1",
-      "uploadPhoto": "dsvsdvsdv",
-      "productDesc": "1kg",
-      "mrp": "100",
-      "dp": "90",
+      "name": "pesticides",
+      "uploadPhoto": "https://5.imimg.com/data5/HW/RX/MY-3222221/pesticides-chemicals-500x500.jpg",
+      "productDesc": "1L",
+      "mrp": "700",
+      "dp": "600",
       "status": "active",
       "addedBy": "krishna naik",
       "isshopowner": true,
       "user_session_id": "15"
     },
     {
-      "id": 3,
-      "name": "efdf",
-      "uploadPhoto": "wef",
-      "productDesc": "wef",
-      "mrp": "wef",
-      "dp": "wfe",
-      "status": "inactive",
-      "addedBy": "nayan kawde",
-      "user_session_id": "3"
+      "id": 4,
+      "name": "pesticides",
+      "uploadPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCKm0dPx407lMBq4JjOX8Q5nGypzTsptLwSQ&usqp=CAU",
+      "productDesc": "10kg",
+      "mrp": "200",
+      "dp": "100",
+      "status": "active",
+      "addedBy": "krishna naik",
+      "isshopowner": true,
+      "user_session_id": "15"
     },
     {
-      "id": 4,
-      "name": "ef",
-      "uploadPhoto": "fe",
-      "productDesc": "fe",
-      "mrp": "fe",
-      "dp": "ef",
+      "id": 5,
+      "name": "pesticides-3",
+      "uploadPhoto": "https://ensia.com/wp-content/uploads/2016/05/feature_pesticides_main-760x378.jpg",
+      "productDesc": "2Kg",
+      "mrp": "60",
+      "dp": "40",
       "status": "active",
-      "addedBy": "nayan kawde",
-      "user_session_id": "3",
-      "isshopowner": false
+      "addedBy": "krishna naik",
+      "isshopowner": true,
+      "user_session_id": "15"
+    },
+    {
+      "id": 6,
+      "name": "crop123",
+      "uploadPhoto": "qewdfe",
+      "productDesc": "100kg",
+      "mrp": "3000",
+      "dp": "2600",
+      "status": "inactive",
+      "addedBy": "rohit shrikhande",
+      "user_session_id": "1"
+    },
+    {
+      "id": 7,
+      "name": "crop121",
+      "uploadPhoto": "wfkewjfnkwjenfkjnk",
+      "productDesc": "1kg",
+      "mrp": "900",
+      "dp": "80",
+      "status": "active",
+      "addedBy": "rohit shrikhande",
+      "user_session_id": "1"
+    },
+    {
+      "id": 8,
+      "name": "cropreg",
+      "uploadPhoto": "lkdvmelkfmvkm",
+      "productDesc": "9",
+      "mrp": "900",
+      "dp": "900",
+      "status": "active",
+      "addedBy": "rohit shrikhande",
+      "user_session_id": "1"
     }
   ],
   "orders": [
     {
+      "userId": 1,
+      "product": {
+        "id": 2,
+        "name": "pesticides",
+        "uploadPhoto": "https://5.imimg.com/data5/HW/RX/MY-3222221/pesticides-chemicals-500x500.jpg",
+        "productDesc": "1L",
+        "mrp": "700",
+        "dp": "600",
+        "status": "active",
+        "addedBy": "krishna naik",
+        "user_session_id": "15",
+        "isshopowner": true
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Chhatrapati Sambhaji Nagar",
+        "addLine2": "Chhatrapati Sambhaji Nagar11",
+        "city": "Chhatrapati Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": 431003
+      },
+      "status": "Ordered",
+      "contact": "9876543210",
+      "dateTime": "09/06/2023",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "product": {
+        "id": 2,
+        "name": "pesticides",
+        "uploadPhoto": "https://5.imimg.com/data5/HW/RX/MY-3222221/pesticides-chemicals-500x500.jpg",
+        "productDesc": "1L",
+        "mrp": "700",
+        "dp": "600",
+        "status": "active",
+        "addedBy": "krishna naik",
+        "user_session_id": "15",
+        "isshopowner": true
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Chhatrapati Sambhaji Nagar",
+        "addLine2": "Chhatrapati Sambhaji Nagar11",
+        "city": "Chhatrapati Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": 431003
+      },
+      "status": "Ordered",
+      "contact": "9876543210",
+      "dateTime": "10/06/2023",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "product": {
+        "id": 2,
+        "name": "pesticides",
+        "uploadPhoto": "https://5.imimg.com/data5/HW/RX/MY-3222221/pesticides-chemicals-500x500.jpg",
+        "productDesc": "1L",
+        "mrp": "700",
+        "dp": "600",
+        "status": "active",
+        "addedBy": "krishna naik",
+        "user_session_id": "15",
+        "isshopowner": true
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Chhatrapati Sambhaji Nagar",
+        "addLine2": "Chhatrapati Sambhaji Nagar11",
+        "city": "Chhatrapati Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": 431003
+      },
+      "status": "Ordered",
+      "contact": "9876543210",
+      "dateTime": "10/06/2023",
+      "id": 3
+    },
+    {
       "userId": 3,
       "product": {
-        "id": 1,
-        "name": "crop1 ",
-        "uploadPhoto": "khvkjv",
+        "id": 7,
+        "name": "crop121",
+        "uploadPhoto": "wfkewjfnkwjenfkjnk",
         "productDesc": "1kg",
-        "mrp": "100",
-        "dp": "90",
+        "mrp": "900",
+        "dp": "80",
         "status": "active",
         "addedBy": "rohit shrikhande",
         "user_session_id": "1"
@@ -459,17 +563,173 @@
         "id": 0,
         "addLine1": "Nashik",
         "addLine2": null,
-        "city": "Nashik",
+        "city": "Nashik1",
         "state": "Maharashtra",
         "zipCode": 123456
       },
       "status": "requested",
       "contact": "9720276354",
-      "dateTime": "07/06/2023",
-      "id": 1
+      "dateTime": "10/6/2023",
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "product": {
+        "id": 8,
+        "name": "cropreg",
+        "uploadPhoto": "lkdvmelkfmvkm",
+        "productDesc": "9",
+        "mrp": "900",
+        "dp": "900",
+        "status": "active",
+        "addedBy": "rohit shrikhande",
+        "user_session_id": "1"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Nashik",
+        "addLine2": null,
+        "city": "Nashik1",
+        "state": "Maharashtra",
+        "zipCode": 123456
+      },
+      "status": "requested",
+      "contact": "9720276354",
+      "dateTime": "10/6/2023",
+      "id": 5
+    },
+    {
+      "userId": 3,
+      "product": {
+        "id": 8,
+        "name": "cropreg",
+        "uploadPhoto": "lkdvmelkfmvkm",
+        "productDesc": "9",
+        "mrp": "900",
+        "dp": "900",
+        "status": "active",
+        "addedBy": "rohit shrikhande",
+        "user_session_id": "1"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Nashik",
+        "addLine2": null,
+        "city": "Nashik1",
+        "state": "Maharashtra",
+        "zipCode": 123456
+      },
+      "status": "requested",
+      "contact": "9720276354",
+      "dateTime": "10/6/2023",
+      "id": 6
+    },
+    {
+      "userId": 3,
+      "product": {
+        "id": 8,
+        "name": "cropreg",
+        "uploadPhoto": "lkdvmelkfmvkm",
+        "productDesc": "9",
+        "mrp": "900",
+        "dp": "900",
+        "status": "active",
+        "addedBy": "rohit shrikhande",
+        "user_session_id": "1"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Nashik",
+        "addLine2": null,
+        "city": "Nashik1",
+        "state": "Maharashtra",
+        "zipCode": 123456
+      },
+      "status": "requested",
+      "contact": "9720276354",
+      "dateTime": "10/6/2023",
+      "id": 7
+    },
+    {
+      "userId": 3,
+      "product": {
+        "id": 8,
+        "name": "cropreg",
+        "uploadPhoto": "lkdvmelkfmvkm",
+        "productDesc": "9",
+        "mrp": "900",
+        "dp": "900",
+        "status": "active",
+        "addedBy": "rohit shrikhande",
+        "user_session_id": "1"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Nashik",
+        "addLine2": null,
+        "city": "Nashik1",
+        "state": "Maharashtra",
+        "zipCode": 123456
+      },
+      "status": "requested",
+      "contact": "9720276354",
+      "dateTime": "10/6/2023",
+      "id": 8
+    },
+    {
+      "userId": 3,
+      "product": {
+        "id": 7,
+        "name": "crop121",
+        "uploadPhoto": "wfkewjfnkwjenfkjnk",
+        "productDesc": "1kg",
+        "mrp": "900",
+        "dp": "80",
+        "status": "active",
+        "addedBy": "rohit shrikhande",
+        "user_session_id": "1"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Nashik",
+        "addLine2": null,
+        "city": "Nashik1",
+        "state": "Maharashtra",
+        "zipCode": 123456
+      },
+      "status": "requested",
+      "contact": "9720276354",
+      "dateTime": "10/06/2023",
+      "id": 9
     }
   ],
   "cart": [],
+  "scheme": [
+    {
+      "id": 1,
+      "name": "scheme1231",
+      "total_benifits": "w1231111",
+      "date": "2023-06-09",
+      "schemeFor": "merchant",
+      "links": "https://agribegri.com/products/sugarcane-special-liquid-micronutrient-mixture-fertilizer.php"
+    },
+    {
+      "id": 2,
+      "name": "3",
+      "total_benifits": "3",
+      "date": "2023-06-14",
+      "schemeFor": "merchant",
+      "links": "3"
+    },
+    {
+      "id": 3,
+      "name": "whbjnwkle;",
+      "total_benifits": "wewe",
+      "date": "2023-06-14",
+      "schemeFor": "farmer",
+      "links": "wewe"
+    }
+  ],
   "pendingOrders": [],
   "declineOrders": []
 }

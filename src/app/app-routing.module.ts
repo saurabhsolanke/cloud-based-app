@@ -29,12 +29,15 @@ import { SchemesComponent } from './admin/admin-dashboard/schemes/schemes.compon
 import { KrishiOrdersComponent } from './krishi-orders/krishi-orders.component';
 import { KrishiCheckoutComponent } from './krishi-checkout/krishi-checkout.component';
 import { MerchantCropregComponent } from './merchant-cropreg/merchant-cropreg.component';
+import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/", pathMatch: "full" },
   { path: "", component: HomeComponent },
   { path: "my-profile", component: UserProfileComponent },
   { path: "contact-us", component:ContactUsComponent},
+  { path: "payment-gateway", component:PaymentGatewayComponent},
+
   //Path/component you want to access before admin login/signin
   {
     path: '', canActivate: [AdminAuthGuardLogin], children: [
@@ -75,6 +78,8 @@ const routes: Routes = [
       { path: "farmer/orders", component: FarmerOrdersComponent },
       { path: "farmer/krishi", component: KrishiOrdersComponent },
       { path: "farmer/krishi-checkout", component: KrishiCheckoutComponent },
+      { path: "farmer/govSchemes", component: SchemesComponent },
+
       // { path: "my-profile", component: UserProfileComponent },
     ]
   },
@@ -97,6 +102,7 @@ const routes: Routes = [
       { path: "merchant/checkout", component: CheckoutComponent },
       { path: "merchant/farmer-list", component: FarmerlistComponent },
       { path: "merchant/merchant-orders", component: MerchantOrdersComponent },
+      { path: "merchant/govSchemes", component: SchemesComponent },
       // { path: "my-profile", component: UserProfileComponent }
     ]
   },

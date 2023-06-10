@@ -29,11 +29,11 @@ export class ShopOrdersComponent implements OnInit {
 
   getOrders() {
     this.product_service.getAllorders().subscribe((data) => {
-      // this.orders = data.filter(
-      //   (order) => order.userId == this.user_session_id
-      // );
-      this.orders = data;
-      console.log(data);
+      this.orders = data.filter(
+        (order) => order.userId
+      );
+      // this.orders = data;
+      // console.log(data);
       
     });
   }

@@ -27,7 +27,7 @@ export class ProductCrudComponent implements OnInit {
   user_session_id: any;
   name: any;
   loggedinname = "";
-  user_role = '';
+  user_role = "";
   isshopowner: boolean;
 
   constructor(
@@ -49,7 +49,7 @@ export class ProductCrudComponent implements OnInit {
       status: ["", Validators.required],
     });
     this.getAllProduct();
-    this.getmyProduct()
+    this.getmyProduct();
   }
 
   get rf() {
@@ -57,33 +57,28 @@ export class ProductCrudComponent implements OnInit {
   }
 
   getAllProduct() {
-      this.product_service.allProduct(this.user_session_id).subscribe(data => {
-        this.all_product_data = data;
-        console.log(data);
-      }
-    );
+    this.product_service.allProduct(this.user_session_id).subscribe((data) => {
+      this.all_product_data = data;
+      console.log(data);
+    });
   }
 
   getmyProduct() {
-    this.product_service.allProduct(this.user_session_id).subscribe(
-      (data) => {
-        this.my_product_data = data.filter(
-          (product) => product.user_session_id == this.user_session_id
-        );
-      }
-    );
+    this.product_service.allProduct(this.user_session_id).subscribe((data) => {
+      this.my_product_data = data.filter(
+        (product) => product.user_session_id == this.user_session_id
+      );
+    });
   }
 
-  
-  Search() {
-    if (this.name == "") {
+  // Search() {
+  Search(): void {
+    if (this.name === "") {
       this.ngOnInit();
     } else {
-      this.all_product_data = this.all_product_data.filter(
+      this.my_product_data = this.my_product_data.filter(
         (res: { name: string }) => {
-          return res.name
-            .toLocaleLowerCase()
-            .match(this.name.toLocaleLowerCase());
+          return res.name.toLowerCase().includes(this.name.toLowerCase());
         }
       );
     }
@@ -96,6 +91,19 @@ export class ProductCrudComponent implements OnInit {
     this.reverse = !this.reverse;
   }
 
+// myproduct
+  Search1(): void {
+    if (this.name === "") {
+      this.ngOnInit();
+    } else {
+      this.all_product_data = this.all_product_data.filter(
+        (res: { name: string }) => {
+          return res.name.toLowerCase().includes(this.name.toLowerCase());
+        }
+      );
+    }
+  }
+
   addProductPopup() {
     this.add_product = true;
     this.edit_product = false;
@@ -105,7 +113,7 @@ export class ProductCrudComponent implements OnInit {
 
   addNewProduct() {
     this.addEditProduct = true;
-    this.isshopowner=false;
+    this.isshopowner = false;
     if (this.addEditProductForm.invalid) {
       // alert('Error!! :-)\n\n' + JSON.stringify(this.addEditUserForm.value))
       return;
@@ -128,6 +136,8 @@ export class ProductCrudComponent implements OnInit {
         // console.log(data);
         jQuery("#addEditProductModal").modal("toggle");
         this.getAllProduct();
+        this.getmyProduct();
+
       },
       (err) => {
         alert("Some Error Occured");
@@ -146,7 +156,6 @@ export class ProductCrudComponent implements OnInit {
       // console.log("single_product_data", this.single_product_data)
       this.addEditProductForm.setValue({
         name: this.single_product_data.name,
-        // uploadPhoto: '',
         uploadPhoto: this.single_product_data.uploadPhoto,
         productDesc: this.single_product_data.productDesc,
         mrp: this.single_product_data.mrp,
@@ -173,17 +182,16 @@ export class ProductCrudComponent implements OnInit {
       status: this.product_data.status,
       addedBy: this.loggedinname,
       user_session_id: this.user_session_id,
-      isshopowner: this.isshopowner
+      isshopowner: this.isshopowner,
     };
     this.product_service
       .updateProduct(this.edit_product_id, this.product_dto)
-      .subscribe(
-        (data) => {
-          // console.log(data);
-          jQuery("#addEditProductModal").modal("toggle");
-          this.getAllProduct();
-        }
-      );
+      .subscribe((data) => {
+        // console.log(data);
+        jQuery("#addEditProductModal").modal("toggle");
+        this.getAllProduct();
+        this.getmyProduct();
+      });
   }
 
   deleteProduct(id) {
@@ -193,6 +201,8 @@ export class ProductCrudComponent implements OnInit {
         (data) => {
           console.log("deleted successfully", data);
           this.getAllProduct();
+          this.getmyProduct();
+
         },
         (err) => {
           alert("Some Error Occured");

@@ -10,6 +10,9 @@ import { User } from "src/app/core/models/object-model";
 })
 export class ProductService {
   public product_url = environment.server_url + "/products/";
+
+  public product_url1 = environment.server_url + "/scheme/";
+
   products: any;
 
   constructor(private apiService: ApiService, private http: HttpClient) {}
@@ -17,6 +20,22 @@ export class ProductService {
   allProduct(user_session_id): Observable<any> {
     return this.apiService.get(this.product_url);
   }
+  addNewScheme(scheme_dto): Observable<any> {
+    return this.apiService.post(this.product_url1, scheme_dto);
+  }
+  allScheme(user_session_id): Observable<any> {
+    return this.apiService.get(this.product_url1);
+  }
+  singleScheme(id) {
+    return this.apiService.get(this.product_url1 + id);
+  }
+  updateScheme(id, scheme_dto): Observable<any> {
+    return this.apiService.put(this.product_url1 + id, scheme_dto);
+  }
+  deleteScheme(id): Observable<any> {
+    return this.apiService.delete(this.product_url1 + id);
+  }
+
   addNewProduct(product_dto): Observable<any> {
     return this.apiService.post(this.product_url, product_dto);
   }
@@ -37,6 +56,11 @@ export class ProductService {
   }
   deleteProduct(id): Observable<any> {
     return this.apiService.delete(this.product_url + id);
+  }
+
+  addtocart(product: any) {
+    let resp: any = this.http.post(this.product_url + "/cart/", product);
+    return resp;
   }
   cartitems() {
     let resp: any = this.http.get(this.product_url + "/cart");
@@ -83,3 +107,7 @@ export class ProductService {
     }
   }
 }
+function scheme_dto(arg0: string, scheme_dto: any): Observable<any> {
+  throw new Error("Function not implemented.");
+}
+
