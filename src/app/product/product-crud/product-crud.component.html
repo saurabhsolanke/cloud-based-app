@@ -10,10 +10,10 @@
                 <strong>All Crops List</strong>
             </div>
             <div class="col">
-                <input  *ngIf=" user_role === 'farmer' || user_role === 'merchant'" type="text" class="form-control" name="name" [(ngModel)]="name" (ngModelChange)="Search()"
-                    placeholder="Search here">
-                <input *ngIf=" user_role === 'admin'" type="text" class="form-control" name="name" [(ngModel)]="name" (ngModelChange)="Search1()"
-                    placeholder="Search here">
+                <input *ngIf=" user_role === 'farmer' || user_role === 'merchant'" type="text" class="form-control"
+                    name="name" [(ngModel)]="name" (ngModelChange)="Search()" placeholder="Search here">
+                <input *ngIf=" user_role === 'admin'" type="text" class="form-control" name="name" [(ngModel)]="name"
+                    (ngModelChange)="Search1()" placeholder="Search here">
             </div>
             <div class="col">
                 <button type="button" class="btn btn-dark float-right" (click)="addProductPopup()" data-toggle="modal"
@@ -54,43 +54,85 @@
                 </div>
             </div>
 
-            <div class="col-11 shadow " *ngIf="user_role == 'farmer' || user_role =='merchant' ">
+            <div id="view" class="e-btn-group">
+                <input type="radio" id="left" name="align" selected value="1" (click)="changeDisplay(1)" />
+                <label class="e-btn" for="left">List View </label> &nbsp;
+                <input type="radio" id="right" name="align" value="2" (click)="changeDisplay(2)" />
+                <label class="e-btn" for="right">Grid View</label>
+            </div>
+
+            <div class="col-11 shadow" *ngIf="user_role == 'farmer' || user_role =='merchant' ">
                 <p class="lead">My Crops</p>
 
-                <table class="table table-hover">
-                    <thead>
-                        <tr class="text-muted">
-                            <th scope="col">#</th>
-                            <th scope="col">Crop Name</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">MRP</th>
-                            <th scope="col">DP</th>
-                            <!-- <th scope="col">Description</th> -->
-                            <th scope="col">Status</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let product_data of my_product_data;  let i = index">
-                            <th scope="row">{{i+1}}</th>
-                            <td>{{product_data.name}}</td>
-                            <!-- <td>{{product_data.uploadPhoto}}</td> -->
-                            <td>{{product_data.productDesc}}</td>
-                            <td>{{product_data.mrp}}</td>
-                            <td>{{product_data.dp}}</td>
-                            <!-- <td>{{product_data.productDesc}}</td> -->
-                            <td>{{product_data.status}}</td>
-                            <td>
-                                <span class="sim-pointer" (click)="editProductPopup(product_data.id)"
-                                    data-toggle="modal" data-target="#addEditProductModal"><i
-                                        class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-                                &nbsp;&nbsp;&nbsp;
-                                <span class="sim-pointer" (click)="deleteProduct(product_data.id)"><i
-                                        class="fa fa-trash" aria-hidden="true"></i></span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div *ngIf="display===1; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr class="text-muted">
+                                <th scope="col">#</th>
+                                <th scope="col">Crop Name</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">MRP</th>
+                                <th scope="col">DP</th>
+                                <!-- <th scope="col">Description</th> -->
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product_data of my_product_data;  let i = index">
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{product_data.name}}</td>
+                                <!-- <td>{{product_data.uploadPhoto}}</td> -->
+                                <td>{{product_data.productDesc}}</td>
+                                <td>{{product_data.mrp}}</td>
+                                <td>{{product_data.dp}}</td>
+                                <!-- <td>{{product_data.productDesc}}</td> -->
+                                <td>{{product_data.status}}</td>
+                                <td>
+                                    <span class="sim-pointer" (click)="editProductPopup(product_data.id)"
+                                        data-toggle="modal" data-target="#addEditProductModal"><i
+                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <span class="sim-pointer" (click)="deleteProduct(product_data.id)"><i
+                                            class="fa fa-trash" aria-hidden="true"></i></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </ng-template>
+
+
+                <ng-template #elseBlock>
+                    <h4 class="display-6 justify-content-center">Kr</h4>
+                    <div class="row">
+                        <div class="col-sm-4 product" *ngFor="let product_data of my_product_data;">
+                            <div class="card shadow">
+                                <img src="{{product_data.uploadPhoto}}" class="card-img-top"
+                                    alt="{{product_data.name}}">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{product_data.name}}</h4>
+                                    <p><span class="float-left"><strong>MRP</strong>:
+                                            <del>{{product_data.mrp}}</del></span>
+                                        <span class="float-right"><strong>DP</strong>:
+                                            {{product_data.dp}}</span>
+                                    </p>
+                                    <br>
+                                    <p class="card-text product-desc">{{product_data.productDesc}}</p>
+                                    <p>Added by:- {{product_data.addedBy}}</p>
+                                    <!-- <a class="btn btn-primary text-light float-left" (click)="addToCart(product.id)">Add to Cart</a> -->
+                                </div>
+                                <div class="card-footer">
+                                    <span class="sim-pointer text-primary col-6" (click)="editProductPopup(product_data.id)"
+                                        data-toggle="modal" data-target="#addEditProductModal"><i
+                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                                    <span class="sim-pointer text-danger col-6" (click)="deleteProduct(product_data.id)"><i
+                                            class="fa fa-trash" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
             </div>
         </div>
 

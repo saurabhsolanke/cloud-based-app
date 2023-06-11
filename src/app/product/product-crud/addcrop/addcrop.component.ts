@@ -30,6 +30,8 @@ export class AddcropComponent implements OnInit {
   user_role = "";
   addEditUserForm: any;
   isshopowner: boolean;
+  mobNumber = "";
+  city = "";
 
   constructor(
     private formBuilder: FormBuilder,
@@ -41,6 +43,8 @@ export class AddcropComponent implements OnInit {
     this.user_role = sessionStorage.getItem("role");
     this.loggedinname = sessionStorage.getItem("name");
     this.user_session_id = sessionStorage.getItem("user_session_id");
+    this.city = sessionStorage.getItem("city");
+    this.mobNumber = sessionStorage.getItem("mobNumber");
     this.addEditProductForm = this.formBuilder.group({
       name: ["", Validators.required],
       uploadPhoto: ["", Validators.required],
@@ -75,7 +79,9 @@ export class AddcropComponent implements OnInit {
       addedBy: this.loggedinname,
       user_session_id: this.user_session_id,
       isshopowner:this.isshopowner,
-
+      role: this.user_role,
+      mobNumber: this.mobNumber,
+      city: this.city,
     };
     this.product_service.addNewProduct(this.product_dto).subscribe((data) => {
       console.log(data);
@@ -102,7 +108,9 @@ export class AddcropComponent implements OnInit {
       addedBy: this.loggedinname,
       user_session_id: this.user_session_id,
       isshopowner:this.isshopowner,
-
+      role: this.user_role,
+      city: this.city,
+      mobNumber: this.mobNumber
     };
     this.product_service
       .updateProduct(this.edit_product_id, this.product_dto)

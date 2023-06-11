@@ -37,6 +37,7 @@ import { KrishiOrdersComponent } from './krishi-orders/krishi-orders.component';
 import { KrishiCheckoutComponent } from './krishi-checkout/krishi-checkout.component';
 import { MerchantCropregComponent } from './merchant-cropreg/merchant-cropreg.component';
 import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
+import { FarmerPurchasingRequestComponent } from './farmer-purchasing-request/farmer-purchasing-request.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -66,6 +67,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     KrishiCheckoutComponent,
     MerchantCropregComponent,
     PaymentGatewayComponent,
+    FarmerPurchasingRequestComponent,
 
   ],
   imports: [

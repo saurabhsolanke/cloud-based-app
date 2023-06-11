@@ -34,8 +34,11 @@ export class Product {
   dp: number;
   status: boolean;
   addedBy: string;
+  role: string;
   isshopowner: boolean;
   user_session_id: number;
+  mobNumber: string;  
+  city: string;
 }
 
 export class Order {
@@ -49,6 +52,7 @@ export class Order {
   status: string;
   is_negotiation: boolean;
   negotiation_price: number;
+  negotiation_quantity:number;
   static id: any;
 }
 

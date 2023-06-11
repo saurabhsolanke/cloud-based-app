@@ -1,706 +1,237 @@
 {
   "user": [
     {
-      "name": "rohit shrikhande",
-      "mobNumber": "9876543210",
       "age": 23,
-      "dob": "1999-12-25",
-      "email": "rohit@gmail.com",
-      "password": "12345678",
+      "agreetc": true,
+      "dob": "1999-01-10",
+      "email": "roshan.sonone@gmail.com",
       "gender": "Male",
       "address": {
         "id": 0,
-        "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": "Chhatrapati Sambhaji Nagar11",
-        "city": "Chhatrapati Sambhaji Nagar",
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
         "state": "Maharashtra",
         "zipCode": "431003"
       },
-      "aboutYou": "i like biry11",
-      "uploadPhoto": "C:\\fakepath\\853c4848-e613-49cd-bb61-176a840d88fb.jpg",
+      "mobNumber": "9876543210",
+      "name": "Roshan Sonone",
+      "password": "12345678",
       "role": "farmer",
       "id": 1
     },
     {
-      "name": "saurabh solanke",
-      "mobNumber": "9028066793",
-      "age": 25,
-      "dob": "1997-05-10",
-      "email": "saurabh@gmail.com",
-      "password": "12345678",
-      "language": [
-        "English"
-      ],
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "wakad",
-        "addLine2": null,
-        "city": "Pune",
-        "state": "...",
-        "zipCode": "411057"
-      },
-      "aboutYou": "Music Lover, ",
-      "uploadPhoto": "C:\\fakepath\\bd869011-097c-4a9e-bc24-4dda6d7db654.jpg",
-      "agreetc": true,
-      "role": "admin",
-      "id": 2
-    },
-    {
-      "name": "nayan kawde",
-      "mobNumber": "9720276354",
-      "age": 25,
-      "dob": "1999-02-21",
-      "email": "nayan@gmail.com",
-      "password": "12345678",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "Nashik",
-        "addLine2": null,
-        "city": "Nashik1",
-        "state": "Maharashtra",
-        "zipCode": "123456"
-      },
-      "aboutYou": "Dj NBK lover",
-      "uploadPhoto": "C:\\fakepath\\150-1503934_computer-icons-scalable-vector-graphics-user-profile-user.png",
-      "role": "merchant",
-      "id": 3
-    },
-    {
-      "name": "kunal pawar",
-      "mobNumber": "9921345678",
       "age": 23,
-      "dob": "1999-07-04",
-      "email": "kunal@gmail.com",
-      "password": "12345678",
-      "language": [
-        "Hindi"
-      ],
+      "agreetc": true,
+      "dob": "1999-01-10",
+      "email": "admin@gmail.com",
       "gender": "Male",
       "address": {
         "id": 0,
-        "addLine1": "solapur",
-        "addLine2": null,
-        "city": "solapur",
-        "state": "...",
-        "zipCode": "411234"
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": "431003"
       },
-      "aboutYou": "Mba studying",
-      "uploadPhoto": "C:\\fakepath\\bd869011-097c-4a9e-bc24-4dda6d7db654.jpg",
-      "agreetc": true,
-      "role": "merchant",
+      "mobNumber": "9876543210",
+      "name": "Admin",
+      "password": "12345678",
+      "role": "admin",
       "id": 4
     },
     {
-      "aboutYou": "from kk wagh college",
-      "age": 22,
-      "agreetc": true,
-      "dob": "1999-05-16",
-      "email": "roshan@gmail.com",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "Chh. Sambhaji nagar",
-        "addLine2": null,
-        "city": "Chh. Sambhaji nagar",
-        "state": "...",
-        "zipCode": "411075"
-      },
-      "language": [
-        "English"
-      ],
-      "mobNumber": "9876543210",
-      "name": "roshan sonone",
-      "password": "12345678",
-      "uploadPhoto": "C:\\fakepath\\853c4848-e613-49cd-bb61-176a840d88fb.jpg",
-      "role": "merchant",
-      "id": 5
-    },
-    {
-      "aboutYou": "HI farmer 1",
-      "age": 25,
-      "agreetc": true,
-      "dob": "2023-04-10",
-      "email": "farmer@gmail.com",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "st.",
-        "addLine2": null,
-        "city": "pune",
-        "state": "...",
-        "zipCode": "411057"
-      },
-      "language": [
-        "Marathi"
-      ],
-      "mobNumber": "9028066793",
-      "name": "farmer",
-      "password": "12345678",
-      "uploadPhoto": "C:\\fakepath\\853c4848-e613-49cd-bb61-176a840d88fb.jpg",
-      "role": "farmer",
-      "id": 6
-    },
-    {
-      "aboutYou": "i am merchant",
-      "age": 24,
-      "agreetc": true,
-      "dob": "1999-08-24",
-      "email": "rucha@gmail.com",
-      "gender": "Female",
-      "address": {
-        "id": 0,
-        "addLine1": "wakad",
-        "addLine2": "",
-        "city": "pune",
-        "state": "...",
-        "zipCode": "411057"
-      },
-      "language": [
-        "Marathi"
-      ],
-      "mobNumber": "9876543210",
-      "name": "rucha muley",
-      "password": "pass1999",
-      "uploadPhoto": "C:\\fakepath\\853c4848-e613-49cd-bb61-176a840d88fb.jpg",
-      "role": "merchant",
-      "id": 7
-    },
-    {
-      "aboutYou": "merchnat",
       "age": 23,
       "agreetc": true,
-      "dob": "1999-08-24",
-      "email": "rucha@gmail.com",
-      "gender": "Female",
+      "dob": "1999-08-31",
+      "email": "chetan.pawar@gmail.com",
+      "gender": "Male",
       "address": {
         "id": 0,
-        "addLine1": "wkad",
-        "addLine2": null,
-        "city": "pune",
-        "state": "...",
-        "zipCode": "411057"
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": "431003"
       },
-      "language": [
-        "Marathi"
-      ],
-      "mobNumber": "9028066793",
-      "name": "rucha",
+      "mobNumber": "9876543210",
+      "name": "Chetan Pawar",
       "password": "12345678",
-      "uploadPhoto": "C:\\fakepath\\bd869011-097c-4a9e-bc24-4dda6d7db654.jpg",
       "role": "merchant",
-      "id": 8
+      "id": 2
     },
     {
-      "aboutYou": "merchant",
       "age": 25,
       "agreetc": true,
-      "dob": "1997-05-31",
-      "email": "parag@gmail.com",
+      "dob": "1997-05-10",
+      "email": "shopowner@krushi.com",
       "gender": "Male",
       "address": {
         "id": 0,
-        "addLine1": "wakad",
-        "addLine2": "N-4 South, CIDCO, Aurangabad",
-        "city": "pune",
-        "state": "...",
+        "addLine1": "N-4 Garkheda,",
+        "addLine2": null,
+        "city": "Chhatrapati Sambhaji Nagar",
+        "state": "Maharashtra",
         "zipCode": "431003"
       },
-      "language": [
-        "Marathi"
-      ],
-      "mobNumber": "84408022997",
-      "name": "parag",
-      "password": "pass1997",
-      "uploadPhoto": "C:\\fakepath\\bd869011-097c-4a9e-bc24-4dda6d7db654.jpg",
-      "role": "merchant",
-      "id": 9
+      "mobNumber": "9028066793",
+      "name": "Shopowner",
+      "password": "12345678",
+      "role": "shopowner",
+      "id": 3
     },
     {
-      "aboutYou": "farmer",
-      "age": 27,
+      "age": 23,
       "agreetc": true,
-      "dob": "1994-08-22",
-      "email": "sudhir@gmail.com",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "flat no. 20, D-wing, Vivekanand Nagar",
-        "addLine2": "N-4 South, CIDCO, Aurangabad",
-        "city": "Aurangabad(Maharasht",
-        "state": "...",
-        "zipCode": "431003"
-      },
-      "language": [
-        "Marathi"
-      ],
-      "mobNumber": "+919028066793",
-      "name": "Sudhir Solanke",
-      "password": "pass1997",
-      "uploadPhoto": "C:\\fakepath\\bd869011-097c-4a9e-bc24-4dda6d7db654.jpg",
-      "role": "farmer",
-      "id": 10
-    },
-    {
-      "aboutYou": "sdjhbwsd",
-      "age": 22,
-      "agreetc": true,
-      "dob": "2000-10-25",
-      "email": "roshan@gmail.com",
+      "dob": "1999-08-03",
+      "email": "sanket@krishi.com",
       "gender": "Male",
       "address": {
         "id": 0,
         "addLine1": "Chh. Sambhaji Nagar",
         "addLine2": null,
         "city": "Chh. Sambhaji Nagar",
-        "state": "...",
+        "state": "Maharashtra",
         "zipCode": "431003"
       },
-      "language": [
-        "Marathi"
-      ],
-      "mobNumber": "987654321",
-      "name": "roshan",
-      "password": "password",
-      "uploadPhoto": "C:\\fakepath\\bd869011-097c-4a9e-bc24-4dda6d7db654.jpg",
-      "role": "farmer",
-      "id": 11
-    },
-    {
-      "aboutYou": "edfghnm",
-      "age": 28,
-      "agreetc": true,
-      "dob": "2023-05-10",
-      "email": "1132200168@mitwpu.edu.in",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "flat no. 20, D-wing, Vivekanand Nagar",
-        "addLine2": "N-4 South, CIDCO, Aurangabad",
-        "city": "AURANGABAD",
-        "state": "...",
-        "zipCode": "431003"
-      },
-      "language": [
-        "Marathi"
-      ],
-      "mobNumber": "+919028066793",
-      "name": "Saurabh Solanke",
-      "password": "12345678",
-      "uploadPhoto": "C:\\fakepath\\shopowner.jpeg",
-      "role": "farmer",
-      "id": 12
-    },
-    {
-      "age": 26,
-      "agreetc": true,
-      "dob": "1997-05-22",
-      "email": "swapnil@gmail.com",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "flat no. 20, D-wing, Vivekanand Nagar",
-        "addLine2": "N-4 South, CIDCO, Aurangabad",
-        "city": "AURANGABAD",
-        "state": "...",
-        "zipCode": "431003"
-      },
-      "mobNumber": "9028066793",
-      "name": "swapnil ukhle",
-      "password": "12345678",
-      "role": "merchant",
-      "id": 13
-    },
-    {
-      "age": 56,
-      "agreetc": true,
-      "dob": "1999-09-12",
-      "email": "kn@gmail.com",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "flat no. 20, D-wing, Vivekanand Nagar",
-        "addLine2": "N-4 South, CIDCO, Aurangabad",
-        "city": "AURANGABAD",
-        "state": "...",
-        "zipCode": "431003"
-      },
-      "mobNumber": "09027077653",
-      "name": "krishna naik",
-      "password": "12345678",
-      "role": "shopowner",
-      "id": 15
-    },
-    {
-      "age": 26,
-      "agreetc": true,
-      "dob": "1997-05-22",
-      "email": "swapnil.ukhle@gmail.com",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "wakad",
-        "addLine2": "pune",
-        "city": "pune",
-        "state": "...",
-        "zipCode": "411057"
-      },
-      "mobNumber": "99999999999",
-      "name": "Swapnil ukhle",
+      "mobNumber": "9876543210",
+      "name": "Sanket Chavan",
       "password": "12345678",
       "role": "farmer",
-      "id": 16
-    },
-    {
-      "age": 23,
-      "agreetc": true,
-      "dob": "1997-05-22",
-      "email": "su@gmail.com",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "bajaj nagar",
-        "addLine2": "pune",
-        "city": "pune",
-        "state": "...",
-        "zipCode": "411057"
-      },
-      "mobNumber": "999990111",
-      "name": "swapnil ukhle",
-      "password": "12345678",
-      "role": "farmer",
-      "id": 17
-    },
-    {
-      "age": 23,
-      "agreetc": true,
-      "dob": "1997-06-05",
-      "email": "shopowner@gmail.com",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "flat no. 20, D-wing, Vivekanand Nagar",
-        "addLine2": "N-4 South, CIDCO, Aurangabad",
-        "city": "Aurangabad(Maharasht",
-        "state": "...",
-        "zipCode": "431003"
-      },
-      "mobNumber": "1234567890",
-      "name": "shopowner1",
-      "password": "12345678",
-      "role": "shopowner",
-      "id": 18
+      "id": 5
     }
   ],
   "products": [
     {
+      "id": 1,
+      "name": "Farmer Crop1",
+      "uploadPhoto": "https://images.pexels.com/photos/1459339/pexels-photo-1459339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "productDesc": "3kg",
+      "mrp": "4000",
+      "dp": "2000",
+      "status": "active",
+      "addedBy": "Roshan Sonone",
+      "user_session_id": "1",
+      "role": "farmer",
+      "mobNumber": "9876543210",
+      "city": "Sambhaji Nagar"
+    },
+    {
       "id": 2,
-      "name": "pesticides",
-      "uploadPhoto": "https://5.imimg.com/data5/HW/RX/MY-3222221/pesticides-chemicals-500x500.jpg",
-      "productDesc": "1L",
+      "name": "merchant 1",
+      "uploadPhoto": "https://images.pexels.com/photos/39511/purple-grapes-vineyard-napa-valley-napa-vineyard-39511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "productDesc": "2kg",
       "mrp": "700",
       "dp": "600",
       "status": "active",
-      "addedBy": "krishna naik",
-      "isshopowner": true,
-      "user_session_id": "15"
+      "addedBy": "Chetan Pawar",
+      "user_session_id": "2",
+      "role": "merchant",
+      "mobNumber": "9876543210",
+      "city": "Sambhaji Nagar"
     },
     {
-      "id": 4,
-      "name": "pesticides",
-      "uploadPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCKm0dPx407lMBq4JjOX8Q5nGypzTsptLwSQ&usqp=CAU",
-      "productDesc": "10kg",
-      "mrp": "200",
-      "dp": "100",
-      "status": "active",
-      "addedBy": "krishna naik",
-      "isshopowner": true,
-      "user_session_id": "15"
-    },
-    {
-      "id": 5,
-      "name": "pesticides-3",
-      "uploadPhoto": "https://ensia.com/wp-content/uploads/2016/05/feature_pesticides_main-760x378.jpg",
+      "id": 3,
+      "name": "shopowner 1",
+      "uploadPhoto": "https://images.pexels.com/photos/41959/food-grains-bread-wheat-cereals-41959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "productDesc": "2Kg",
-      "mrp": "60",
-      "dp": "40",
+      "mrp": "800",
+      "dp": "700",
       "status": "active",
-      "addedBy": "krishna naik",
+      "addedBy": "Shopowner",
       "isshopowner": true,
-      "user_session_id": "15"
-    },
-    {
-      "id": 6,
-      "name": "crop123",
-      "uploadPhoto": "qewdfe",
-      "productDesc": "100kg",
-      "mrp": "3000",
-      "dp": "2600",
-      "status": "inactive",
-      "addedBy": "rohit shrikhande",
-      "user_session_id": "1"
-    },
-    {
-      "id": 7,
-      "name": "crop121",
-      "uploadPhoto": "wfkewjfnkwjenfkjnk",
-      "productDesc": "1kg",
-      "mrp": "900",
-      "dp": "80",
-      "status": "active",
-      "addedBy": "rohit shrikhande",
-      "user_session_id": "1"
-    },
-    {
-      "id": 8,
-      "name": "cropreg",
-      "uploadPhoto": "lkdvmelkfmvkm",
-      "productDesc": "9",
-      "mrp": "900",
-      "dp": "900",
-      "status": "active",
-      "addedBy": "rohit shrikhande",
-      "user_session_id": "1"
+      "user_session_id": "3",
+      "role": "shopowner",
+      "city": null,
+      "mobNumber": "9028066793"
     }
   ],
   "orders": [
     {
-      "userId": 1,
       "product": {
-        "id": 2,
-        "name": "pesticides",
-        "uploadPhoto": "https://5.imimg.com/data5/HW/RX/MY-3222221/pesticides-chemicals-500x500.jpg",
-        "productDesc": "1L",
-        "mrp": "700",
-        "dp": "600",
-        "status": "active",
-        "addedBy": "krishna naik",
-        "user_session_id": "15",
-        "isshopowner": true
+        "id": 0,
+        "name": "Farmer Crop1",
+        "uploadPhoto": "https://images.pexels.com/photos/1459339/pexels-photo-1459339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "productDesc": "3kg",
+        "mrp": "4000",
+        "dp": "2000",
+        "status": "Ordered",
+        "addedBy": "Roshan Sonone",
+        "city": "Sambhaji Nagar"
       },
       "deliveryAddress": {
         "id": 0,
-        "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": "Chhatrapati Sambhaji Nagar11",
-        "city": "Chhatrapati Sambhaji Nagar",
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
         "state": "Maharashtra",
         "zipCode": 431003
       },
+      "negotiation_price": "11/06/2023",
+      "negotiation_quantity": "11/06/2023",
+      "dateTime": "11/06/2023",
       "status": "Ordered",
-      "contact": "9876543210",
-      "dateTime": "09/06/2023",
       "id": 1
     },
     {
       "userId": 1,
       "product": {
-        "id": 2,
-        "name": "pesticides",
-        "uploadPhoto": "https://5.imimg.com/data5/HW/RX/MY-3222221/pesticides-chemicals-500x500.jpg",
-        "productDesc": "1L",
-        "mrp": "700",
-        "dp": "600",
+        "id": 3,
+        "name": "shopowner 1",
+        "uploadPhoto": "https://images.pexels.com/photos/41959/food-grains-bread-wheat-cereals-41959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "productDesc": "2Kg",
+        "mrp": "800",
+        "dp": "700",
         "status": "active",
-        "addedBy": "krishna naik",
-        "user_session_id": "15",
-        "isshopowner": true
+        "addedBy": "Shopowner",
+        "user_session_id": "3",
+        "isshopowner": true,
+        "role": "shopowner",
+        "mobNumber": "9028066793",
+        "city": null
       },
       "deliveryAddress": {
         "id": 0,
-        "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": "Chhatrapati Sambhaji Nagar11",
-        "city": "Chhatrapati Sambhaji Nagar",
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
         "state": "Maharashtra",
         "zipCode": 431003
       },
       "status": "Ordered",
       "contact": "9876543210",
-      "dateTime": "10/06/2023",
+      "dateTime": "11/06/2023",
       "id": 2
     },
     {
-      "userId": 1,
+      "userId": 2,
       "product": {
-        "id": 2,
-        "name": "pesticides",
-        "uploadPhoto": "https://5.imimg.com/data5/HW/RX/MY-3222221/pesticides-chemicals-500x500.jpg",
-        "productDesc": "1L",
-        "mrp": "700",
-        "dp": "600",
+        "id": 1,
+        "name": "Farmer Crop1",
+        "uploadPhoto": "https://images.pexels.com/photos/1459339/pexels-photo-1459339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "productDesc": "3kg",
+        "mrp": "4000",
+        "dp": "2000",
         "status": "active",
-        "addedBy": "krishna naik",
-        "user_session_id": "15",
-        "isshopowner": true
+        "addedBy": "Roshan Sonone",
+        "user_session_id": "1",
+        "role": "merchant"
       },
       "deliveryAddress": {
         "id": 0,
-        "addLine1": "Chhatrapati Sambhaji Nagar",
-        "addLine2": "Chhatrapati Sambhaji Nagar11",
-        "city": "Chhatrapati Sambhaji Nagar",
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
         "state": "Maharashtra",
         "zipCode": 431003
       },
-      "status": "Ordered",
+      "status": "requested",
+      "is_negotiation": false,
+      "negotiation_price": 0,
+      "negotiation_quantity": 0,
       "contact": "9876543210",
-      "dateTime": "10/06/2023",
+      "dateTime": "11/06/2023",
       "id": 3
-    },
-    {
-      "userId": 3,
-      "product": {
-        "id": 7,
-        "name": "crop121",
-        "uploadPhoto": "wfkewjfnkwjenfkjnk",
-        "productDesc": "1kg",
-        "mrp": "900",
-        "dp": "80",
-        "status": "active",
-        "addedBy": "rohit shrikhande",
-        "user_session_id": "1"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Nashik",
-        "addLine2": null,
-        "city": "Nashik1",
-        "state": "Maharashtra",
-        "zipCode": 123456
-      },
-      "status": "requested",
-      "contact": "9720276354",
-      "dateTime": "10/6/2023",
-      "id": 4
-    },
-    {
-      "userId": 3,
-      "product": {
-        "id": 8,
-        "name": "cropreg",
-        "uploadPhoto": "lkdvmelkfmvkm",
-        "productDesc": "9",
-        "mrp": "900",
-        "dp": "900",
-        "status": "active",
-        "addedBy": "rohit shrikhande",
-        "user_session_id": "1"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Nashik",
-        "addLine2": null,
-        "city": "Nashik1",
-        "state": "Maharashtra",
-        "zipCode": 123456
-      },
-      "status": "requested",
-      "contact": "9720276354",
-      "dateTime": "10/6/2023",
-      "id": 5
-    },
-    {
-      "userId": 3,
-      "product": {
-        "id": 8,
-        "name": "cropreg",
-        "uploadPhoto": "lkdvmelkfmvkm",
-        "productDesc": "9",
-        "mrp": "900",
-        "dp": "900",
-        "status": "active",
-        "addedBy": "rohit shrikhande",
-        "user_session_id": "1"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Nashik",
-        "addLine2": null,
-        "city": "Nashik1",
-        "state": "Maharashtra",
-        "zipCode": 123456
-      },
-      "status": "requested",
-      "contact": "9720276354",
-      "dateTime": "10/6/2023",
-      "id": 6
-    },
-    {
-      "userId": 3,
-      "product": {
-        "id": 8,
-        "name": "cropreg",
-        "uploadPhoto": "lkdvmelkfmvkm",
-        "productDesc": "9",
-        "mrp": "900",
-        "dp": "900",
-        "status": "active",
-        "addedBy": "rohit shrikhande",
-        "user_session_id": "1"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Nashik",
-        "addLine2": null,
-        "city": "Nashik1",
-        "state": "Maharashtra",
-        "zipCode": 123456
-      },
-      "status": "requested",
-      "contact": "9720276354",
-      "dateTime": "10/6/2023",
-      "id": 7
-    },
-    {
-      "userId": 3,
-      "product": {
-        "id": 8,
-        "name": "cropreg",
-        "uploadPhoto": "lkdvmelkfmvkm",
-        "productDesc": "9",
-        "mrp": "900",
-        "dp": "900",
-        "status": "active",
-        "addedBy": "rohit shrikhande",
-        "user_session_id": "1"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Nashik",
-        "addLine2": null,
-        "city": "Nashik1",
-        "state": "Maharashtra",
-        "zipCode": 123456
-      },
-      "status": "requested",
-      "contact": "9720276354",
-      "dateTime": "10/6/2023",
-      "id": 8
-    },
-    {
-      "userId": 3,
-      "product": {
-        "id": 7,
-        "name": "crop121",
-        "uploadPhoto": "wfkewjfnkwjenfkjnk",
-        "productDesc": "1kg",
-        "mrp": "900",
-        "dp": "80",
-        "status": "active",
-        "addedBy": "rohit shrikhande",
-        "user_session_id": "1"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Nashik",
-        "addLine2": null,
-        "city": "Nashik1",
-        "state": "Maharashtra",
-        "zipCode": 123456
-      },
-      "status": "requested",
-      "contact": "9720276354",
-      "dateTime": "10/06/2023",
-      "id": 9
     }
   ],
   "cart": [],

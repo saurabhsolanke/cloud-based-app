@@ -13,20 +13,30 @@ export class PesticidesSeedsComponent implements OnInit {
   show_checkout: Boolean = false;
   isshopowner: boolean;
   shoporderhistory: boolean;
+  user_session_id: any;
+  user_role: string;
+  loggedinname: string;
 
   constructor(
     private router: Router,
-    public productservice: ProductService,
+    public product_service: ProductService,
     private customerService: CustomerService
   ) {}
 
-  ngOnInit() {
+  ngOnInit() {    
+    this.user_role = sessionStorage.getItem("role");
+    this.loggedinname = sessionStorage.getItem("name");
+    this.user_session_id = sessionStorage.getItem("user_session_id");
+
     this.getAllProduct();
   }
 
   getAllProduct() {
-    this.customerService.allProduct().subscribe((data) => {
+    this.product_service.allProduct(this.user_session_id).subscribe((data) => {
       this.all_products = data;
+      this.all_products = data.filter(
+        (product) => product.role === 'shopowner'
+      );
     });
   }
 

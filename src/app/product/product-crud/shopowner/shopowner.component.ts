@@ -31,6 +31,8 @@ export class ShopownerComponent implements OnInit {
   loggedinname = "";
   user_role = '';
   isshopowner: boolean;
+  mobNumber = "";
+  city = "";
 
   constructor(
     private formBuilder: FormBuilder,
@@ -42,6 +44,8 @@ export class ShopownerComponent implements OnInit {
     this.user_role = sessionStorage.getItem("role");
     this.loggedinname = sessionStorage.getItem("name");
     this.user_session_id = sessionStorage.getItem("user_session_id");
+    this.mobNumber = sessionStorage.getItem("mobNumber");
+    this.city = sessionStorage.getItem("city");
     this.addEditProductForm = this.formBuilder.group({
       name: ["", Validators.required],
       uploadPhoto: ["", Validators.required],
@@ -123,6 +127,9 @@ export class ShopownerComponent implements OnInit {
       addedBy: this.loggedinname,
       isshopowner: this.isshopowner,
       user_session_id: this.user_session_id,
+      role: this.user_role,
+      city: this.city,
+      mobNumber: this.mobNumber,
     };
     this.product_service.addNewProduct(this.product_dto).subscribe(
       (data) => {
@@ -175,6 +182,9 @@ export class ShopownerComponent implements OnInit {
       addedBy: this.loggedinname,
       user_session_id: this.user_session_id,
       isshopowner: true,
+      role: this.user_role,
+      mobNumber: this.mobNumber,
+      city: this.city,
     };
     this.product_service
       .updateProduct(this.edit_product_id, this.product_dto)

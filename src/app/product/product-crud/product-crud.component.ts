@@ -28,7 +28,11 @@ export class ProductCrudComponent implements OnInit {
   name: any;
   loggedinname = "";
   user_role = "";
+  mobNumber = "";
+  city = "";
   isshopowner: boolean;
+  public display: number = 1;
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,6 +44,8 @@ export class ProductCrudComponent implements OnInit {
     this.user_role = sessionStorage.getItem("role");
     this.loggedinname = sessionStorage.getItem("name");
     this.user_session_id = sessionStorage.getItem("user_session_id");
+    this.mobNumber = sessionStorage.getItem("mobNumber");
+    this.city = sessionStorage.getItem("city");
     this.addEditProductForm = this.formBuilder.group({
       name: ["", Validators.required],
       uploadPhoto: ["", Validators.required],
@@ -47,6 +53,9 @@ export class ProductCrudComponent implements OnInit {
       mrp: ["", Validators.required],
       dp: ["", Validators.required],
       status: ["", Validators.required],
+      role: ["", Validators.required],
+      mobNumber: ["", Validators.required],
+      city: ["", Validators.required]
     });
     this.getAllProduct();
     this.getmyProduct();
@@ -103,6 +112,10 @@ export class ProductCrudComponent implements OnInit {
       );
     }
   }
+  changeDisplay(mode: number): void {
+    this.display = mode;
+  }
+
 
   addProductPopup() {
     this.add_product = true;
@@ -130,14 +143,16 @@ export class ProductCrudComponent implements OnInit {
       addedBy: this.loggedinname,
       user_session_id: this.user_session_id,
       isshopowner: this.isshopowner,
+      role: this.user_role,
+      mobNumber: this.mobNumber,
+      city: this.city,
     };
     this.product_service.addNewProduct(this.product_dto).subscribe(
       (data) => {
-        // console.log(data);
+        console.log(data);
         jQuery("#addEditProductModal").modal("toggle");
         this.getAllProduct();
         this.getmyProduct();
-
       },
       (err) => {
         alert("Some Error Occured");
@@ -161,6 +176,9 @@ export class ProductCrudComponent implements OnInit {
         mrp: this.single_product_data.mrp,
         dp: this.single_product_data.dp,
         status: this.single_product_data.status,
+        role: this.single_product_data.role,
+        mobNumber : this.single_product_data.mobNumber,
+        city : this.single_product_data.city
       });
     });
   }
@@ -183,6 +201,9 @@ export class ProductCrudComponent implements OnInit {
       addedBy: this.loggedinname,
       user_session_id: this.user_session_id,
       isshopowner: this.isshopowner,
+      role: this.user_role,
+      city: this.city,
+      mobNumber: this.mobNumber
     };
     this.product_service
       .updateProduct(this.edit_product_id, this.product_dto)
