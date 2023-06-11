@@ -116,16 +116,22 @@ export class SigninSignupComponent implements OnInit {
           sessionStorage.setItem("user_session_id", this.user_data[0].id);
           sessionStorage.setItem("role", this.user_data[0].role);
           sessionStorage.setItem("name", this.user_data[0].name);
+          sessionStorage.setItem("mobNumber", this.user_data[0].mobNumber);
+          sessionStorage.setItem("city", this.user_data[0].address.city);
           this.router.navigateByUrl('/my-profile');
         } else if (this.user_data[0].role == "merchant") {
           sessionStorage.setItem("user_session_id", this.user_data[0].id);
           sessionStorage.setItem("role", this.user_data[0].role);
           sessionStorage.setItem("name", this.user_data[0].name);
+          sessionStorage.setItem("mobNumber", this.user_data[0].mobNumber);
+          sessionStorage.setItem("city", this.user_data[0].address.city);
           this.router.navigateByUrl('/my-profile');
         }else if (this.user_data[0].role == "shopowner") {
           sessionStorage.setItem("user_session_id", this.user_data[0].id);
           sessionStorage.setItem("role", this.user_data[0].role);
           sessionStorage.setItem("name", this.user_data[0].name);
+          sessionStorage.setItem("mobNumber", this.user_data[0].mobNumber);
+          sessionStorage.setItem("address", this.user_data[0].address.city);
           this.router.navigateByUrl('/my-profile');
         }  
         else {

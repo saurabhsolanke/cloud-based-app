@@ -46,6 +46,10 @@ export class PurchaserequestComponent implements OnInit {
   orderId: any;
   editing: any;
   edit: boolean = false;
+
+  mobNumber="";
+  city="";
+
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -55,7 +59,6 @@ export class PurchaserequestComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    
     this.user_role = sessionStorage.getItem("role");
     this.loggedinname = sessionStorage.getItem("name");
     this.user_session_id = sessionStorage.getItem("user_session_id");
@@ -75,20 +78,30 @@ export class PurchaserequestComponent implements OnInit {
       city: [""],
       state: [""],
       zipCode: [""],
+      negotiation_price: [""],
+      negotiation_quantity: [""],
+
     });
-    console.log(this.order_data);
-    this.getOrders();
+    this.getOrdersFarmer();
+    this.getOrdersMerchant();
     // this.getmyProduct();
   }
   get rf() {
     return this.addEditProductForm1.controls;
   }
-  getOrders() {
+  getOrdersFarmer() {
     this.product_service.getAllorders().subscribe((data) => {
       this.orders = data.filter((order) => {
-        console.log(order);
         return order.product.user_session_id == this.user_session_id;
       });
+    });
+  }
+
+  getOrdersMerchant() {
+    this.product_service.getAllorders().subscribe((data) => {
+      this.orders = data.filter(
+        (order) => order.product.user_session_id == this.user_session_id
+      );
     });
   }
 
@@ -119,42 +132,46 @@ export class PurchaserequestComponent implements OnInit {
         status: this.singleOrder.status || "",
         contact: this.singleOrder.contact || "",
         dateTime: this.singleOrder.dateTime || "",
+        negotiation_price: this.singleOrder.dateTime || "",
+        negotiation_quantity: this.singleOrder.dateTime || "",
       });
     });
   }
-
-  // CHAT GPT
 
   updateProduct(): void {
     if (this.addEditProductForm1.valid) {
       this.order_data = this.addEditProductForm1.value;
       this.order_dto = {
         // const updatedOrder = {
-        orderid: this.singleOrder.id,
+        orderid: this.order_data.id,
         userId: this.order_data.user_id,
         product: {
           // id: this.individual_product.id,
           id: 0,
-          name: this.individual_product.name,
-          uploadPhoto: this.individual_product.uploadPhoto,
-          productDesc: this.individual_product.productDesc,
-          mrp: this.individual_product.mrp,
-          dp: this.individual_product.dp,
-          status: this.individual_product.status,
-          addedBy: this.individual_product.addedBy,
-          user_session_id: this.individual_product.user_session_id,
+          name: this.order_data.name,
+          uploadPhoto: this.order_data.uploadPhoto,
+          productDesc: this.order_data.productDesc,
+          mrp: this.order_data.mrp,
+          dp: this.order_data.dp,
+          status: this.order_data.status,
+          addedBy: this.order_data.addedBy,
+          user_session_id: this.order_data.user_session_id,
           isshopowner: this.isshopowner,
+          role: this.order_data.role,
+          mobNumber: this.order_data.mobNumber,
+          city: this.order_data.city
         },
         deliveryAddress: {
           id: 0,
-          addLine1: this.user_address.addLine1,
-          addLine2: this.user_address.addLine2,
-          city: this.user_address.city,
-          state: this.user_address.state,
-          zipCode: Number(this.user_address.zipCode),
+          addLine1: this.order_data.addLine1,
+          addLine2: this.order_data.addLine2,
+          city: this.order_data.city,
+          state: this.order_data.state,
+          zipCode: Number(this.order_data.zipCode),
         },
         is_negotiation: this.order_data.is_negotiation,
         negotiation_price: this.order_data.negotiation_price,
+        negotiation_quantity: this.order_data.negotiation_quantity,
         contact: this.order_data.user_contact_no,
         dateTime: this.order_data.dateTime,
         status: this.order_data.status,
@@ -168,11 +185,6 @@ export class PurchaserequestComponent implements OnInit {
           alert("Order edited successfully");
           this.router.navigateByUrl("/farmer/purchaserequest");
         });
-
-      // Call the update method in your service to update the order
-      // this.customerService.updateOrder(updatedOrder).subscribe((response) => {
-      //   console.log("Order updated successfully", response);
-      // });
     }
   }
 
@@ -182,7 +194,7 @@ export class PurchaserequestComponent implements OnInit {
       this.customerService.deleteorder(id).subscribe(
         (data) => {
           console.log("deleted successfully", data);
-          this.getOrders();
+          this.getOrdersFarmer();
         },
         (err) => {
           alert("Some Error Occured");
@@ -192,5 +204,4 @@ export class PurchaserequestComponent implements OnInit {
       alert("You pressed Cancel!");
     }
   }
-
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { CustomerService } from "../../services/customer.service";
 import { Product, User, Order } from "../../../core/models/object-model";
+import { FormBuilder, FormGroup } from "@angular/forms";
 
 @Component({
   selector: "app-checkout",
@@ -9,6 +10,7 @@ import { Product, User, Order } from "../../../core/models/object-model";
   styleUrls: ["./checkout.component.scss"],
 })
 export class CheckoutComponent implements OnInit {
+  addEditProductForm1: FormGroup;
   single_product_id: number;
   user_id: number;
   individual_product: Product;
@@ -21,17 +23,51 @@ export class CheckoutComponent implements OnInit {
   is_negotiation: boolean;
   negotiation_price: number;
   isshopowner: boolean;
+  user_role: string;
+  loggedinname: string;
+  user_session_id: string;
+  mobNumber: string;
+  city: string;
+  negotiation_quantity: number;
+  edit: boolean;
+  popup_header: string;
+  singleOrder: any;
+  edit_order_id: any;
 
   constructor(
     private customerService: CustomerService,
+    private formBuilder: FormBuilder,
     private router: Router
   ) {}
 
   ngOnInit() {
+    this.user_role = sessionStorage.getItem("role");
+    this.loggedinname = sessionStorage.getItem("name");
+    this.user_session_id = sessionStorage.getItem("user_session_id");
     this.customerService.currentProduct.subscribe(
       (product) => (this.single_product_id = product)
     );
     this.user_id = Number(sessionStorage.getItem("user_session_id"));
+    this.addEditProductForm1 = this.formBuilder.group({
+      orderid: [""],
+      name: [""],
+      uploadPhoto: [""],
+      productDesc: [""],
+      mrp: [""],
+      dp: [""],
+      addedBy: [""],
+      contact: [""],
+      status: [""],
+      dateTime: [""],
+      addLine1: [""],
+      addLine2: [""],
+      city: [""],
+      state: [""],
+      zipCode: [""],
+      negotiation_price: [""],
+      negotiation_quantity: [""],
+    });
+
     this.productDetail(this.single_product_id);
     this.userAddress(this.user_id);
   }
@@ -76,6 +112,9 @@ export class CheckoutComponent implements OnInit {
         addedBy: this.individual_product.addedBy,
         user_session_id: this.individual_product.user_session_id,
         isshopowner: this.isshopowner,
+        role: this.user_role,
+        mobNumber: this.mobNumber,
+        city: this.city,
       },
       deliveryAddress: {
         id: 0,
@@ -86,17 +125,51 @@ export class CheckoutComponent implements OnInit {
         zipCode: Number(this.user_address.zipCode),
       },
       status: this.status,
-      is_negotiation: this.is_negotiation,
-      negotiation_price: this.negotiation_price,
+      is_negotiation: false,
+      negotiation_price: 0,
+      negotiation_quantity: 0,
       contact: this.user_contact_no,
       dateTime: new Date().toLocaleDateString(),
     };
     // console.log("Place order dto", this.order_dto);
     this.customerService.insertNewOrder(this.order_dto).subscribe((data) => {
       // console.log("Order placed successfully", data);
-      alert("Order places successfully");
+      // alert("Order places successfully");
       // this.router.navigateByUrl("/merchant/merchant-orders");
-      this.router.navigateByUrl("/farmer/purchaserequest");
+      this.router.navigateByUrl("/payment-gateway");
+    });
+  }
+
+  editProductPopup(id) {
+    // this.current_order_id = Order.id;
+    // this.user_contact_no = order.contact;
+    // this.status = order.status;
+    this.edit = true;
+    this.popup_header = "Update Order Status : " + id;
+    this.addEditProductForm1.reset();
+    this.customerService.singleOrder(id).subscribe((data) => {
+      this.singleOrder = data;
+      this.edit_order_id = data.id;
+      console.log("single order", this.singleOrder);
+      this.addEditProductForm1.setValue({
+        orderid: this.singleOrder.id || "",
+        name: this.singleOrder.product.name || "",
+        uploadPhoto: this.singleOrder.product.uploadPhoto || "",
+        productDesc: this.singleOrder.product.productDesc || "",
+        mrp: this.singleOrder.product.mrp || "",
+        dp: this.singleOrder.product.dp || "",
+        addedBy: this.singleOrder.product.addedBy || "",
+        addLine1: this.singleOrder.deliveryAddress.addLine1 || "",
+        addLine2: this.singleOrder.deliveryAddress.addLine2 || "",
+        city: this.singleOrder.deliveryAddress.city || "",
+        state: this.singleOrder.deliveryAddress.state || "",
+        zipCode: this.singleOrder.deliveryAddress.zipCode || "",
+        status: this.singleOrder.status || "",
+        contact: this.singleOrder.contact || "",
+        dateTime: this.singleOrder.dateTime || "",
+        negotiation_price : this.singleOrder.negotiation_price || "",
+        negotiation_quantity : this.singleOrder.negotiation_quantity || ""
+      });
     });
   }
 
@@ -118,6 +191,9 @@ export class CheckoutComponent implements OnInit {
         addedBy: this.individual_product.addedBy,
         user_session_id: this.individual_product.user_session_id,
         isshopowner: this.isshopowner,
+        role: this.user_role,
+        mobNumber: this.mobNumber,
+        city: this.city,
       },
       deliveryAddress: {
         id: 0,
@@ -128,20 +204,16 @@ export class CheckoutComponent implements OnInit {
         zipCode: Number(this.user_address.zipCode),
       },
       status: this.status,
+      negotiation_quantity: this.negotiation_quantity,
       contact: this.user_contact_no,
       dateTime: new Date().toLocaleDateString(),
     };
-    // console.log("Place order dto", this.order_dto);
-    this.customerService.insertNewOrder(this.order_dto).subscribe(
-      (data) => {
-        // console.log("Order placed successfully", data);
-        alert("Order places successfully");
-        // this.router.navigateByUrl("/merchant/merchant-orders");
-        this.router.navigateByUrl("/farmer/purchaserequest");
-      },
-      (err) => {
-        alert("Some Error Occured");
-      }
-    );
+    console.log("Place order dto", this.order_dto);
+    this.customerService.insertNewOrder(this.order_dto).subscribe((data) => {
+      // console.log("Order placed successfully", data);
+      alert("requested");
+      // this.router.navigateByUrl("/merchant/merchant-orders");
+      this.router.navigateByUrl("/payment-gateway");
+    });
   }
 }

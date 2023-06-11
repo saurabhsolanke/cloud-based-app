@@ -98,6 +98,7 @@ const routes: Routes = [
     path: '', canActivate: [BuyerAuthGaurdService], children: [
       { path: "merchant/addcrop", component: MerchantCropregComponent },
       { path: "merchant/product", component: ProductCrudComponent },
+      { path: "merchant/purchaserequest", component: PurchaserequestComponent },
       { path: "merchant-dashboard", component: BuyerDashboardComponent },
       { path: "merchant/checkout", component: CheckoutComponent },
       { path: "merchant/farmer-list", component: FarmerlistComponent },

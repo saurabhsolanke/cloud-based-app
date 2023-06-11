@@ -27,6 +27,7 @@ export class CartComponent implements OnInit {
   is_negotiation: boolean;
   negotiation_price: number;
   isshopowner: boolean;
+  negotiation_quantity: number;
 
   constructor(
     private customerService: CustomerService,
@@ -82,6 +83,9 @@ export class CartComponent implements OnInit {
         addedBy: this.individual_product.addedBy,
         user_session_id: this.individual_product.user_session_id,
         isshopowner: this.isshopowner,
+        role: this.individual_product.role,
+        mobNumber: this.individual_product.mobNumber,
+        city: this.individual_product.city
       },
       deliveryAddress: {
         id: 0,
@@ -94,6 +98,7 @@ export class CartComponent implements OnInit {
       status: this.status,
       is_negotiation: this.is_negotiation,
       negotiation_price: this.negotiation_price,
+      negotiation_quantity: this.negotiation_quantity,
       contact: this.user_contact_no,
       dateTime: new Date().toLocaleDateString(),
     };
@@ -112,6 +117,7 @@ export class CartComponent implements OnInit {
       userId: this.user_id,
       is_negotiation: true,
       negotiation_price: this.negotiation_price,
+      negotiation_quantity: this.negotiation_quantity,
       // sellerId: 2, //Now it is hard coded, we are not implimented multi farmer functionlity
       product: {
         id: this.individual_product.id,
@@ -124,6 +130,9 @@ export class CartComponent implements OnInit {
         addedBy: this.individual_product.addedBy,
         user_session_id: this.individual_product.user_session_id,
         isshopowner: this.isshopowner,
+        role: this.individual_product.role,
+        mobNumber: this.individual_product.mobNumber,
+        city: this.individual_product.city
       },
       deliveryAddress: {
         id: 0,

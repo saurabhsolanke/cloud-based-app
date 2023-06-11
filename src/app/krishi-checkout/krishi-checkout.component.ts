@@ -21,6 +21,7 @@ export class KrishiCheckoutComponent implements OnInit {
   is_negotiation: boolean;
   negotiation_price: number;
   isshopowner: boolean=true;
+  negotiation_quantity: number;
 
   constructor(
     private customerService: CustomerService,
@@ -73,6 +74,9 @@ export class KrishiCheckoutComponent implements OnInit {
         addedBy: this.individual_product.addedBy,
         user_session_id: this.individual_product.user_session_id,
         isshopowner: this.isshopowner,
+        role: this.individual_product.role,
+        mobNumber: this.individual_product.mobNumber,
+        city: this.individual_product.city
       },
       deliveryAddress: {
         id: 0,
@@ -85,15 +89,17 @@ export class KrishiCheckoutComponent implements OnInit {
       status: this.status,
       is_negotiation: this.is_negotiation,
       negotiation_price: this.negotiation_price,
+      negotiation_quantity: this.negotiation_quantity,
       contact: this.user_contact_no,
       dateTime: new Date().toLocaleDateString(),
     };
     // console.log("Place order dto", this.order_dto);
     this.customerService.insertNewOrder(this.order_dto).subscribe((data) => {
       // console.log("Order placed successfully", data);
-      alert("Order places successfully");
+      // alert("Order places successfully");
       // this.router.navigateByUrl("/merchant/merchant-orders");
-      this.router.navigateByUrl("/farmer/krishi");
+      // this.router.navigateByUrl("/farmer/krishi");
+      this.router.navigateByUrl("/payment-gateway");
     });
   }
 

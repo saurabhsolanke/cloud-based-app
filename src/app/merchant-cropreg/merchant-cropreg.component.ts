@@ -1,18 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 declare var jQuery: any;
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { Product } from "src/app/core/models/object-model";
 import { ProductService } from "src/app/shared/services/product.service";
 
-
 @Component({
-  selector: 'app-merchant-cropreg',
-  templateUrl: './merchant-cropreg.component.html',
-  styleUrls: ['./merchant-cropreg.component.scss']
+  selector: "app-merchant-cropreg",
+  templateUrl: "./merchant-cropreg.component.html",
+  styleUrls: ["./merchant-cropreg.component.scss"],
 })
 export class MerchantCropregComponent implements OnInit {
-
   all_product_data;
   my_product_data;
   addEditProductForm: FormGroup;
@@ -32,6 +30,9 @@ export class MerchantCropregComponent implements OnInit {
   user_role = "";
   addEditUserForm: any;
   isshopowner: boolean;
+  city: string;
+  role: string;
+  mobNumber: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -60,9 +61,9 @@ export class MerchantCropregComponent implements OnInit {
   addNewProduct() {
     this.addEditProduct = true;
     console.log("inside new");
-    
+
     if (this.addEditProductForm.invalid) {
-      alert('Error!! :-)\n\n' + JSON.stringify(this.addEditUserForm.value))
+      alert("Error!! :-)\n\n" + JSON.stringify(this.addEditUserForm.value));
       return;
     }
     this.product_data = this.addEditProductForm.value;
@@ -76,14 +77,15 @@ export class MerchantCropregComponent implements OnInit {
       status: this.product_data.status,
       addedBy: this.loggedinname,
       user_session_id: this.user_session_id,
-      isshopowner:this.isshopowner,
-
+      isshopowner: this.isshopowner,
+      role: this.role,
+      mobNumber: this.mobNumber,
+      city: this.city,
     };
     this.product_service.addNewProduct(this.product_dto).subscribe((data) => {
       console.log(data);
       this.router.navigateByUrl("/farmer/product");
-    }
-    );
+    });
   }
 
   updateProduct() {
@@ -103,7 +105,10 @@ export class MerchantCropregComponent implements OnInit {
       status: this.product_data.status,
       addedBy: this.loggedinname,
       user_session_id: this.user_session_id,
-      isshopowner:this.isshopowner,
+      isshopowner: this.isshopowner,
+      role: this.role,
+      mobNumber: this.mobNumber,
+      city: this.city,
     };
     this.product_service
       .updateProduct(this.edit_product_id, this.product_dto)
@@ -117,5 +122,4 @@ export class MerchantCropregComponent implements OnInit {
         }
       );
   }
-
 }
