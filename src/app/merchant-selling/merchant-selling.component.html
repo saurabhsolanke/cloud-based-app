@@ -9,12 +9,14 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Name of merchant</th>
-            <th scope="col">required crop</th>
-            <th scope="col">buying rate</th>
-            <th scope="col">address</th>
-            <th scope="col">contact</th>
-            <th scope="col">action</th>
+          <th scope="col">Name of Merchant</th>
+          <th scope="col">required crop</th>
+          <th scope="col">buying rate</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">address</th>
+          <th scope="col">contact</th>
+          <th scope="col">Photo</th>
+          <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -31,9 +33,11 @@
               <span class="sim-pointer" (click)="view(product.id)" data-toggle="modal"
                 data-target="#addEditProductModal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
             </td> -->
-            <td> <a class="btn btn-primary text-light float-right" data-toggle="modal"
-              data-target="#addEditProductModal">Negotiate</a></td>
-            <td> <a class="btn btn-primary text-light float-right" (click)="buyProduct(merchant.id)">Request</a></td>
+
+
+            <!-- <td> <a class="btn btn-primary text-light float-right" data-toggle="modal"
+              data-target="#addEditProductModal">Negotiate</a></td> -->
+            <td> <a class="btn btn-primary text-light float-right" (click)="buyProduct(merchant.id)">Proceed For selling</a></td>
   
   
             <div class="modal fade" id="addEditProductModal" tabindex="-1" role="dialog" aria-labelledby="addEditUserTitle"
@@ -51,7 +55,7 @@
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <button type="button" (click)="buyProduct1(merchant.id)" data-dismiss="modal"
-                  class="btn btn-primary">Request</button>
+                  class="btn btn-primary">Proceed For selling</button>
                 </div>
               
               </div>

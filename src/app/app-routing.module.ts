@@ -30,6 +30,7 @@ import { KrishiOrdersComponent } from './krishi-orders/krishi-orders.component';
 import { KrishiCheckoutComponent } from './krishi-checkout/krishi-checkout.component';
 import { MerchantCropregComponent } from './merchant-cropreg/merchant-cropreg.component';
 import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
+import { FarmerPurchasingRequestComponent } from './farmer-purchasing-request/farmer-purchasing-request.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/", pathMatch: "full" },
@@ -72,7 +73,7 @@ const routes: Routes = [
       { path: "farmer/seeds-pesticides", component: PesticidesSeedsComponent },
       { path: "farmer/cart", component: CartComponent },
       { path: "farmer/merchant-selling", component: MerchantSellingComponent },
-      { path: "farmer/purchaserequest", component: PurchaserequestComponent },
+      { path: "farmer/purchaserequestf", component: PurchaserequestComponent },
       { path: "farmer/order/:id", component: OrderViewComponent },
       { path: "farmer/checkout", component: FamercheckoutComponent },
       { path: "farmer/orders", component: FarmerOrdersComponent },
@@ -98,7 +99,7 @@ const routes: Routes = [
     path: '', canActivate: [BuyerAuthGaurdService], children: [
       { path: "merchant/addcrop", component: MerchantCropregComponent },
       { path: "merchant/product", component: ProductCrudComponent },
-      { path: "merchant/purchaserequest", component: PurchaserequestComponent },
+      { path: "merchant/purchaserequestm", component: FarmerPurchasingRequestComponent },
       { path: "merchant-dashboard", component: BuyerDashboardComponent },
       { path: "merchant/checkout", component: CheckoutComponent },
       { path: "merchant/farmer-list", component: FarmerlistComponent },

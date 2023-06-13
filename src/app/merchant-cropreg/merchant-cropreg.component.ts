@@ -30,9 +30,9 @@ export class MerchantCropregComponent implements OnInit {
   user_role = "";
   addEditUserForm: any;
   isshopowner: boolean;
-  city: string;
-  role: string;
-  mobNumber: string;
+  city = "";
+  role = "";
+  mobNumber = "";
 
   constructor(
     private formBuilder: FormBuilder,
@@ -63,7 +63,7 @@ export class MerchantCropregComponent implements OnInit {
     console.log("inside new");
 
     if (this.addEditProductForm.invalid) {
-      alert("Error!! :-)\n\n" + JSON.stringify(this.addEditUserForm.value));
+      // alert("Error!! :-)\n\n" + JSON.stringify(this.addEditUserForm.value));
       return;
     }
     this.product_data = this.addEditProductForm.value;
@@ -78,7 +78,7 @@ export class MerchantCropregComponent implements OnInit {
       addedBy: this.loggedinname,
       user_session_id: this.user_session_id,
       isshopowner: this.isshopowner,
-      role: this.role,
+      role: this.user_role,
       mobNumber: this.mobNumber,
       city: this.city,
     };
@@ -109,7 +109,7 @@ export class MerchantCropregComponent implements OnInit {
       role: this.role,
       mobNumber: this.mobNumber,
       city: this.city,
-    };
+    };    
     this.product_service
       .updateProduct(this.edit_product_id, this.product_dto)
       .subscribe(

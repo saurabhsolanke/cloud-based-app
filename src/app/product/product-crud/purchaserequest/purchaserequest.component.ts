@@ -83,7 +83,7 @@ export class PurchaserequestComponent implements OnInit {
 
     });
     this.getOrdersFarmer();
-    this.getOrdersMerchant();
+    // this.getOrdersMerchant();
     // this.getmyProduct();
   }
   get rf() {
@@ -91,17 +91,23 @@ export class PurchaserequestComponent implements OnInit {
   }
   getOrdersFarmer() {
     this.product_service.getAllorders().subscribe((data) => {
-      this.orders = data.filter((order) => {
-        return order.product.user_session_id == this.user_session_id;
-      });
+      this.orders = data.filter(
+        (order) => order.product.role === 'farmer'
+      )
+      // this.orders = data.filter(
+      //   (order) => order.user_Id == this.user_session_id
+      // );
+      console.log(data);
     });
   }
 
   getOrdersMerchant() {
     this.product_service.getAllorders().subscribe((data) => {
-      this.orders = data.filter(
-        (order) => order.product.user_session_id == this.user_session_id
-      );
+      this.orders = data
+      // this.orders = data.filter(
+      //   (order) => order.product.user_session_id == this.user_session_id
+      // );
+      console.log(data);
     });
   }
 
