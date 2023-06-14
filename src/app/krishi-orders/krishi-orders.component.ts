@@ -32,7 +32,9 @@ export class KrishiOrdersComponent implements OnInit {
     this.product_service.getAllorders().subscribe((data) => {
       this.orders = data.filter(
         // (order) => order.userId == this.user_session_id
-        (order) => order.userId == this.user_session_id && order.product.isshopowner === true
+        (order) => order.userId == this.user_session_id && order.product.isshopowner === true,
+        console.log(data.userId),
+        console.log( this.user_session_id)
       );
     });
   }

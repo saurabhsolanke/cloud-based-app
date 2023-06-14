@@ -29,8 +29,11 @@ export class FarmerOrdersComponent implements OnInit {
 
   getOrder() {
     this.product_service.getAllorders().subscribe((data) => {
+      // this.orders = data;
       this.orders = data.filter(
-        (order) => order.userId == this.user_session_id && this.user_role === 'farmer'
+        (order) => order.userId && order.product.role === 'farmer' ,
+        console.log(data.userId),
+        console.log( this.user_session_id)
       );
     });
   }

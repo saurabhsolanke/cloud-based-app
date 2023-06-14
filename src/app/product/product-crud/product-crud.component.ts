@@ -30,6 +30,7 @@ export class ProductCrudComponent implements OnInit {
   user_role = "";
   mobNumber = "";
   city = "";
+  role='';
   isshopowner: boolean;
   public display: number = 1;
 
@@ -143,7 +144,7 @@ export class ProductCrudComponent implements OnInit {
       addedBy: this.loggedinname,
       user_session_id: this.user_session_id,
       isshopowner: this.isshopowner,
-      role: this.user_role,
+      role: this.role,
       mobNumber: this.mobNumber,
       city: this.city,
     };

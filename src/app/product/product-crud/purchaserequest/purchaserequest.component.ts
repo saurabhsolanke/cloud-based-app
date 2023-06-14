@@ -47,8 +47,9 @@ export class PurchaserequestComponent implements OnInit {
   editing: any;
   edit: boolean = false;
 
-  mobNumber="";
-  city="";
+  mobNumber = "";
+  city = "";
+  user_id: number;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -61,8 +62,11 @@ export class PurchaserequestComponent implements OnInit {
   ngOnInit() {
     this.user_role = sessionStorage.getItem("role");
     this.loggedinname = sessionStorage.getItem("name");
+    console.log(this.loggedinname);
     this.user_session_id = sessionStorage.getItem("user_session_id");
+    this.user_id = Number(sessionStorage.getItem("user_session_id"));
     this.addEditProductForm1 = this.formBuilder.group({
+      user_id:[""],
       orderid: [""],
       name: [""],
       uploadPhoto: [""],
@@ -75,15 +79,21 @@ export class PurchaserequestComponent implements OnInit {
       dateTime: [""],
       addLine1: [""],
       addLine2: [""],
+      id: [""],
+      status1: [""],
       city: [""],
       state: [""],
       zipCode: [""],
       negotiation_price: [""],
       negotiation_quantity: [""],
-
+      user_session_id: [""],
+      role: [""],
+      mobNumber: [""],
+      // city : this.singleOrder.product.city || "",
     });
+
     this.getOrdersFarmer();
-    this.getOrdersMerchant();
+    // this.getOrdersMerchant();
     // this.getmyProduct();
   }
   get rf() {
@@ -91,17 +101,24 @@ export class PurchaserequestComponent implements OnInit {
   }
   getOrdersFarmer() {
     this.product_service.getAllorders().subscribe((data) => {
-      this.orders = data.filter((order) => {
-        return order.product.user_session_id == this.user_session_id;
-      });
+      this.orders = data.filter(
+        // (order) => order.userId && order.product.role === 'farmer',
+        (order) => order.product.role === "farmer",
+        console.log(data)
+      );
+      // this.orders = data.filter(
+      //   (order) => order.user_Id == this.user_session_id
+      // );
     });
   }
 
   getOrdersMerchant() {
     this.product_service.getAllorders().subscribe((data) => {
-      this.orders = data.filter(
-        (order) => order.product.user_session_id == this.user_session_id
-      );
+      this.orders = data;
+      // this.orders = data.filter(
+      //   (order) => order.product.user_session_id == this.user_session_id
+      // );
+      console.log(data);
     });
   }
 
@@ -117,13 +134,21 @@ export class PurchaserequestComponent implements OnInit {
       this.edit_order_id = data.id;
       console.log("single order", this.singleOrder);
       this.addEditProductForm1.setValue({
+        user_id: this.singleOrder.userId || "",
         orderid: this.singleOrder.id || "",
+        id: this.singleOrder.product.id || "",
         name: this.singleOrder.product.name || "",
         uploadPhoto: this.singleOrder.product.uploadPhoto || "",
         productDesc: this.singleOrder.product.productDesc || "",
         mrp: this.singleOrder.product.mrp || "",
         dp: this.singleOrder.product.dp || "",
         addedBy: this.singleOrder.product.addedBy || "",
+        user_session_id: this.singleOrder.product.user_session_id || "",
+        role: this.singleOrder.product.role || "",
+        mobNumber: this.singleOrder.product.mobNumber || "",
+        // city : this.singleOrder.product.city || "",
+        status1: this.singleOrder.product.status || "",
+
         addLine1: this.singleOrder.deliveryAddress.addLine1 || "",
         addLine2: this.singleOrder.deliveryAddress.addLine2 || "",
         city: this.singleOrder.deliveryAddress.city || "",
@@ -147,7 +172,7 @@ export class PurchaserequestComponent implements OnInit {
         userId: this.order_data.user_id,
         product: {
           // id: this.individual_product.id,
-          id: 0,
+          id: this.order_data.id,
           name: this.order_data.name,
           uploadPhoto: this.order_data.uploadPhoto,
           productDesc: this.order_data.productDesc,
@@ -159,7 +184,7 @@ export class PurchaserequestComponent implements OnInit {
           isshopowner: this.isshopowner,
           role: this.order_data.role,
           mobNumber: this.order_data.mobNumber,
-          city: this.order_data.city
+          city: this.order_data.city,
         },
         deliveryAddress: {
           id: 0,
@@ -183,7 +208,7 @@ export class PurchaserequestComponent implements OnInit {
 
           jQuery("#addEditProductModal").modal("toggle");
           alert("Order edited successfully");
-          this.router.navigateByUrl("/farmer/purchaserequest");
+          this.router.navigateByUrl("/farmer/purchaserequestf");
         });
     }
   }

@@ -13,7 +13,7 @@ export class ShopOrdersComponent implements OnInit {
   orders = [];
   userId: any;
   user_session_id: string;
-
+isshopowner;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -30,11 +30,10 @@ export class ShopOrdersComponent implements OnInit {
   getOrders() {
     this.product_service.getAllorders().subscribe((data) => {
       this.orders = data.filter(
-        (order) => order.userId
+        (order) => order.userId && order.product.isshopowner == true
       );
       // this.orders = data;
       // console.log(data);
-      
     });
   }
 

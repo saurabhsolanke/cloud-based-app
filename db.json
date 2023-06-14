@@ -99,16 +99,65 @@
       "password": "12345678",
       "role": "farmer",
       "id": 5
+    },
+    {
+      "age": 23,
+      "agreetc": true,
+      "dob": "1999-06-16",
+      "email": "merchant2@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "earth",
+        "addLine2": "erath",
+        "city": "pune",
+        "state": "Maharashtra",
+        "zipCode": "411057"
+      },
+      "mobNumber": "0987654321",
+      "name": "merchant2",
+      "password": "12345678",
+      "role": "merchant",
+      "id": 6
     }
   ],
   "products": [
     {
       "id": 1,
-      "name": "Farmer Crop1",
-      "uploadPhoto": "https://images.pexels.com/photos/1459339/pexels-photo-1459339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "productDesc": "3kg",
-      "mrp": "4000",
-      "dp": "2000",
+      "name": "farmer crop 1",
+      "uploadPhoto": "https://images.pexels.com/photos/1624076/pexels-photo-1624076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "productDesc": "1",
+      "mrp": "900",
+      "dp": "800",
+      "status": "active",
+      "addedBy": "Sanket Chavan",
+      "user_session_id": "5",
+      "role": "farmer",
+      "mobNumber": "9876543210",
+      "city": "Chh. Sambhaji Nagar"
+    },
+    {
+      "id": 5,
+      "name": "shop",
+      "uploadPhoto": "https://images.pexels.com/photos/1624076/pexels-photo-1624076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "productDesc": "1",
+      "mrp": "22",
+      "dp": "33",
+      "status": "active",
+      "addedBy": "Shopowner",
+      "isshopowner": true,
+      "user_session_id": "3",
+      "role": "shopowner",
+      "city": "Sambhaji Nagar",
+      "mobNumber": "9028066793"
+    },
+    {
+      "id": 6,
+      "name": "Roshan Crop1 Farmer",
+      "uploadPhoto": "https://images.pexels.com/photos/1624076/pexels-photo-1624076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "productDesc": "1",
+      "mrp": "10",
+      "dp": "9",
       "status": "active",
       "addedBy": "Roshan Sonone",
       "user_session_id": "1",
@@ -117,46 +166,66 @@
       "city": "Sambhaji Nagar"
     },
     {
-      "id": 2,
-      "name": "merchant 1",
-      "uploadPhoto": "https://images.pexels.com/photos/39511/purple-grapes-vineyard-napa-valley-napa-vineyard-39511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "productDesc": "2kg",
-      "mrp": "700",
-      "dp": "600",
+      "id": 7,
+      "name": "merchant crop1",
+      "uploadPhoto": "https://images.pexels.com/photos/1624076/pexels-photo-1624076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "productDesc": "1",
+      "mrp": "77",
+      "dp": "66",
       "status": "active",
       "addedBy": "Chetan Pawar",
       "user_session_id": "2",
       "role": "merchant",
-      "mobNumber": "9876543210",
-      "city": "Sambhaji Nagar"
-    },
-    {
-      "id": 3,
-      "name": "shopowner 1",
-      "uploadPhoto": "https://images.pexels.com/photos/41959/food-grains-bread-wheat-cereals-41959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "productDesc": "2Kg",
-      "mrp": "800",
-      "dp": "700",
-      "status": "active",
-      "addedBy": "Shopowner",
-      "isshopowner": true,
-      "user_session_id": "3",
-      "role": "shopowner",
-      "city": null,
-      "mobNumber": "9028066793"
+      "mobNumber": "",
+      "city": ""
     }
   ],
   "orders": [
     {
+      "userId": 5,
       "product": {
+        "id": 5,
+        "name": "shop",
+        "uploadPhoto": "https://images.pexels.com/photos/1624076/pexels-photo-1624076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "productDesc": "1",
+        "mrp": "22",
+        "dp": "33",
+        "status": "active",
+        "addedBy": "Shopowner",
+        "user_session_id": "3",
+        "isshopowner": true,
+        "role": "shopowner",
+        "mobNumber": "9028066793",
+        "city": "Sambhaji Nagar"
+      },
+      "deliveryAddress": {
         "id": 0,
-        "name": "Farmer Crop1",
-        "uploadPhoto": "https://images.pexels.com/photos/1459339/pexels-photo-1459339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "productDesc": "3kg",
-        "mrp": "4000",
-        "dp": "2000",
+        "addLine1": "Chh. Sambhaji Nagar",
+        "addLine2": null,
+        "city": "Chh. Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": 431003
+      },
+      "status": "Ordered",
+      "contact": "9876543210",
+      "dateTime": "14/06/2023",
+      "id": 1
+    },
+    {
+      "orderid": 1,
+      "userId": 2,
+      "product": {
+        "id": 1,
+        "name": "farmer crop 1",
+        "uploadPhoto": "https://images.pexels.com/photos/1624076/pexels-photo-1624076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "productDesc": "1",
+        "mrp": "900",
+        "dp": "800",
         "status": "Ordered",
-        "addedBy": "Roshan Sonone",
+        "addedBy": "Sanket Chavan",
+        "user_session_id": "5",
+        "role": "farmer",
+        "mobNumber": "9876543210",
         "city": "Sambhaji Nagar"
       },
       "deliveryAddress": {
@@ -167,71 +236,11 @@
         "state": "Maharashtra",
         "zipCode": 431003
       },
-      "negotiation_price": "11/06/2023",
-      "negotiation_quantity": "11/06/2023",
-      "dateTime": "11/06/2023",
+      "negotiation_price": "14/06/2023",
+      "negotiation_quantity": "14/06/2023",
+      "dateTime": "14/06/2023",
       "status": "Ordered",
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "product": {
-        "id": 3,
-        "name": "shopowner 1",
-        "uploadPhoto": "https://images.pexels.com/photos/41959/food-grains-bread-wheat-cereals-41959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "productDesc": "2Kg",
-        "mrp": "800",
-        "dp": "700",
-        "status": "active",
-        "addedBy": "Shopowner",
-        "user_session_id": "3",
-        "isshopowner": true,
-        "role": "shopowner",
-        "mobNumber": "9028066793",
-        "city": null
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Sambhaji Nagar",
-        "addLine2": "Sambhaji Nagar",
-        "city": "Sambhaji Nagar",
-        "state": "Maharashtra",
-        "zipCode": 431003
-      },
-      "status": "Ordered",
-      "contact": "9876543210",
-      "dateTime": "11/06/2023",
       "id": 2
-    },
-    {
-      "userId": 2,
-      "product": {
-        "id": 1,
-        "name": "Farmer Crop1",
-        "uploadPhoto": "https://images.pexels.com/photos/1459339/pexels-photo-1459339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "productDesc": "3kg",
-        "mrp": "4000",
-        "dp": "2000",
-        "status": "active",
-        "addedBy": "Roshan Sonone",
-        "user_session_id": "1",
-        "role": "merchant"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Sambhaji Nagar",
-        "addLine2": "Sambhaji Nagar",
-        "city": "Sambhaji Nagar",
-        "state": "Maharashtra",
-        "zipCode": 431003
-      },
-      "status": "requested",
-      "is_negotiation": false,
-      "negotiation_price": 0,
-      "negotiation_quantity": 0,
-      "contact": "9876543210",
-      "dateTime": "11/06/2023",
-      "id": 3
     }
   ],
   "cart": [],

@@ -33,7 +33,6 @@ export class MerchantSellingComponent implements OnInit {
   single_product_data;
 
   ngOnInit() {
-    // this.getAllMerchants();
     this.addEditProductForm = this.formBuilder.group({
       name: ["", Validators.required],
       uploadPhoto: ["", Validators.required],
@@ -45,6 +44,7 @@ export class MerchantSellingComponent implements OnInit {
       mobNumber: ["", Validators.required],
       city: ["", Validators.required]
     });
+    this.getAllMerchants();
     this.getAllProduct();
 
   }
@@ -107,7 +107,7 @@ export class MerchantSellingComponent implements OnInit {
     this.show_checkout = true;
     this.isshopowner = false;
     this.customerService.quickBuyProduct(id) //We pass to serice from service we can access in another component
-    this.router.navigateByUrl("/merchant/checkout");
+    this.router.navigateByUrl("/farmer/checkout");
   }
 
   view(id) {
