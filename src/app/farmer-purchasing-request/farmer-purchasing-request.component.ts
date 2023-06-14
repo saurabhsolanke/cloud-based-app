@@ -100,12 +100,12 @@ export class FarmerPurchasingRequestComponent implements OnInit {
   getOrdersMerchant() {
     this.product_service.getAllorders().subscribe((data) => {
       this.orders = data.filter(
-        (order) => order.product.role === 'merchant'
+        (order) => order.product.role === 'merchant',
+        console.log(data)
       )
       // this.orders = data.filter(
       //   (order) => order.product.user_session_id == this.user_session_id
       // );
-      console.log(data);
     });
   }
 

@@ -108,8 +108,6 @@ export class FamercheckoutComponent implements OnInit {
     this.order_dto = {
       orderid: this.id,
       userId: this.user_id,
-      is_negotiation: true,
-      negotiation_price: this.negotiation_price,
       // sellerId: 2, //Now it is hard coded, we are not implimented multi farmer functionlity
       product: {
         id: this.individual_product.id,
@@ -135,6 +133,8 @@ export class FamercheckoutComponent implements OnInit {
         zipCode: Number(this.user_address.zipCode),
       },
       status: this.status,
+      is_negotiation: true,
+      negotiation_price: this.negotiation_price,
       negotiation_quantity: this.negotiation_quantity,
       contact: this.user_contact_no,
       dateTime: new Date().toLocaleDateString(),

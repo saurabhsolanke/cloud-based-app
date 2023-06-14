@@ -113,8 +113,8 @@ export class CheckoutComponent implements OnInit {
         user_session_id: this.individual_product.user_session_id,
         isshopowner: this.isshopowner,
         role: this.individual_product.role,
-        mobNumber: this.mobNumber,
-        city: this.city,
+        mobNumber: this.individual_product.mobNumber,
+        city: this.individual_product.city,
       },
       deliveryAddress: {
         id: 0,
@@ -135,8 +135,8 @@ export class CheckoutComponent implements OnInit {
     this.customerService.insertNewOrder(this.order_dto).subscribe((data) => {
       // console.log("Order placed successfully", data);
       // alert("Order places successfully");
-      // this.router.navigateByUrl("/merchant/merchant-orders");
-      this.router.navigateByUrl("/payment-gateway");
+      this.router.navigateByUrl("/merchant/merchant-orders");
+      // this.router.navigateByUrl("/payment-gateway");
     });
   }
 
@@ -177,8 +177,6 @@ export class CheckoutComponent implements OnInit {
     this.order_dto = {
       orderid: this.id,
       userId: this.user_id,
-      is_negotiation: true,
-      negotiation_price: this.negotiation_price,
       // sellerId: 2, //Now it is hard coded, we are not implimented multi farmer functionlity
       product: {
         id: this.individual_product.id,
@@ -192,8 +190,8 @@ export class CheckoutComponent implements OnInit {
         user_session_id: this.individual_product.user_session_id,
         isshopowner: this.isshopowner,
         role: this.individual_product.role,
-        mobNumber: this.mobNumber,
-        city: this.city,
+        mobNumber: this.individual_product.mobNumber,
+        city: this.individual_product.city,
       },
       deliveryAddress: {
         id: 0,
@@ -204,6 +202,8 @@ export class CheckoutComponent implements OnInit {
         zipCode: Number(this.user_address.zipCode),
       },
       status: this.status,
+      is_negotiation: true,
+      negotiation_price: this.negotiation_price,
       negotiation_quantity: this.negotiation_quantity,
       contact: this.user_contact_no,
       dateTime: new Date().toLocaleDateString(),
@@ -212,8 +212,8 @@ export class CheckoutComponent implements OnInit {
     this.customerService.insertNewOrder(this.order_dto).subscribe((data) => {
       // console.log("Order placed successfully", data);
       alert("requested");
-      // this.router.navigateByUrl("/merchant/merchant-orders");
-      this.router.navigateByUrl("/payment-gateway");
+      this.router.navigateByUrl("/merchant/merchant-orders");
+      // this.router.navigateByUrl("/payment-gateway");
     });
   }
 }
