@@ -65,6 +65,8 @@ export class PurchaserequestComponent implements OnInit {
     console.log(this.loggedinname);
     this.user_session_id = sessionStorage.getItem("user_session_id");
     this.user_id = Number(sessionStorage.getItem("user_session_id"));
+    console.log(this.user_session_id);
+    
     this.addEditProductForm1 = this.formBuilder.group({
       user_id:[""],
       orderid: [""],
@@ -89,6 +91,7 @@ export class PurchaserequestComponent implements OnInit {
       user_session_id: [""],
       role: [""],
       mobNumber: [""],
+      merchantname:[""]
       // city : this.singleOrder.product.city || "",
     });
 
@@ -103,8 +106,8 @@ export class PurchaserequestComponent implements OnInit {
     this.product_service.getAllorders().subscribe((data) => {
       this.orders = data.filter(
         // (order) => order.userId && order.product.role === 'farmer',
-        (order) => order.product.role === "farmer",
-        console.log(data)
+        // (order) => order.product.role === "farmer",
+        (order) => order.product.user_session_id === this.user_session_id,
       );
       // this.orders = data.filter(
       //   (order) => order.user_Id == this.user_session_id
@@ -134,6 +137,7 @@ export class PurchaserequestComponent implements OnInit {
       this.edit_order_id = data.id;
       console.log("single order", this.singleOrder);
       this.addEditProductForm1.setValue({
+        merchantname: this.loggedinname || "",
         user_id: this.singleOrder.userId || "",
         orderid: this.singleOrder.id || "",
         id: this.singleOrder.product.id || "",
@@ -168,6 +172,7 @@ export class PurchaserequestComponent implements OnInit {
       this.order_data = this.addEditProductForm1.value;
       this.order_dto = {
         // const updatedOrder = {
+        merchantname: this.loggedinname,
         orderid: this.order_data.id,
         userId: this.order_data.user_id,
         product: {
@@ -208,7 +213,7 @@ export class PurchaserequestComponent implements OnInit {
 
           jQuery("#addEditProductModal").modal("toggle");
           alert("Order edited successfully");
-          this.router.navigateByUrl("/farmer/purchaserequestf");
+          this.router.navigateByUrl("/farmer/orders");
         });
     }
   }

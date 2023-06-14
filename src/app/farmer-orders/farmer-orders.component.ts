@@ -12,6 +12,8 @@ export class FarmerOrdersComponent implements OnInit {
 
   user_role: string;
   orders = [];
+  myorders = [];
+
   userId: any;
   user_session_id: string;
 
@@ -25,14 +27,24 @@ export class FarmerOrdersComponent implements OnInit {
     this.user_session_id = sessionStorage.getItem("user_session_id");
     console.log(this.user_session_id);
     this.getOrder();
+    this.getmyOrder();
   }
 
   getOrder() {
     this.product_service.getAllorders().subscribe((data) => {
       // this.orders = data;
       this.orders = data.filter(
-        (order) => order.userId && order.product.role === 'farmer' ,
-        console.log(data.userId),
+        (order) => order.product.user_session_id === this.user_session_id,
+        console.log( this.user_session_id)
+      );
+    });
+  }
+
+  getmyOrder() {
+    this.product_service.getAllorders().subscribe((data) => {
+      // this.orders = data;
+      this.orders = data.filter(
+        (order) => order.product.user_session_id === this.user_session_id,
         console.log( this.user_session_id)
       );
     });

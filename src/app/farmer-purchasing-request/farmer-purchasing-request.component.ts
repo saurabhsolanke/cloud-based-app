@@ -49,6 +49,7 @@ export class FarmerPurchasingRequestComponent implements OnInit {
 
   mobNumber="";
   city="";
+  user_id: number;
 
   constructor( private formBuilder: FormBuilder,
     private router: Router,
@@ -60,7 +61,12 @@ export class FarmerPurchasingRequestComponent implements OnInit {
     this.user_role = sessionStorage.getItem("role");
     this.loggedinname = sessionStorage.getItem("name");
     this.user_session_id = sessionStorage.getItem("user_session_id");
+    this.user_id = Number(sessionStorage.getItem("user_session_id"));
+    console.log(this.loggedinname);
+    console.log(this.user_session_id);
+
     this.addEditProductForm1 = this.formBuilder.group({
+      user_id:[""],
       orderid: [""],
       name: [""],
       uploadPhoto: [""],
@@ -73,11 +79,17 @@ export class FarmerPurchasingRequestComponent implements OnInit {
       dateTime: [""],
       addLine1: [""],
       addLine2: [""],
+      id: [""],
+      status1: [""],
       city: [""],
       state: [""],
       zipCode: [""],
       negotiation_price: [""],
       negotiation_quantity: [""],
+      user_session_id: [""],
+      role: [""],
+      mobNumber: [""],
+      merchantname:[""]
 
     });
     // this.getOrdersFarmer();
@@ -100,7 +112,7 @@ export class FarmerPurchasingRequestComponent implements OnInit {
   getOrdersMerchant() {
     this.product_service.getAllorders().subscribe((data) => {
       this.orders = data.filter(
-        (order) => order.product.role === 'merchant',
+        (order) => order.product.user_session_id === this.user_session_id,
         console.log(data)
       )
       // this.orders = data.filter(
@@ -121,13 +133,22 @@ export class FarmerPurchasingRequestComponent implements OnInit {
       this.edit_order_id = data.id;
       console.log("single order", this.singleOrder);
       this.addEditProductForm1.setValue({
+        merchantname: this.loggedinname || "",
+        user_id: this.singleOrder.userId || "",
         orderid: this.singleOrder.id || "",
+        id: this.singleOrder.product.id || "",
         name: this.singleOrder.product.name || "",
         uploadPhoto: this.singleOrder.product.uploadPhoto || "",
         productDesc: this.singleOrder.product.productDesc || "",
         mrp: this.singleOrder.product.mrp || "",
         dp: this.singleOrder.product.dp || "",
         addedBy: this.singleOrder.product.addedBy || "",
+        user_session_id: this.singleOrder.product.user_session_id || "",
+        role: this.singleOrder.product.role || "",
+        mobNumber: this.singleOrder.product.mobNumber || "",
+        // city : this.singleOrder.product.city || "",
+        status1: this.singleOrder.product.status || "",
+
         addLine1: this.singleOrder.deliveryAddress.addLine1 || "",
         addLine2: this.singleOrder.deliveryAddress.addLine2 || "",
         city: this.singleOrder.deliveryAddress.city || "",
@@ -146,6 +167,7 @@ export class FarmerPurchasingRequestComponent implements OnInit {
     if (this.addEditProductForm1.valid) {
       this.order_data = this.addEditProductForm1.value;
       this.order_dto = {
+        merchantname: this.loggedinname,
         // const updatedOrder = {
         orderid: this.order_data.id,
         userId: this.order_data.user_id,
@@ -187,7 +209,7 @@ export class FarmerPurchasingRequestComponent implements OnInit {
 
           jQuery("#addEditProductModal").modal("toggle");
           alert("Order edited successfully");
-          this.router.navigateByUrl("/farmer/purchaserequestm");
+          this.router.navigateByUrl("/merchant/merchant-orders");
         });
     }
   }

@@ -44,20 +44,19 @@ export class MerchantSellingComponent implements OnInit {
       mobNumber: ["", Validators.required],
       city: ["", Validators.required]
     });
-    this.getAllMerchants();
+    // this.getAllMerchants();
     this.getAllProduct();
 
   }
 
-  getAllMerchants() {
-    this.product_service.getAllusers().subscribe((data) => {
-      this.all_merchants = data.filter((product) => {
-        console.log(product.role);
-        return product.role === 'merchant'
-        this.all_merchants = data;
-      })
-    });
-  }
+  // getAllMerchants() {
+  //   this.product_service.getAllusers().subscribe((data) => {
+  //     this.all_merchants = data.filter((product) => {
+  //       return product.role === 'merchant'
+  //       this.all_merchants = data;
+  //     })
+  //   });
+  // }
 
   getAllProduct() {
     this.customerService.allProduct().subscribe(data => {

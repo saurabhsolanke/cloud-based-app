@@ -28,7 +28,7 @@
             <td>{{merchant.productDesc}}</td>
             <td>{{merchant.mobNumber}}</td>
             <td>{{merchant.city}}</td>
-            <td> <img src="{{merchant.uploadPhoto}}" class="img-fluid" alt=""></td>
+            <td> <img src="{{merchant.uploadPhoto}}" class="img-thumbnail" alt="" style="height : 90px"></td>
             <!-- <td>
               <span class="sim-pointer" (click)="view(product.id)" data-toggle="modal"
                 data-target="#addEditProductModal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
@@ -37,7 +37,7 @@
 
             <!-- <td> <a class="btn btn-primary text-light float-right" data-toggle="modal"
               data-target="#addEditProductModal">Negotiate</a></td> -->
-            <td> <a class="btn btn-primary text-light float-right" (click)="buyProduct(merchant.id)">Proceed For selling</a></td>
+            <td> <a class="btn btn-primary text-light float-right" (click)="buyProduct(merchant.id)">Proceed</a></td>
   
   
             <div class="modal fade" id="addEditProductModal" tabindex="-1" role="dialog" aria-labelledby="addEditUserTitle"
@@ -55,7 +55,7 @@
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <button type="button" (click)="buyProduct1(merchant.id)" data-dismiss="modal"
-                  class="btn btn-primary">Proceed For selling</button>
+                  class="btn btn-primary">Proceed</button>
                 </div>
               
               </div>

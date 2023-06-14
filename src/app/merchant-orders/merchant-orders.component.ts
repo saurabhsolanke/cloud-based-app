@@ -29,7 +29,7 @@ export class MerchantOrdersComponent implements OnInit {
   getOrder() {
     this.product_service.getAllorders().subscribe((data) => {
       this.orders = data.filter(
-        (order) => order.userId && order.product.role === 'farmer' ,
+        (order) => order.product.user_session_id === this.user_session_id,
       );
     });
   }

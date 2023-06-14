@@ -37,3 +37,43 @@
   </div>
 
 </div>
+<!-- 
+<div class="row">
+  <div class="col-3">
+
+  </div>
+  <div class="col">
+
+    <p class="display-4"></p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">orderId</th>
+          <th scope="col">Name</th>
+          <th scope="col">Product Desc</th>
+          <th scope="col">Price</th>
+          <th scope="col">contact</th>
+          <th scope="col">time</th>
+          <th scope="col">Added By</th>
+          <th scope="col">Status</th>
+          <th scope="col">action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <th scope="row">{{order.id}}</th>
+          <td>{{order.product.name}}</td>
+          <td>{{order.product.productDesc}}</td>
+          <td>{{order.product.dp}}</td>
+          <td>{{order.contact}}</td>
+          <td>{{order.dateTime}}</td>
+          <td>{{order.product.addedBy}},  {{order.product.role}}</td>
+          <td>{{order.status}}</td>
+          <td > 
+            <button [disabled]="order.status === 'requested' " type="button" routerLink="/payment-gateway" class="btn btn-success">Pay Now</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->

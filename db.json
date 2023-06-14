@@ -23,26 +23,6 @@
     {
       "age": 23,
       "agreetc": true,
-      "dob": "1999-01-10",
-      "email": "admin@gmail.com",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "Sambhaji Nagar",
-        "addLine2": "Sambhaji Nagar",
-        "city": "Sambhaji Nagar",
-        "state": "Maharashtra",
-        "zipCode": "431003"
-      },
-      "mobNumber": "9876543210",
-      "name": "Admin",
-      "password": "12345678",
-      "role": "admin",
-      "id": 4
-    },
-    {
-      "age": 23,
-      "agreetc": true,
       "dob": "1999-08-31",
       "email": "chetan.pawar@gmail.com",
       "gender": "Male",
@@ -79,6 +59,26 @@
       "password": "12345678",
       "role": "shopowner",
       "id": 3
+    },
+    {
+      "age": 23,
+      "agreetc": true,
+      "dob": "1999-01-10",
+      "email": "admin@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": "431003"
+      },
+      "mobNumber": "9876543210",
+      "name": "Admin",
+      "password": "12345678",
+      "role": "admin",
+      "id": 4
     },
     {
       "age": 23,
@@ -122,20 +122,6 @@
     }
   ],
   "products": [
-    {
-      "id": 1,
-      "name": "farmer crop 1",
-      "uploadPhoto": "https://images.pexels.com/photos/1624076/pexels-photo-1624076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "productDesc": "1",
-      "mrp": "900",
-      "dp": "800",
-      "status": "active",
-      "addedBy": "Sanket Chavan",
-      "user_session_id": "5",
-      "role": "farmer",
-      "mobNumber": "9876543210",
-      "city": "Chh. Sambhaji Nagar"
-    },
     {
       "id": 5,
       "name": "shop",
@@ -182,48 +168,19 @@
   ],
   "orders": [
     {
-      "userId": 5,
-      "product": {
-        "id": 5,
-        "name": "shop",
-        "uploadPhoto": "https://images.pexels.com/photos/1624076/pexels-photo-1624076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "productDesc": "1",
-        "mrp": "22",
-        "dp": "33",
-        "status": "active",
-        "addedBy": "Shopowner",
-        "user_session_id": "3",
-        "isshopowner": true,
-        "role": "shopowner",
-        "mobNumber": "9028066793",
-        "city": "Sambhaji Nagar"
-      },
-      "deliveryAddress": {
-        "id": 0,
-        "addLine1": "Chh. Sambhaji Nagar",
-        "addLine2": null,
-        "city": "Chh. Sambhaji Nagar",
-        "state": "Maharashtra",
-        "zipCode": 431003
-      },
-      "status": "Ordered",
-      "contact": "9876543210",
-      "dateTime": "14/06/2023",
-      "id": 1
-    },
-    {
-      "orderid": 1,
+      "merchantname": "Roshan Sonone",
+      "orderid": 6,
       "userId": 2,
       "product": {
-        "id": 1,
-        "name": "farmer crop 1",
+        "id": 6,
+        "name": "Roshan Crop1 Farmer",
         "uploadPhoto": "https://images.pexels.com/photos/1624076/pexels-photo-1624076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "productDesc": "1",
-        "mrp": "900",
-        "dp": "800",
+        "mrp": "10",
+        "dp": "9",
         "status": "Ordered",
-        "addedBy": "Sanket Chavan",
-        "user_session_id": "5",
+        "addedBy": "Roshan Sonone",
+        "user_session_id": "1",
         "role": "farmer",
         "mobNumber": "9876543210",
         "city": "Sambhaji Nagar"
@@ -236,11 +193,105 @@
         "state": "Maharashtra",
         "zipCode": 431003
       },
-      "negotiation_price": "14/06/2023",
-      "negotiation_quantity": "14/06/2023",
-      "dateTime": "14/06/2023",
+      "negotiation_price": "15/06/2023",
+      "negotiation_quantity": "15/06/2023",
+      "dateTime": "15/06/2023",
+      "status": "Ordered",
+      "id": 1
+    },
+    {
+      "merchantname": "Chetan Pawar",
+      "orderid": 7,
+      "userId": 1,
+      "product": {
+        "id": 0,
+        "name": "merchant crop1",
+        "uploadPhoto": "https://images.pexels.com/photos/1624076/pexels-photo-1624076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "productDesc": "1",
+        "mrp": "77",
+        "dp": "66",
+        "status": "Ordered",
+        "addedBy": "Chetan Pawar",
+        "user_session_id": "2",
+        "role": "merchant",
+        "mobNumber": "",
+        "city": "Sambhaji Nagar"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": 431003
+      },
+      "negotiation_price": "15/06/2023",
+      "negotiation_quantity": "15/06/2023",
+      "dateTime": "15/06/2023",
       "status": "Ordered",
       "id": 2
+    },
+    {
+      "merchantname": "Roshan Sonone",
+      "orderid": 6,
+      "userId": 2,
+      "product": {
+        "id": 6,
+        "name": "Roshan Crop1 Farmer",
+        "uploadPhoto": "https://images.pexels.com/photos/1624076/pexels-photo-1624076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "productDesc": "1",
+        "mrp": "10",
+        "dp": "9",
+        "status": "Ordered",
+        "addedBy": "Roshan Sonone",
+        "user_session_id": "1",
+        "role": "farmer",
+        "mobNumber": "9876543210",
+        "city": "Sambhaji Nagar"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": 431003
+      },
+      "negotiation_price": "15/06/2023",
+      "negotiation_quantity": "15/06/2023",
+      "dateTime": "15/06/2023",
+      "status": "Ordered",
+      "id": 3
+    },
+    {
+      "merchantname": "Roshan Sonone",
+      "userId": 1,
+      "product": {
+        "id": 7,
+        "name": "merchant crop1",
+        "uploadPhoto": "https://images.pexels.com/photos/1624076/pexels-photo-1624076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "productDesc": "1",
+        "mrp": "77",
+        "dp": "66",
+        "status": "active",
+        "addedBy": "Chetan Pawar",
+        "user_session_id": "2",
+        "role": "merchant",
+        "mobNumber": "",
+        "city": ""
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": 431003
+      },
+      "status": "requested",
+      "contact": "9876543210",
+      "dateTime": "15/06/2023",
+      "id": 4
     }
   ],
   "cart": [],
