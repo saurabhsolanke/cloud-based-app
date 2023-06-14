@@ -28,6 +28,7 @@ export class CartComponent implements OnInit {
   negotiation_price: number;
   isshopowner: boolean;
   negotiation_quantity: number;
+  loggedinname: string;
 
   constructor(
     private customerService: CustomerService,
@@ -38,6 +39,7 @@ export class CartComponent implements OnInit {
     this.customerService.currentProduct.subscribe(
       (product) => (this.single_product_id = product)
     );
+    this.loggedinname = sessionStorage.getItem("name");
     this.user_id = Number(sessionStorage.getItem("user_session_id"));
     this.productDetail(this.single_product_id);
     this.userAddress(this.user_id);
@@ -69,6 +71,7 @@ export class CartComponent implements OnInit {
 
   placeOrder() {
     this.order_dto = {
+      merchantname: this.loggedinname,
       orderid: this.id,
       userId: this.user_id,
       // sellerId: 2, //Now it is hard coded, we are not implimented multi farmer functionlity
@@ -115,6 +118,7 @@ export class CartComponent implements OnInit {
     this.order_dto = {
       orderid: this.id,
       userId: this.user_id,
+      merchantname: this.loggedinname,
       is_negotiation: true,
       negotiation_price: this.negotiation_price,
       negotiation_quantity: this.negotiation_quantity,

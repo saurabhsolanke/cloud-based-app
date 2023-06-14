@@ -22,6 +22,7 @@ export class KrishiCheckoutComponent implements OnInit {
   negotiation_price: number;
   isshopowner: boolean=true;
   negotiation_quantity: number;
+  loggedinname: string;
 
   constructor(
     private customerService: CustomerService,
@@ -33,6 +34,7 @@ export class KrishiCheckoutComponent implements OnInit {
       (product) => (this.single_product_id = product)
     );
     this.user_id = Number(sessionStorage.getItem("user_session_id"));
+    this.loggedinname = sessionStorage.getItem("name");
     this.productDetail(this.single_product_id);
     this.userAddress(this.user_id);
   }
@@ -62,6 +64,7 @@ export class KrishiCheckoutComponent implements OnInit {
     this.order_dto = {
       orderid: this.id,
       userId: this.user_id,
+      merchantname: this.loggedinname,
       // sellerId: 2, //Now it is hard coded, we are not implimented multi farmer functionlity
       product: {
         id: this.individual_product.id,

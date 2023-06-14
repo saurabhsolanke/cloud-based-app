@@ -66,6 +66,7 @@
             <thead class="table-dark">
                 <tr>
                     <th scope="col">#</th>
+                    <!-- <th>id</th> -->
                     <th scope="col">Name</th>
                     <th scope="col">Mob</th>
                     <th scope="col">Email</th>
@@ -78,6 +79,7 @@
             <tbody class="table-light">
                 <tr *ngFor="let user_data of all_user_data; let i = index">
                     <th scope="row">{{i+1}}</th>
+                    <!-- <td>{{user_data.id}}</td> -->
                     <td>{{user_data.name}}</td>
                     <td>{{user_data.mobNumber}}</td>
                     <td>{{user_data.email}}</td>

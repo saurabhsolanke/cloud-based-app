@@ -53,6 +53,7 @@
                         <th>buying rate</th>
                         <th>contact</th>
                         <th>time</th>
+                        <th>Request By</th>
                         <th>Negotiated Price</th>
                         <th>Negotiated quantity</th>
                         <th>Status</th>
@@ -67,10 +68,11 @@
                         <td>{{order.product.dp}}</td>
                         <td>{{order.contact}}</td>
                         <td>{{order.dateTime}}</td>
+                        <td>{{order.merchantname}}</td>
                         <td>{{order.negotiation_price}}</td>
                         <td>{{order.negotiation_quantity}}</td>
 
-                        <td><span [ngClass]="" class="badge badge-primary">{{order.status}}</span> </td>
+                        <td><span [ngClass]=" "  class="badge badge-primary">{{order.status}}</span> </td>
                         <td>
                             <span class="sim-pointer" data-toggle="modal" data-target="#addEditProductModal"
                                 (click)="editProductPopup(order.id)"><i class="fa fa-pencil-square-o"
