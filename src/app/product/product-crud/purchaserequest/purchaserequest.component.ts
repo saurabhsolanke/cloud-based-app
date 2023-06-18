@@ -50,7 +50,8 @@ export class PurchaserequestComponent implements OnInit {
   mobNumber = "";
   city = "";
   user_id: number;
-
+  approvedby: string;
+  requestedby: string;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -66,9 +67,9 @@ export class PurchaserequestComponent implements OnInit {
     this.user_session_id = sessionStorage.getItem("user_session_id");
     this.user_id = Number(sessionStorage.getItem("user_session_id"));
     console.log(this.user_session_id);
-    
+
     this.addEditProductForm1 = this.formBuilder.group({
-      user_id:[""],
+      user_id: [""],
       orderid: [""],
       name: [""],
       uploadPhoto: [""],
@@ -91,7 +92,7 @@ export class PurchaserequestComponent implements OnInit {
       user_session_id: [""],
       role: [""],
       mobNumber: [""],
-      merchantname:[""]
+      requestedby: [""],
       // city : this.singleOrder.product.city || "",
     });
 
@@ -107,7 +108,7 @@ export class PurchaserequestComponent implements OnInit {
       this.orders = data.filter(
         // (order) => order.userId && order.product.role === 'farmer',
         // (order) => order.product.role === "farmer",
-        (order) => order.product.user_session_id === this.user_session_id,
+        (order) => order.product.user_session_id === this.user_session_id
       );
       // this.orders = data.filter(
       //   (order) => order.user_Id == this.user_session_id
@@ -137,7 +138,7 @@ export class PurchaserequestComponent implements OnInit {
       this.edit_order_id = data.id;
       console.log("single order", this.singleOrder);
       this.addEditProductForm1.setValue({
-        merchantname: this.loggedinname || "",
+        requestedby: this.singleOrder.requestedby || "",
         user_id: this.singleOrder.userId || "",
         orderid: this.singleOrder.id || "",
         id: this.singleOrder.product.id || "",
@@ -159,10 +160,10 @@ export class PurchaserequestComponent implements OnInit {
         state: this.singleOrder.deliveryAddress.state || "",
         zipCode: this.singleOrder.deliveryAddress.zipCode || "",
         status: this.singleOrder.status || "",
-        contact: this.singleOrder.contact || "",
+        contact: this.singleOrder.mobNumber || "",
         dateTime: this.singleOrder.dateTime || "",
-        negotiation_price: this.singleOrder.dateTime || "",
-        negotiation_quantity: this.singleOrder.dateTime || "",
+        negotiation_price: this.singleOrder.negotiation_price || "",
+        negotiation_quantity: this.singleOrder.negotiation_quantity || "",
       });
     });
   }
@@ -172,7 +173,8 @@ export class PurchaserequestComponent implements OnInit {
       this.order_data = this.addEditProductForm1.value;
       this.order_dto = {
         // const updatedOrder = {
-        merchantname: this.loggedinname,
+        requestedby: this.order_data.requestedby,
+        approvedby: this.loggedinname,
         orderid: this.order_data.id,
         userId: this.order_data.user_id,
         product: {

@@ -23,6 +23,7 @@ export class KrishiCheckoutComponent implements OnInit {
   isshopowner: boolean=true;
   negotiation_quantity: number;
   loggedinname: string;
+  approvedby: string;
 
   constructor(
     private customerService: CustomerService,
@@ -64,8 +65,8 @@ export class KrishiCheckoutComponent implements OnInit {
     this.order_dto = {
       orderid: this.id,
       userId: this.user_id,
-      merchantname: this.loggedinname,
-      // sellerId: 2, //Now it is hard coded, we are not implimented multi farmer functionlity
+      requestedby: this.loggedinname,
+      approvedby: this.approvedby,      // sellerId: 2, //Now it is hard coded, we are not implimented multi farmer functionlity
       product: {
         id: this.individual_product.id,
         name: this.individual_product.name,

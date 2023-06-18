@@ -22,6 +22,7 @@ export class FamercheckoutComponent implements OnInit {
   isshopowner: boolean;
   negotiation_quantity: number;
   loggedinname: string;
+  approvedby: string;
 
   constructor(
     private customerService: CustomerService,
@@ -66,8 +67,9 @@ export class FamercheckoutComponent implements OnInit {
   placeOrder() {
     this.order_dto = {
       orderid: this.id,
-      merchantname: this.loggedinname,
-      userId: this.user_id,
+      requestedby: this.loggedinname,
+      approvedby: '',
+            userId: this.user_id,
       // sellerId: 2, //Now it is hard coded, we are not implimented multi farmer functionlity
       product: {
         id: this.individual_product.id,
@@ -110,8 +112,8 @@ export class FamercheckoutComponent implements OnInit {
 
   negotiatedOrder() {
     this.order_dto = {
-      merchantname: this.loggedinname,
-
+      requestedby: this.loggedinname,
+      approvedby: this.approvedby,
       orderid: this.id,
       userId: this.user_id,
       // sellerId: 2, //Now it is hard coded, we are not implimented multi farmer functionlity

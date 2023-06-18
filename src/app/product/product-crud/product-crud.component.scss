@@ -114,3 +114,50 @@ body {
       }
     }
   }
+
+
+  /* Styles for the toggle container */
+.toggle-container {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #dcdcdc;
+  overflow: hidden;
+}
+
+/* Styles for the toggle button */
+.toggle-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+/* Styles for the toggle button label */
+.toggle-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  color: #999999;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+/* Styles for the checked state */
+.toggle-container input:checked + .toggle-button {
+  transform: translateX(100%);
+}
+
+.toggle-container input:checked + .toggle-button .toggle-label {
+  color: #007aff;
+}

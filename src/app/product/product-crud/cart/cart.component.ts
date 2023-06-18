@@ -29,6 +29,7 @@ export class CartComponent implements OnInit {
   isshopowner: boolean;
   negotiation_quantity: number;
   loggedinname: string;
+  approvedby: string;
 
   constructor(
     private customerService: CustomerService,
@@ -71,8 +72,9 @@ export class CartComponent implements OnInit {
 
   placeOrder() {
     this.order_dto = {
-      merchantname: this.loggedinname,
-      orderid: this.id,
+      requestedby: this.loggedinname,
+      approvedby: this.approvedby,
+            orderid: this.id,
       userId: this.user_id,
       // sellerId: 2, //Now it is hard coded, we are not implimented multi farmer functionlity
       product: {
@@ -118,8 +120,8 @@ export class CartComponent implements OnInit {
     this.order_dto = {
       orderid: this.id,
       userId: this.user_id,
-      merchantname: this.loggedinname,
-      is_negotiation: true,
+      requestedby: this.loggedinname,
+      approvedby: this.approvedby,      is_negotiation: true,
       negotiation_price: this.negotiation_price,
       negotiation_quantity: this.negotiation_quantity,
       // sellerId: 2, //Now it is hard coded, we are not implimented multi farmer functionlity

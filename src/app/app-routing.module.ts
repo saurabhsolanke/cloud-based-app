@@ -31,6 +31,8 @@ import { KrishiCheckoutComponent } from './krishi-checkout/krishi-checkout.compo
 import { MerchantCropregComponent } from './merchant-cropreg/merchant-cropreg.component';
 import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
 import { FarmerPurchasingRequestComponent } from './farmer-purchasing-request/farmer-purchasing-request.component';
+import { OrdersComponent } from './admin/orders/orders.component';
+import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/", pathMatch: "full" },
@@ -52,7 +54,9 @@ const routes: Routes = [
       { path: "my-profile", component: UserProfileComponent },
       { path: "admin/user", component: UserCrudComponent },
       { path: "admin/product", component: ProductCrudComponent },
-      { path: "admin/govSchemes", component: SchemesComponent }
+      { path: "admin/govSchemes", component: SchemesComponent },
+      { path: "admin/orders", component: OrdersComponent },
+      { path: "admin/feedbacks", component: FeedbacksComponent },
     ]
   },
 

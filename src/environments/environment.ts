@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   server_url: "http://localhost:3000",
-  // server_url: "http://192.168.0.106:3000"
+  // server_url: "http://192.168.1.19:3000"
   // supabaseUrl: 'https://ggukqoqhrbfpulcrvkoo.supabase.co',
   // supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdndWtxb3FocmJmcHVsY3J2a29vIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQxMTk4NDksImV4cCI6MTk5OTY5NTg0OX0.CNLMx-xNuWxEu4-JKlJfY9mz840GQ0jq6Dit2QZP_Wc',
 };
