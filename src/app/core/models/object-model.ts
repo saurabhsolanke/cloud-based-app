@@ -53,7 +53,8 @@ export class Order {
   is_negotiation: boolean;
   negotiation_price: number;
   negotiation_quantity:number;
-  merchantname: string;
+  requestedby: string;
+  approvedby:string;
   static id: any;
 }
 

@@ -10,11 +10,11 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Name of Farmer</th>
-          <th scope="col">required crop</th>
-          <th scope="col">buying rate</th>
+          <th scope="col">Crop</th>
+          <th scope="col">Price</th>
           <th scope="col">Quantity</th>
-          <th scope="col">address</th>
-          <th scope="col">contact</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Address</th>
           <th scope="col">Photo</th>
           <th scope="col">action</th>
         </tr>
@@ -33,9 +33,11 @@
             <span class="sim-pointer" (click)="view(product.id)" data-toggle="modal"
               data-target="#addEditProductModal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
           </td> -->
-          <td> <a class="btn btn-primary text-light float-right" data-toggle="modal"
-            data-target="#addEditProductModal">Negotiate</a></td>
+          <!-- <td> <a class="btn btn-primary text-light float-right" data-toggle="modal"
+            data-target="#addEditProductModal">Negotiate</a></td> -->
           <td> <a class="btn btn-primary text-light float-right" (click)="buyProduct(product.id)">Request</a></td>
+          
+          
           <div class="modal fade" id="addEditProductModal" tabindex="-1" role="dialog" aria-labelledby="addEditUserTitle"
           aria-hidden="true">
           <div class="modal-dialog modal-dialog-scrollable" role="document">

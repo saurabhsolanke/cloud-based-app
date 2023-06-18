@@ -50,6 +50,8 @@ export class FarmerPurchasingRequestComponent implements OnInit {
   mobNumber="";
   city="";
   user_id: number;
+  approvedby: string;
+  requestedby: string;
 
   constructor( private formBuilder: FormBuilder,
     private router: Router,
@@ -89,7 +91,7 @@ export class FarmerPurchasingRequestComponent implements OnInit {
       user_session_id: [""],
       role: [""],
       mobNumber: [""],
-      merchantname:[""]
+      requestedby:[""]
 
     });
     // this.getOrdersFarmer();
@@ -133,7 +135,7 @@ export class FarmerPurchasingRequestComponent implements OnInit {
       this.edit_order_id = data.id;
       console.log("single order", this.singleOrder);
       this.addEditProductForm1.setValue({
-        merchantname: this.loggedinname || "",
+        requestedby: this.singleOrder.requestedby || "",
         user_id: this.singleOrder.userId || "",
         orderid: this.singleOrder.id || "",
         id: this.singleOrder.product.id || "",
@@ -157,8 +159,8 @@ export class FarmerPurchasingRequestComponent implements OnInit {
         status: this.singleOrder.status || "",
         contact: this.singleOrder.contact || "",
         dateTime: this.singleOrder.dateTime || "",
-        negotiation_price: this.singleOrder.dateTime || "",
-        negotiation_quantity: this.singleOrder.dateTime || "",
+        negotiation_price: this.singleOrder.negotiation_price || "",
+        negotiation_quantity: this.singleOrder.negotiation_quantity || "",
       });
     });
   }
@@ -167,8 +169,8 @@ export class FarmerPurchasingRequestComponent implements OnInit {
     if (this.addEditProductForm1.valid) {
       this.order_data = this.addEditProductForm1.value;
       this.order_dto = {
-        merchantname: this.loggedinname,
-        // const updatedOrder = {
+        requestedby: this.order_data.requestedby,
+        approvedby: this.loggedinname,        // const updatedOrder = {
         orderid: this.order_data.id,
         userId: this.order_data.user_id,
         product: {

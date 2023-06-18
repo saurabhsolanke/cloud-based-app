@@ -14,6 +14,7 @@ export class CustomerService {
   public product_url = environment.server_url + '/products/';
   public user_url = environment.server_url + '/user/';
   public order_url = environment.server_url + '/orders/';
+  public feedback = environment.server_url + '/feedbacks/';
   apiUrl: any;
   http: any;
 
@@ -21,6 +22,14 @@ export class CustomerService {
 
   allProduct(): Observable<any> {
     return this.apiService.get(this.product_url)
+  }
+
+  submitForm(formData: any): Observable<any> {
+    return this.apiService.post(this.feedback, formData);
+  }
+
+  allfeedbacks(){
+    return this.apiService.get(this.feedback)
   }
 
   allorder(): Observable<any> {

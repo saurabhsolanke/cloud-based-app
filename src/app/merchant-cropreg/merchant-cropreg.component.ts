@@ -43,6 +43,8 @@ export class MerchantCropregComponent implements OnInit {
   ngOnInit() {
     this.user_role = sessionStorage.getItem("role");
     this.loggedinname = sessionStorage.getItem("name");
+    this.city = sessionStorage.getItem("city");
+    this.mobNumber = sessionStorage.getItem("mobNumber");
     this.user_session_id = sessionStorage.getItem("user_session_id");
     this.addEditProductForm = this.formBuilder.group({
       name: ["", Validators.required],
@@ -84,7 +86,7 @@ export class MerchantCropregComponent implements OnInit {
     };
     this.product_service.addNewProduct(this.product_dto).subscribe((data) => {
       console.log(data);
-      this.router.navigateByUrl("/farmer/product");
+      this.router.navigateByUrl("/merchant/product");
     });
   }
 

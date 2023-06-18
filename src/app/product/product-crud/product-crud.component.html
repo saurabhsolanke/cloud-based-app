@@ -53,12 +53,13 @@
                     </ul>
                 </div>
             </div>
-
             <div id="view" class="e-btn-group">
-                <input type="radio" id="left" name="align" selected value="1" (click)="changeDisplay(1)" />
+                <button type="button" id="left" class="e-btn btn btn-sm bg-secondary text-light" (click)="changeDisplay(1)">List View</button> &nbsp;
+                <button type="button" id="right" class="e-btn btn btn-sm bg-secondary text-light" (click)="changeDisplay(2)">Grid View</button>
+                <!-- <input type="radio" id="left" name="align" selected value="1" (click)="changeDisplay(1)" />
                 <label class="e-btn" for="left">List View </label> &nbsp;
                 <input type="radio" id="right" name="align" value="2" (click)="changeDisplay(2)" />
-                <label class="e-btn" for="right">Grid View</label>
+                <label class="e-btn" for="right">Grid View</label> -->
             </div>
             
             <div class="col-11 p-5 shadow" *ngIf="user_role == 'farmer' || user_role =='merchant' ">

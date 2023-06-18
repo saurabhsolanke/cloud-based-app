@@ -38,6 +38,8 @@ import { KrishiCheckoutComponent } from './krishi-checkout/krishi-checkout.compo
 import { MerchantCropregComponent } from './merchant-cropreg/merchant-cropreg.component';
 import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
 import { FarmerPurchasingRequestComponent } from './farmer-purchasing-request/farmer-purchasing-request.component';
+import { OrdersComponent } from './admin/orders/orders.component';
+import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -68,6 +70,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MerchantCropregComponent,
     PaymentGatewayComponent,
     FarmerPurchasingRequestComponent,
+    OrdersComponent,
+    FeedbacksComponent,
 
   ],
   imports: [

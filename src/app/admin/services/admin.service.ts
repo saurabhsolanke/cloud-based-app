@@ -46,4 +46,8 @@ export class AdminService {
   deleteUser(user_id) {
     return this.apiService.delete(this.user_url + user_id);
   }
+
+  deleteorder(id) {
+    return this.apiService.delete(this.all_orders + id);
+  }
 }
