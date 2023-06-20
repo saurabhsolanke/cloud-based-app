@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../shared/services/product.service';
 import { FormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
-
 @Component({
   selector: 'app-farmer-orders',
   templateUrl: './farmer-orders.component.html',

@@ -29,8 +29,8 @@
           <td *ngIf="order.product.role === 'merchant' ">{{order.requestedby}} </td>
           <td *ngIf="order.product.role === 'farmer' ">{{order.approvedby}} </td>
           <td>{{order.status}}</td>
-          <td > 
-            <button [disabled]="order.status === 'requested' " type="button" routerLink="/payment-gateway" class="btn btn-success">Pay Now</button>
+          <td>
+            <button [disabled]="order.status === 'requested' " type="button" class="btn btn-success" (click)="paynow()">Pay Now</button>
           </td>
         </tr>
       </tbody>
