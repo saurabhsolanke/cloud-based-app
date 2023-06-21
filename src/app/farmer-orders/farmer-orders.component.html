@@ -11,7 +11,7 @@
             <li class="breadcrumb-item"><a>Orders</a></li>
         </ol>
     </nav>
-      <table class="table table-bordered table-secondary">
+      <table class="table table-bordered table-secondary" >
         <thead>
           <tr>
             <th scope="col">orderId</th>
@@ -25,7 +25,7 @@
             <!-- <th scope="col">action</th> -->
           </tr>
         </thead>
-        <tbody *ngFor="let order of orders">
+        <tbody *ngFor="let order of orders" ngIf="order.product.isshopowner === false">
           <tr *ngIf="order.requestedby === this.loggedinname || order.approvedby === loggedinname">
             <th scope="row">{{order.id}}</th>
             <td>{{order.product.name}}</td>

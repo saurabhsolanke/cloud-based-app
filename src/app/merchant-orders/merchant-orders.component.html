@@ -13,6 +13,8 @@
           <th scope="col">Price</th>
           <th scope="col">contact</th>
           <th scope="col">time</th>
+          <th scope="col">nego. price</th>
+          <th scope="col">wanted nego</th>
           <th scope="col">Farmer Name</th>
           <th scope="col">Status</th>
           <th scope="col">action</th>
@@ -26,9 +28,11 @@
           <td>{{order.product.dp}}</td>
           <td>{{order.product.mobNumber}}</td>
           <td>{{order.dateTime}}</td>
+          <td>{{order.negotiation_price}}</td>
+          <td>{{order.negotiation_quantity}}</td>
           <td *ngIf="order.product.role === 'merchant' ">{{order.requestedby}} </td>
           <td *ngIf="order.product.role === 'farmer' ">{{order.approvedby}} </td>
-          <td>{{order.status}}</td>
+          <td> <span [ngClass]="{'badge text-bg-success': order.status === 'requested', 'badge text-bg-danger' : order.status === 'pending payment', 'badge text-bg-warning' : order.status === 'Ordered'}">{{order.status}}</span> </td>
           <td>
             <button [disabled]="order.status === 'requested' " type="button" class="btn btn-success" (click)="paynow()">Pay Now</button>
           </td>

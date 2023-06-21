@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
 import { Product, User, Order } from "../core/models/object-model";
 import { CustomerService } from "../customer/services/customer.service";
@@ -8,6 +9,7 @@ import { CustomerService } from "../customer/services/customer.service";
   styleUrls: ["./famercheckout.component.scss"],
 })
 export class FamercheckoutComponent implements OnInit {
+  addEditProductForm1: FormGroup;
   single_product_id: number;
   user_id: number;
   individual_product: Product;
@@ -16,26 +18,56 @@ export class FamercheckoutComponent implements OnInit {
   user_contact_no: Number;
   order_dto: Order;
   id: number;
-  status = "requested";
+  status = "Payment Pending";
   is_negotiation: boolean;
   negotiation_price: number;
   isshopowner: boolean;
-  negotiation_quantity: number;
+  user_role: string;
   loggedinname: string;
+  user_session_id: string;
+  mobNumber: string;
+  city: string;
+  negotiation_quantity: number;
+  edit: boolean;
+  popup_header: string;
+  singleOrder: any;
+  edit_order_id: any;
   approvedby: string;
 
   constructor(
     private customerService: CustomerService,
+    private formBuilder: FormBuilder,
     private router: Router
   ) {}
 
   ngOnInit() {
+    this.user_role = sessionStorage.getItem("role");
+    this.loggedinname = sessionStorage.getItem("name");
+    this.user_session_id = sessionStorage.getItem("user_session_id");
     this.customerService.currentProduct.subscribe(
       (product) => (this.single_product_id = product)
     );
-    this.loggedinname = sessionStorage.getItem("name");
-    console.log(this.loggedinname);
     this.user_id = Number(sessionStorage.getItem("user_session_id"));
+    this.addEditProductForm1 = this.formBuilder.group({
+      orderid: [""],
+      name: [""],
+      uploadPhoto: [""],
+      productDesc: [""],
+      mrp: [""],
+      dp: [""],
+      addedBy: [""],
+      contact: [""],
+      status: [""],
+      dateTime: [""],
+      addLine1: [""],
+      addLine2: [""],
+      city: [""],
+      state: [""],
+      zipCode: [""],
+      negotiation_price: [""],
+      negotiation_quantity: [""],
+    });
+
     this.productDetail(this.single_product_id);
     this.userAddress(this.user_id);
   }
@@ -95,9 +127,9 @@ export class FamercheckoutComponent implements OnInit {
         zipCode: Number(this.user_address.zipCode),
       },
       status: this.status,
-      is_negotiation: this.is_negotiation,
-      negotiation_price: this.negotiation_price,
-      negotiation_quantity: this.negotiation_quantity,
+      is_negotiation: false,
+      negotiation_price: 0,
+      negotiation_quantity: 0,
       contact: this.user_contact_no,
       dateTime: new Date().toLocaleDateString(),
     };
@@ -107,6 +139,39 @@ export class FamercheckoutComponent implements OnInit {
       alert("Order places successfully");
       // this.router.navigateByUrl("/merchant/merchant-orders");
       this.router.navigateByUrl("/farmer/orders");
+    });
+  }
+
+  editProductPopup(id) {
+    // this.current_order_id = Order.id;
+    // this.user_contact_no = order.contact;
+    // this.status = order.status;
+    this.edit = true;
+    this.popup_header = "Update Order Status : " + id;
+    this.addEditProductForm1.reset();
+    this.customerService.singleOrder(id).subscribe((data) => {
+      this.singleOrder = data;
+      this.edit_order_id = data.id;
+      console.log("single order", this.singleOrder);
+      this.addEditProductForm1.setValue({
+        orderid: this.singleOrder.id || "",
+        name: this.singleOrder.product.name || "",
+        uploadPhoto: this.singleOrder.product.uploadPhoto || "",
+        productDesc: this.singleOrder.product.productDesc || "",
+        mrp: this.singleOrder.product.mrp || "",
+        dp: this.singleOrder.product.dp || "",
+        addedBy: this.singleOrder.product.addedBy || "",
+        addLine1: this.singleOrder.deliveryAddress.addLine1 || "",
+        addLine2: this.singleOrder.deliveryAddress.addLine2 || "",
+        city: this.singleOrder.deliveryAddress.city || "",
+        state: this.singleOrder.deliveryAddress.state || "",
+        zipCode: this.singleOrder.deliveryAddress.zipCode || "",
+        status: this.singleOrder.status || "",
+        contact: this.singleOrder.contact || "",
+        dateTime: this.singleOrder.dateTime || "",
+        negotiation_price : this.singleOrder.negotiation_price || "",
+        negotiation_quantity : this.singleOrder.negotiation_quantity || ""
+      });
     });
   }
 
@@ -151,9 +216,9 @@ export class FamercheckoutComponent implements OnInit {
     this.customerService.insertNewOrder(this.order_dto).subscribe(
       (data) => {
         // console.log("Order placed successfully", data);
-        alert("Order places successfully");
+        alert("requested, payment pending");
         // this.router.navigateByUrl("/merchant/merchant-orders");
-        this.router.navigateByUrl("/farmer/purchaserequest");
+        this.router.navigateByUrl("/farmer/purchaserequestf");
       },
       (err) => {
         alert("Some Error Occured");
