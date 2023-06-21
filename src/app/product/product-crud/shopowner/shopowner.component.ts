@@ -84,7 +84,7 @@ export class ShopownerComponent implements OnInit {
     if (this.name == "") {
       this.ngOnInit();
     } else {
-      this.all_product_data = this.all_product_data.filter(
+      this.my_product_data = this.my_product_data.filter(
         (res: { name: string }) => {
           return res.name
             .toLocaleLowerCase()

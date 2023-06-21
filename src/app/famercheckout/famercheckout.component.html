@@ -51,25 +51,37 @@
                             <h1 class="modal-title" id="staticBackdropLabel">Do you want to Negotiate?</h1>
                             <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
                         </div>
-                        <div class="modal-body">
-                            <div class="container">
-                                <!-- <div class="form-group">
+                        <form [formGroup]="addEditProductForm1">
+                            <div class="modal-body">
+                                <div class="container">
+                                    <!-- <div class="form-group">
                                     <label for="">i want to negotiate</label>
                                     <input type="checkbox" id="negotiate" name="negotiate" value="negotiate">
                                 </div> -->
-                                <div class="form-group">
-                                    <form>
+                                    <div class="form-group">
+                                        <!-- <div class="form-group">
+                                            <label for="productImage">mrp</label>
+                                            <input type="text" class="form-control" readonly formControlName="mrp">
+                                        </div> -->
+
                                         <label for="my-input">Negotiated Price</label>
-                                        <input id="negotiation_price" class="form-control" type="text" name="negotiation_price" ngModel placeholder="my-input">
-                                      </form>
-                                      <!-- form value: {login: ''} -->
+                                        <input id="negotiation_price" class="form-control"
+                                            [(ngModel)]="negotiation_price" formControlName="negotiation_price"
+                                            type="text" name="negotiation_price">
+
+                                        <label for="my-input">Negotiated Quantity</label>
+                                        <input id="negotiation_quantity" class="form-control"
+                                            [(ngModel)]="negotiation_quantity" formControlName="negotiation_quantity"
+                                            type="text" name="negotiation_quantity">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" (click)="negotiatedOrder()">Proceed</button>
-                        </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                    (click)="negotiatedOrder()">Proceed</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -84,8 +96,8 @@
                         <p class="card-text">{{user_address?.city}},{{user_address?.state}}</p>
                         <p class="card-text">Postal Code: {{user_address?.zipCode}}</p>
                         <p class="card-text">Contact Number: {{user_contact_no}}</p>
-                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#staticBackdrop">Do you want to negotiate </button> -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#staticBackdrop">Do you want to negotiate </button>
                         <a class="btn btn-success" (click)="placeOrder()">Request</a>
                         <div class="alert alert-info" role="alert">
                             <strong>Note: </strong>
@@ -95,9 +107,7 @@
                             section.
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-</div>

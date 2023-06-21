@@ -19,7 +19,7 @@ export class CheckoutComponent implements OnInit {
   user_contact_no: Number;
   order_dto: Order;
   id: number;
-  status = "requested";
+  status = "Payment Pending";
   is_negotiation: boolean;
   negotiation_price: number;
   isshopowner: boolean;
@@ -214,10 +214,10 @@ export class CheckoutComponent implements OnInit {
       contact: this.user_contact_no,
       dateTime: new Date().toLocaleDateString(),
     };
-    console.log("Place order dto", this.order_dto);
+    // console.log("Place order dto", this.order_dto);
     this.customerService.insertNewOrder(this.order_dto).subscribe((data) => {
       // console.log("Order placed successfully", data);
-      alert("requested");
+      alert("requested, payment pending");
       this.router.navigateByUrl("/merchant/merchant-orders");
       // this.router.navigateByUrl("/payment-gateway");
     });
