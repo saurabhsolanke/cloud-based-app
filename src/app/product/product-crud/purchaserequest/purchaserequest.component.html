@@ -52,7 +52,7 @@
                         <th>Quantity</th>
                         <th>buying rate</th>
                         <th>contact</th>
-                        <th>time</th>
+                        <th>Date</th>
                         <th>Request By</th>
                         <th>Negotiated Price</th>
                         <th>Negotiated quantity</th>
@@ -72,7 +72,7 @@
                         <td>{{order.negotiation_price}}</td>
                         <td>{{order.negotiation_quantity}}</td>
 
-                        <td><span [ngClass]=" "  class="badge badge-primary">{{order.status}}</span> </td>
+                        <td><span class="badge badge-primary">{{order.status}}</span> </td>
                         <td>
                             <span class="sim-pointer" data-toggle="modal" data-target="#addEditProductModal"
                                 (click)="editProductPopup(order.id)"><i class="fa fa-pencil-square-o"
@@ -159,8 +159,8 @@
                                 <label for="status">Status</label>
                                 <select class="form-control" formControlName="status">
                                     <option value="Requested">Requested</option>
-                                    <option value="Payment Pending">Payment Pending</option>
-                                    <option value="Ordered">Accept Order</option>
+                                    <option value="Payment Pending">Approve</option>
+                                    <!-- <option value="Ordered">Accept Order</option> -->
                                 </select>
                             </div>
                             <div class="form-group">

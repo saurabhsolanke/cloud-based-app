@@ -18,7 +18,7 @@ export class FamercheckoutComponent implements OnInit {
   user_contact_no: Number;
   order_dto: Order;
   id: number;
-  status = "Payment Pending";
+  status = "Requested";
   is_negotiation: boolean;
   negotiation_price: number;
   isshopowner: boolean;
@@ -218,7 +218,7 @@ export class FamercheckoutComponent implements OnInit {
         // console.log("Order placed successfully", data);
         alert("requested, payment pending");
         // this.router.navigateByUrl("/merchant/merchant-orders");
-        this.router.navigateByUrl("/farmer/purchaserequestf");
+        this.router.navigateByUrl("/farmer/orders");
       },
       (err) => {
         alert("Some Error Occured");
