@@ -19,7 +19,7 @@ export class CheckoutComponent implements OnInit {
   user_contact_no: Number;
   order_dto: Order;
   id: number;
-  status = "Payment Pending";
+  status = "Requested";
   is_negotiation: boolean;
   negotiation_price: number;
   isshopowner: boolean;
