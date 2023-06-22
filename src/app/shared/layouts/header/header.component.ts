@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   user_role = '';
   name = ''
 
-  constructor(private translate: TranslateService, private router: Router) { }
+  constructor(private translate: TranslateService, public router: Router) { }
 
   ngOnInit() {
   }

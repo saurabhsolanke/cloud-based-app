@@ -33,11 +33,11 @@ export class FarmerOrdersComponent implements OnInit {
 
   getOrder() {
     this.product_service.getAllorders().subscribe((data) => {
-      this.orders = data;
-      // this.orders = data.filter(
-      //   (order) => order.product.user_session_id === this.user_session_id,
-      //   console.log( this.user_session_id)
-      // );
+      // this.orders = data;
+      this.orders = data.filter(
+        (order) =>  order.product.isshopowner !== true,
+        console.log( this.user_session_id)
+      );
     });
   }
 

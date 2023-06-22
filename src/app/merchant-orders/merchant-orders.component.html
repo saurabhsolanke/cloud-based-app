@@ -4,17 +4,17 @@
   </div>
   <div class="col mt-3">
     <p class="lead">orders</p>
-    <table class="table">
+    <table class="table border">
       <thead>
         <tr>
           <th scope="col">orderId</th>
-          <th scope="col">Crop Name</th>
+          <th scope="col">Name</th>
           <th scope="col">Quantity</th>
-          <th scope="col">Price</th>
+          <th scope="col">buying rate</th>
           <th scope="col">contact</th>
-          <th scope="col">time</th>
-          <th scope="col">nego. price</th>
-          <th scope="col">wanted nego</th>
+          <th scope="col">date</th>
+          <th scope="col">Negotiated Price</th>
+          <th scope="col">Negotiated Quantity</th>
           <th scope="col">Farmer Name</th>
           <th scope="col">Status</th>
           <th scope="col">action</th>
@@ -34,7 +34,7 @@
           <td *ngIf="order.product.role === 'farmer' ">{{order.approvedby}} </td>
           <td> <span [ngClass]="{'badge text-bg-success': order.status === 'requested', 'badge text-bg-danger' : order.status === 'pending payment', 'badge text-bg-warning' : order.status === 'Ordered'}">{{order.status}}</span> </td>
           <td>
-            <button [disabled]="order.status === 'requested' " type="button" class="btn btn-success" (click)="paynow()">Pay Now</button>
+            <button [disabled]="order.status === 'requested' || order.status === 'Ordered' " type="button" class="btn btn-success" (click)="paynow()">Pay Now</button>
           </td>
         </tr>
       </tbody>

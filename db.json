@@ -119,6 +119,26 @@
       "password": "12345678",
       "role": "merchant",
       "id": 6
+    },
+    {
+      "age": 23,
+      "agreetc": true,
+      "dob": "1998-06-10",
+      "email": "sahop2@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "PUNE",
+        "addLine2": "PUNE",
+        "city": "PUNE",
+        "state": "MH",
+        "zipCode": "431003"
+      },
+      "mobNumber": "9028066793",
+      "name": "shopowner2",
+      "password": "12345678",
+      "role": "shopowner",
+      "id": 7
     }
   ],
   "products": [
@@ -129,13 +149,13 @@
       "productDesc": "1",
       "mrp": "22",
       "dp": "33",
-      "status": "active",
+      "status": "inactive",
       "addedBy": "Shopowner",
-      "isshopowner": true,
       "user_session_id": "3",
+      "isshopowner": true,
       "role": "shopowner",
-      "city": "Sambhaji Nagar",
-      "mobNumber": "9028066793"
+      "mobNumber": "9028066793",
+      "city": "Sambhaji Nagar"
     },
     {
       "id": 6,
@@ -182,17 +202,17 @@
     {
       "id": 9,
       "name": "Shop Product2",
-      "uploadPhoto": "uicwuicqwucilwbeiwbib",
+      "uploadPhoto": "https://images.pexels.com/photos/971078/pexels-photo-971078.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "productDesc": "1",
       "mrp": "10",
       "dp": "9",
       "status": "active",
       "addedBy": "Shopowner",
-      "isshopowner": true,
       "user_session_id": "3",
+      "isshopowner": true,
       "role": "shopowner",
-      "city": null,
-      "mobNumber": "9028066793"
+      "mobNumber": "9028066793",
+      "city": "Sambhaji Nagar"
     },
     {
       "id": 10,
@@ -222,20 +242,51 @@
       "role": "merchant",
       "mobNumber": "9876543210",
       "city": "Sambhaji Nagar"
+    },
+    {
+      "id": 12,
+      "name": "shop2 ",
+      "uploadPhoto": "https://images.pexels.com/photos/164504/pexels-photo-164504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "productDesc": "2",
+      "mrp": "222",
+      "dp": "22",
+      "status": "active",
+      "addedBy": "shopowner2",
+      "user_session_id": "7",
+      "isshopowner": true,
+      "role": "shopowner",
+      "mobNumber": "9028066793",
+      "city": "Sambhaji Nagar"
+    },
+    {
+      "id": 13,
+      "name": "Grain",
+      "uploadPhoto": "https://images.pexels.com/photos/273838/pexels-photo-273838.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "productDesc": "12kg",
+      "mrp": "900",
+      "dp": "800",
+      "status": "active",
+      "addedBy": "Sanket Chavan",
+      "user_session_id": "5",
+      "role": "farmer",
+      "mobNumber": "9876543210",
+      "city": "Chh. Sambhaji Nagar"
     }
   ],
   "orders": [
     {
       "requestedby": "Roshan Sonone",
+      "approvedby": "Chetan Pawar",
+      "orderid": 11,
       "userId": 1,
       "product": {
-        "id": 11,
+        "id": 0,
         "name": "crop1",
         "uploadPhoto": "wertyuiop",
         "productDesc": "1",
         "mrp": "1",
         "dp": "1",
-        "status": "active",
+        "status": "Ordered",
         "addedBy": "Chetan Pawar",
         "user_session_id": "2",
         "role": "merchant",
@@ -250,12 +301,10 @@
         "state": "Maharashtra",
         "zipCode": 431003
       },
-      "status": "Payment Pending",
-      "is_negotiation": true,
       "negotiation_price": "20",
       "negotiation_quantity": "1",
-      "contact": "9876543210",
       "dateTime": "21/06/2023",
+      "status": "Ordered",
       "id": 1
     },
     {
@@ -288,6 +337,235 @@
       "contact": "9876543210",
       "dateTime": "21/06/2023",
       "id": 2
+    },
+    {
+      "userId": 1,
+      "requestedby": "Roshan Sonone",
+      "product": {
+        "id": 10,
+        "name": "seeds",
+        "uploadPhoto": "bvoiorbio3rbfi3bhb",
+        "productDesc": "1",
+        "mrp": "100",
+        "dp": "90",
+        "status": "active",
+        "addedBy": "Shopowner",
+        "user_session_id": "3",
+        "isshopowner": true,
+        "role": "shopowner",
+        "mobNumber": "9028066793",
+        "city": null
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": 431003
+      },
+      "status": "Ordered",
+      "contact": "9876543210",
+      "dateTime": "22/06/2023",
+      "id": 3
+    },
+    {
+      "requestedby": "Chetan Pawar",
+      "approvedby": "Roshan Sonone",
+      "orderid": 8,
+      "userId": 2,
+      "product": {
+        "id": 8,
+        "name": "Sugarcane",
+        "uploadPhoto": "https://images.pexels.com/photos/11689868/pexels-photo-11689868.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "productDesc": "100 ton",
+        "mrp": "9000",
+        "dp": "8000",
+        "status": "Ordered",
+        "addedBy": "Roshan Sonone",
+        "user_session_id": "1",
+        "role": "farmer",
+        "mobNumber": "9876543210",
+        "city": "Sambhaji Nagar"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": 431003
+      },
+      "negotiation_price": "7000",
+      "negotiation_quantity": "100kg",
+      "dateTime": "22/06/2023",
+      "status": "Ordered",
+      "id": 4
+    },
+    {
+      "requestedby": "Roshan Sonone",
+      "approvedby": "Chetan Pawar",
+      "orderid": 11,
+      "userId": 1,
+      "product": {
+        "id": 0,
+        "name": "crop1",
+        "uploadPhoto": "wertyuiop",
+        "productDesc": "1",
+        "mrp": "1",
+        "dp": "1",
+        "status": "Ordered",
+        "addedBy": "Chetan Pawar",
+        "user_session_id": "2",
+        "role": "merchant",
+        "mobNumber": "9876543210",
+        "city": "Sambhaji Nagar"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": 431003
+      },
+      "negotiation_price": "77",
+      "negotiation_quantity": "100kg",
+      "dateTime": "22/06/2023",
+      "status": "Ordered",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "requestedby": "Roshan Sonone",
+      "product": {
+        "id": 12,
+        "name": "shop2 ",
+        "uploadPhoto": "https://images.pexels.com/photos/164504/pexels-photo-164504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "productDesc": "2",
+        "mrp": "222",
+        "dp": "22",
+        "status": "active",
+        "addedBy": "shopowner2",
+        "user_session_id": "7",
+        "isshopowner": true,
+        "role": "shopowner",
+        "mobNumber": "9028066793",
+        "city": "Sambhaji Nagar"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": 431003
+      },
+      "status": "Ordered",
+      "contact": "9876543210",
+      "dateTime": "22/06/2023",
+      "id": 6
+    },
+    {
+      "requestedby": "Sanket Chavan",
+      "approvedby": "Chetan Pawar",
+      "orderid": 11,
+      "userId": 5,
+      "product": {
+        "id": 0,
+        "name": "crop1",
+        "uploadPhoto": "wertyuiop",
+        "productDesc": "1",
+        "mrp": "1",
+        "dp": "1",
+        "status": "Ordered",
+        "addedBy": "Chetan Pawar",
+        "user_session_id": "2",
+        "role": "merchant",
+        "mobNumber": "9876543210",
+        "city": "Chh. Sambhaji Nagar"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Chh. Sambhaji Nagar",
+        "addLine2": "",
+        "city": "Chh. Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": 431003
+      },
+      "negotiation_price": "2",
+      "negotiation_quantity": "2",
+      "dateTime": "22/06/2023",
+      "status": "Ordered",
+      "id": 7
+    },
+    {
+      "requestedby": "Chetan Pawar",
+      "approvedby": "",
+      "userId": 2,
+      "product": {
+        "id": 8,
+        "name": "Sugarcane",
+        "uploadPhoto": "https://images.pexels.com/photos/11689868/pexels-photo-11689868.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "productDesc": "100 ton",
+        "mrp": "9000",
+        "dp": "8000",
+        "status": "active",
+        "addedBy": "Roshan Sonone",
+        "user_session_id": "1",
+        "role": "farmer",
+        "mobNumber": "9876543210",
+        "city": "Sambhaji Nagar"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": 431003
+      },
+      "status": "Payment Pending",
+      "is_negotiation": false,
+      "negotiation_price": 0,
+      "negotiation_quantity": 0,
+      "contact": "9876543210",
+      "dateTime": "22/6/2023",
+      "id": 8
+    },
+    {
+      "requestedby": "Chetan Pawar",
+      "approvedby": "",
+      "userId": 2,
+      "product": {
+        "id": 8,
+        "name": "Sugarcane",
+        "uploadPhoto": "https://images.pexels.com/photos/11689868/pexels-photo-11689868.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "productDesc": "100 ton",
+        "mrp": "9000",
+        "dp": "8000",
+        "status": "active",
+        "addedBy": "Roshan Sonone",
+        "user_session_id": "1",
+        "role": "farmer",
+        "mobNumber": "9876543210",
+        "city": "Sambhaji Nagar"
+      },
+      "deliveryAddress": {
+        "id": 0,
+        "addLine1": "Sambhaji Nagar",
+        "addLine2": "Sambhaji Nagar",
+        "city": "Sambhaji Nagar",
+        "state": "Maharashtra",
+        "zipCode": 431003
+      },
+      "status": "Payment Pending",
+      "is_negotiation": false,
+      "negotiation_price": 0,
+      "negotiation_quantity": 0,
+      "contact": "9876543210",
+      "dateTime": "22/6/2023",
+      "id": 9
     }
   ],
   "cart": [],

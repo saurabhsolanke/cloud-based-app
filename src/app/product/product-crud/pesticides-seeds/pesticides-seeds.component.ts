@@ -33,9 +33,9 @@ export class PesticidesSeedsComponent implements OnInit {
 
   getAllProduct() {
     this.product_service.allProduct(this.user_session_id).subscribe((data) => {
-      this.all_products = data;
+      // this.all_products = data;
       this.all_products = data.filter(
-        (product) => product.role === 'shopowner'
+        (product) => product.role === 'shopowner' && product.status === 'active'
       );
     });
   }
