@@ -16,23 +16,27 @@
           <tr>
             <th scope="col">orderId</th>
             <th scope="col">Name</th>
-            <th scope="col">Product Description</th>
+            <th scope="col">Quantity</th>
             <th scope="col">buying rate</th>
             <th scope="col">contact</th>
-            <th scope="col">time</th>
+            <th scope="col">Date</th>
+            <th scope="col">Negotiated Price</th>
+            <th scope="col">Negotiated Quantity</th>
             <th scope="col">merchant name</th>
             <th scope="col">Status</th>
             <!-- <th scope="col">action</th> -->
           </tr>
         </thead>
-        <tbody *ngFor="let order of orders" ngIf="order.product.isshopowner === false">
+        <tbody *ngFor="let order of orders">
           <tr *ngIf="order.requestedby === this.loggedinname || order.approvedby === loggedinname">
             <th scope="row">{{order.id}}</th>
             <td>{{order.product.name}}</td>
             <td>{{order.product.productDesc}}</td>
-            <td>{{order.product.dp}}</td>
+            <td>{{order.product.dp}}</td>            
             <td>{{order.product.mobNumber}}</td>
             <td>{{order.dateTime}}</td>
+            <td>{{order.negotiation_price}}</td>
+            <td>{{order.negotiation_quantity}}</td>
             <td *ngIf="order.product.role === 'farmer' ">{{order.requestedby}} </td>
             <td *ngIf="order.product.role === 'merchant' ">{{order.approvedby}} </td>
             <td>{{order.status}}</td>

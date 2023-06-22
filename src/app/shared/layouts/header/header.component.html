@@ -2,7 +2,7 @@
   <!-- [ngClass]="{'bg-success': user_role === 'merchant', 'bg-primary' : user_role === 'farmer', 'bg-info' : user_role === 'admin' }" -->
 
   <!-- user_role == 'merchant' ? 'bg-primary' : 'bg-success' -->
-  <a class="navbar-brand text-light"  routerLink="/">{{'proj_name' | translate}}</a>
+  <a class="navbar-brand text-light"  routerLink="/home">{{'proj_name' | translate}}</a>
   <span
     [ngClass]="user_role == 'farmer' ? 'badge bg-info text-light' : 'badge bg-success text-light'">{{user_role}}</span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -94,7 +94,7 @@
   </div>
 </nav>
 
-<aside id="sidebar" class="sidebar" *ngIf="logged_in">
+<aside id="sidebar" class="sidebar" *ngIf="logged_in && router.url !== '/home' ">
   <ul class="sidebar-nav" id="sidebar-nav">
     
     <li class="nav-item">
@@ -147,7 +147,7 @@
     <li class="nav-item" *ngIf="user_role == 'merchant' ">
       <a class="nav-link collapsed">
         <i class="bi bi-layout-text-window-reverse"></i>
-        <span routerLink="/merchant/purchaserequestm">Purchasing Requests1</span><i class="bi bi-chevron-down ms-auto"></i>
+        <span routerLink="/merchant/purchaserequestm">Purchasing Requests</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
     </li>
 

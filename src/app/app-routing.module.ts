@@ -37,6 +37,7 @@ import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 const routes: Routes = [
   { path: "", redirectTo: "/", pathMatch: "full" },
   { path: "", component: HomeComponent },
+  { path: "home", component: HomeComponent },
   { path: "my-profile", component: UserProfileComponent },
   { path: "contact-us", component:ContactUsComponent},
   { path: "payment-gateway", component:PaymentGatewayComponent},
