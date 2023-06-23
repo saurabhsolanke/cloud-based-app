@@ -53,8 +53,8 @@
                                     <a routerlink="/orders"> <img src="../assets/currency-dollar.svg" alt=""></a>
                                 </div>
                                 <div class="ps-3 mx-3">
-                                    <h6 >{{ productTotal}} </h6>
-                                   
+                                    <h6>  ₹ {{ productTotal}} </h6>
+
                                     <!-- <span class="text-success small pt-1 fw-bold">8%</span> <span
                                         class="text-muted small pt-2 ps-1">increase</span> -->
 
@@ -93,7 +93,7 @@
 
         <!--  Recent Sales -->
 
-        <!-- <div class="container-fluid">
+        <div class="container-fluid">
             <div class="col">
                 <div class="card recent-sales overflow-auto">
 
@@ -111,53 +111,31 @@
                     </div>
 
                     <div class="card-body">
-                        <h5 class="card-title">Recent Sales <span>| Today</span></h5>
+                        <h5 class="card-title">Recent Sales <span></span></h5>
 
                         <table class="table table-borderless datatable">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Product</th>
-                                    <th scope="col">Price</th>
+                                    <th scope="col">orderId</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">date</th>
+                                    <th scope="col">Requested By</th>
+                                    <th scope="col">Approved By</th>
                                     <th scope="col">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row"><a href="#">#2457</a></th>
-                                    <td>Brandon Jacob</td>
-                                    <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                                    <td>$64</td>
-                                    <td><span class="badge bg-success">Approved</span></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><a href="#">#2147</a></th>
-                                    <td>Bridie Kessler</td>
-                                    <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                                    <td>$47</td>
-                                    <td><span class="badge bg-warning">Pending</span></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><a href="#">#2049</a></th>
-                                    <td>Ashleigh Langosh</td>
-                                    <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                                    <td>$147</td>
-                                    <td><span class="badge bg-success">Approved</span></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><a href="#">#2644</a></th>
-                                    <td>Angus Grady</td>
-                                    <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
-                                    <td>$67</td>
-                                    <td><span class="badge bg-danger">Rejected</span></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><a href="#">#2644</a></th>
-                                    <td>Raheem Lehner</td>
-                                    <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
-                                    <td>$165</td>
-                                    <td><span class="badge bg-success">Approved</span></td>
+                                <tr *ngFor="let order of orders; let i of index">
+                                    <th scope="row">{{order.id}}</th>
+                                    <td>{{order.product.name}}</td>
+                                    <td>{{order.product.productDesc}}</td>
+                                    <td>{{order.dateTime}}</td>
+                                    <td>{{order.requestedby}}</td>
+                                    <td>{{order.approvedby}}</td>
+                                    <td><span class="badge text-light"
+                                            [ngClass]="{'bg-secondary': order.status === 'Requested', 'bg-success': order.status === 'Pending Payment','bg-primary' : order.status === 'Ordered' }">{{order.status}}</span>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -166,7 +144,7 @@
 
                 </div>
             </div>
-        </div> -->
+        </div>
         <!-- End Recent Sales -->
 
         <!-- <div class="row mb-2 border">

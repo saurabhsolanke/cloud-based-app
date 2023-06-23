@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { User } from "src/app/core/models/object-model";
+import { ProductService } from "src/app/shared/services/product.service";
 import { AdminService } from "../services/admin.service";
 
 @Component({
@@ -28,8 +29,10 @@ export class AdminDashboardComponent implements OnInit {
   ordercount;
   usercount;
   productcount;
+  orders: any;
 
-  constructor(private router: Router, private adminService: AdminService) {}
+  constructor(private router: Router, private adminService: AdminService,
+    private product_service: ProductService) {}
 
   ngOnInit() {
     this.adminUserDashboardData();
@@ -37,6 +40,8 @@ export class AdminDashboardComponent implements OnInit {
     this.getAllUser();
     this.getAllproducts();
     this.getAllorders();
+    this.getOrder();
+
   }
 
   userDashboard() {
@@ -45,6 +50,12 @@ export class AdminDashboardComponent implements OnInit {
 
   productDashboard() {
     this.router.navigateByUrl("/admin/product");
+  }
+
+  getOrder() {
+    this.product_service.getAllorders().subscribe((data) => {
+      this.orders = data;
+    });
   }
 
   adminUserDashboardData() {
